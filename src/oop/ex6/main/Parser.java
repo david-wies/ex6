@@ -70,9 +70,11 @@ class Parser {
      * @param lineNumber
      * @throws IllegalException
      */
-    private void updateVaribales(HashMap<String,Variable> variables,String line, int lineNumber)
+    public void updateVaribales(HashMap<String,Variable> variables,String line, int lineNumber)
             throws IllegalException{
-
+        String variableType = extractFirstWord(line,lineNumber);
+        line = line.substring(variableType.length());
+        String[] parts = line.split(",");
     }
 
     /**
