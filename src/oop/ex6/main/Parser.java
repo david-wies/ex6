@@ -13,8 +13,8 @@ import java.util.regex.Pattern;
  */
 class Parser {
 
-    // Pattern's string's.
     static final private String BAD_FORMAT_ERROR = "bad format line";
+    private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
     private static final String FIRST_WORD = "(\\b\\w+\\b)";
     private static final String LEGAL_END = "[^;]*;\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
@@ -27,6 +27,7 @@ class Parser {
     private static Pattern startBlock = Pattern.compile(START_BLOCK);
     private HashMap<String, Method> methods;
     private HashMap<String, Variable> globalVariables;
+    private final String FINAL = "final";
 
     /**
      * @param filePath The path to the s-java file.
@@ -79,11 +80,15 @@ class Parser {
             throws IllegalException{
         boolean isFinal=false;
         String firstWord = extractFirstWord(line,lineNumber);
-        if (firstWord.equals("final")){
+        if (firstWord.equals(FINAL)){
             isFinal=true;
-            line = line.substring(varType.length());
+            line = line.substring(line.indexOf(FINAL)+FINAL.length());
         }
-        line = line.substring(varType.length());
+        String varType = extractFirstWord(line,lineNumber);
+        if (!Variable.isLegalityVariableType(varType)){
+            throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+        }
+        line = line.substring(line.indexOf(varType));
         String[] parts = line.split(",");
         for (String part:parts){
             if (!part.contains("=")){ //var assignment without value.
@@ -93,13 +98,21 @@ class Parser {
                     Variable newVar = new Variable(varType,varName,lineNumber);
                     variables.put(newVar.getName(),newVar);
                 }
-                throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+                else {
+                    throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+                }
             }
             else{ //var assignment with value.
                 String[] parameters = part.split("=");
                 if (parameters.length==2){
-                    Variable newVar = new Variable(varType,parameters[0],parameters[1],lineNumber,)
+                    Variable.verifyLegalityVariableName(parameters[0],lineNumber,variables);
+                    Variable newVar = new Variable(varType,parameters[0],parameters[1],lineNumber,isFinal);
+                    variables.put(newVar.getName(),newVar);
                 }
+                else{
+                    throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+                }
+
 
             }
         }
