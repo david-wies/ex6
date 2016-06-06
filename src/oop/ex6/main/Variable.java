@@ -109,7 +109,7 @@ class Variable {
     /**
      * @return Is the variable has value.
      */
-    boolean isHasValue() {
+    boolean hasValue() {
         return hasValue;
     }
 
