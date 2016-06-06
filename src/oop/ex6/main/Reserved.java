@@ -5,8 +5,8 @@ package oop.ex6.main;
  */
 class Reserved {
 
-    private static final String[] RESERVED_KEYWORDS = {"void", "final", "if", "while", "true", "false", "return",
-            "int", "double", "boolean", "char", "String"};
+    private static final String[] RESERVED_KEYWORDS = {"void", "final", "if", "while", "true", "false",
+            "return", "int", "double", "boolean", "char", "String"};
 
     /**
      * Check if the name is in the reserved keyboard of s-java list.

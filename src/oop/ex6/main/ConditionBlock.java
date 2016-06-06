@@ -9,6 +9,7 @@ import java.util.HashMap;
 class ConditionBlock extends Block {
 
     private final String CONDITION;
+
     /**
      * The constructor.
      *
