@@ -24,6 +24,36 @@ class ConditionBlock extends Block {
     }
 
     /**
+     * Convert the string of parameter into variables to be use.
+     *
+     * @param parameters The string that describe the parameter's of the method.
+     * @throws IllegalException
+     */
+    private void analysisCondition(String condition) throws IllegalException {
+        variables.add(new HashMap<>());
+        int start;
+        int end;
+        String spliter = "[^((&&)|(||))]";
+        String[] parts = condition.split("||");
+//        for (String part : parts) {
+//            if ()
+//            Matcher m1 = pattern1.matcher(part);
+//            Matcher m2 = pattern2.matcher(part);
+//            if (m1.matches()) {
+//                m2.find();
+//                start = m2.start();
+//                end = m2.end();
+//                String newPart = part.substring(start, end);
+//                String[] typeAndName = newPart.split("\\s");
+//                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], ORIGIN_LINE);
+//                variables.get(0).put(newVar.getName(), newVar);
+//                this.parameters.add(newVar);
+//            } else
+//                throw new IllegalException(NAME_ERROR, ORIGIN_LINE);
+//        }
+    }
+
+    /**
      * @return The condition
      */
     public String getCondition() {
