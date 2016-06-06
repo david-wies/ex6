@@ -36,9 +36,11 @@ class Parser {
     }
 
     /**
-     * @param line
-     * @param numberLine
-     * @return
+     * Extract the string that describe the parameter's from the line.
+     *
+     * @param line The line that contain the describe of the parameter's.
+     * @param numberLine The number of the line in the file.
+     * @return String of the parameter's.
      * @throws IllegalException
      */
     private static String extractParameters(String line, int numberLine) throws IllegalException {
@@ -92,6 +94,10 @@ class Parser {
 
     /**
      * Go other all of the s-java file and do the first analysis.
+     *
+     * @param path The path tp the s-java file.
+     * @throws IOException The file does'nt exist.
+     * @throws IllegalException The file contain illegal command.
      */
     void analyzerFile(String path) throws IOException, IllegalException {
         File sJavaFile = new File(path);
@@ -114,11 +120,9 @@ class Parser {
             }
             line = line.substring(matcher.end());
             if (rows == null) {
-                if (Variable.isLegalityVariableType(word)) { // This line create a variable. 
-                    String type = word;
-                    String name = extractFirstWord(line, lineNumber);
-                    Variable.verifyLegalityVariableName(name, lineNumber, globalVariables);
-
+                if (Variable.isLegalityVariableType(word) || word.equals("final")) { // This line create a
+                    // variable.
+                    updateVariables(globalVariables, line, lineNumber);
                     // while and if blocks must be in method in s-java,
                 } else if (word.equals("}") || word.equals("if") || word.equals("while")) { // done!
                     throw new IllegalException("", lineNumber);
@@ -155,14 +159,6 @@ class Parser {
 
             lineNumber++;
         }
-    }
-
-    HashMap<String, Method> getMethods() {
-        return methods;
-    }
-
-    HashMap<String, Variable> getGlobalVariables() {
-        return globalVariables;
     }
 
     /**
