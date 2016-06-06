@@ -76,18 +76,30 @@ class Parser {
      */
     public void updateVariables(HashMap<String,Variable> variables, String line, int lineNumber)
             throws IllegalException{
-        String varType = extractFirstWord(line,lineNumber);
+        boolean isFinal=false;
+        String firstWord = extractFirstWord(line,lineNumber);
+        if (firstWord.equals("final")){
+            isFinal=true;
+            line = line.substring(varType.length());
+        }
         line = line.substring(varType.length());
         String[] parts = line.split(",");
         for (String part:parts){
-            if (part.contains("=")){
+            if (!part.contains("=")){ //var assignment without value.
                 Matcher matcher = singleName.matcher(part);
                 if (matcher.matches()){
                     String varName = extractFirstWord(part,lineNumber);
                     Variable newVar = new Variable(varType,varName,lineNumber);
                     variables.put(newVar.getName(),newVar);
                 }
-                throw new
+                throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+            }
+            else{ //var assignment with value.
+                String[] parameters = part.split("=");
+                if (parameters.length==2){
+                    Variable newVar = new Variable(varType,parameters[0],parameters[1],lineNumber,)
+                }
+
             }
         }
     }
