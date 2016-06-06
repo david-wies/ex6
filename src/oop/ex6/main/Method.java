@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
  * Created by David and Roi.
  */
 class Method extends Block {
+
     static final private String NAME_ERROR = "illegal method name";
     static final private String PARAMETERS_ERROR = "unmatched paremeters";
     private final String parameterPattern1 = "\\s*(int|double|String|boolean|char)\\s+\\S+\\s*";

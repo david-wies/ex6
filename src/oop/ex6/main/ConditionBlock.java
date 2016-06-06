@@ -7,12 +7,13 @@ import java.util.HashMap;
  * Created by David and Roi.
  */
 class ConditionBlock extends Block {
+
     /**
      * The constructor.
      *
      * @param rows       The row's of this bock.
      * @param originLine the line where the block begin.
-     * @param variables
+     * @param variables The variable's that this method known.
      */
     ConditionBlock(ArrayList<String> rows, int originLine, ArrayList<HashMap<String, Variable>> variables,
                    String condition) {
