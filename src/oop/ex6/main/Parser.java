@@ -122,7 +122,8 @@ class Parser {
                 String[] parameters = part.split("=");
                 if (parameters.length == 2) {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, variables);
-                    Variable newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1], lineNumber), lineNumber, isFinal);
+                    Variable newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
+                            lineNumber), lineNumber, isFinal);
                     variables.put(newVar.getName(), newVar);
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
