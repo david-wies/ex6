@@ -2,7 +2,6 @@ package oop.ex6.main;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.regex.Pattern;
 
 /**
  * Created by David and Roi.
@@ -27,19 +26,20 @@ class ConditionBlock extends Block {
     /**
      * Convert the string of parameter into variables to be use.
      *
-     * @param condition The string that describe the condition of the block.
+     * @param conditions The string that describe the condition of the block.
      * @throws IllegalException
      */
     private void analysisCondition(String conditions) throws IllegalException {
         variables.add(new HashMap<>());
         String splitter = "(\\&{2})|(\\|{2})";
-        Pattern splitterPattern = Pattern.compile(splitter);
         String[] parts = conditions.split(splitter);
         for (String condition : parts) {
             if (condition.equals("true") || condition.equals("false")) {
                 continue;
             } else {
+                while (condition.length() > 0) {
 
+                }
             }
         }
 //        for (String part : parts) {

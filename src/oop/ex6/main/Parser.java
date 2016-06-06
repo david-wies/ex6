@@ -21,7 +21,7 @@ class Parser {
     private final String FINAL = "final";
 
     // Pattern's string's.
-    private static final String FIRST_WORD = "(\\b\\S+\\b)";
+    private static final String FIRST_WORD = "\\b\\S+\\b";
     private static final String LEGAL_END = "[^;]*;\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
     private static final String START_BLOCK = "\\s*\\{\\s*";
@@ -72,7 +72,7 @@ class Parser {
      * @return the first word in the string
      * @throws IllegalException
      */
-    public static String extractFirstWord(String string, int numberLine) throws IllegalException {
+    static String extractFirstWord(String string, int numberLine) throws IllegalException {
         Matcher matcher = firstWordPattern.matcher(string);
         if (matcher.find()) {
             return string.substring(matcher.start(), matcher.end());
