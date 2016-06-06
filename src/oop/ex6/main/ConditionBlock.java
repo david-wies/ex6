@@ -2,6 +2,7 @@ package oop.ex6.main;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 /**
  * Created by David and Roi.
@@ -33,7 +34,8 @@ class ConditionBlock extends Block {
         variables.add(new HashMap<>());
         int start;
         int end;
-        String spliter = "[^((&&)|(||))]";
+        String spliter = "(\\&{2})|(\\|{2})";
+        Pattern legalEnd = Pattern.compile(spliter);
         String[] parts = condition.split("||");
 //        for (String part : parts) {
 //            if ()

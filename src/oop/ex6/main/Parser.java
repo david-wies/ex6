@@ -112,6 +112,7 @@ class Parser {
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber);
+                    Variable.verifyLegalityVariableName(varName, lineNumber, variables);
                     Variable newVar = new Variable(varType, varName, lineNumber);
                     variables.put(newVar.getName(), newVar);
                 } else {
