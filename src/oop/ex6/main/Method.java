@@ -37,7 +37,7 @@ class Method extends Block {
      * @param name       The NAME of this method.
      * @param originLine The number of th e first line in the original file.
      * @param variables  The variable's that this method known.
-     * @throws Exception
+     * @throws IllegalException The Parameter's ar illegal.
      */
     Method(ArrayList<String> rows, String name, int originLine, ArrayList<HashMap<String, Variable>>
             variables, String parameters) throws IllegalException {
@@ -53,7 +53,6 @@ class Method extends Block {
      * @throws IllegalException
      */
     static void verifyLegalityMethodName(String name, int originLine) throws IllegalException {
-
         Matcher m = namePattern.matcher(name);
         if (!m.matches() || Reserved.isReserved(name)) {
             throw new IllegalException(NAME_ERROR, originLine);
@@ -66,7 +65,7 @@ class Method extends Block {
      * @param parameters The string that describe the parameter's of the method.
      * @throws IllegalException
      */
-    void analysisParameters(String parameters) throws IllegalException {
+    private void analysisParameters(String parameters) throws IllegalException {
         variables.add(new HashMap<>());
         this.parameters = new ArrayList<>();
         int start;
@@ -110,7 +109,7 @@ class Method extends Block {
         }
     }
 
-    public String getName() {
+    String getName() {
         return NAME;
     }
 }
