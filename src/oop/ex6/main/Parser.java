@@ -123,7 +123,7 @@ class Parser {
                 if (parameters.length == 2) {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, variables);
                     Variable newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
-                            lineNumber), lineNumber, isFinal);
+                            lineNumber), lineNumber, isFinal); // TODO: don't work on string with space!!!
                     variables.put(newVar.getName(), newVar);
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
