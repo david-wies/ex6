@@ -99,7 +99,8 @@ class Parser {
         if (!Variable.isLegalVariableType(varType)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
-        line = line.substring(line.indexOf(varType));
+        System.out.println(line.indexOf(varType));
+        line = line.substring(line.indexOf(varType)+varType.length());
         String[] parts = line.split(",");
         for (String part : parts) {
             if (!part.contains("=")) { //var assignment without value.

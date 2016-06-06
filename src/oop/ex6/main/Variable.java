@@ -20,7 +20,7 @@ class Variable {
 
     // Pattern's string's.
     private static final String TYPES_PATTERN = "int|double|String|boolean|char";
-    private static final String NAME_PATTERN = "w*([a-zA-Z]|_\\w)+\\w*";
+    private static final String NAME_PATTERN = "\\s*([a-zA-Z]|_\\w)+\\w*\\s*";
 
     // Pattern's
     private static Pattern typePattern = Pattern.compile(TYPES_PATTERN);
