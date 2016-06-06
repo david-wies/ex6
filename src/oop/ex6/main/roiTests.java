@@ -3,8 +3,6 @@ package oop.ex6.main;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class roiTests {
     public static void main(String[] args) throws IOException {
@@ -21,7 +19,7 @@ public class roiTests {
         String line = "int a,b=2 ,c ;";
         Parser pars = new Parser("C:\\Users\\roishtivi\\IdeaProjects\\ex6\\src\\oop\\ex6\\main");
         try {
-            pars.updateVaribales(vars, line, 5);
+            pars.updateVariables(vars, line, 5);
         } catch (IllegalException e) {
             System.out.println(e.getMessage());
         }
