@@ -20,7 +20,7 @@ class Variable {
 
     // Pattern's string's.
     private static final String TYPES_PATTERN = "int|double|String|boolean|char";
-    private static final String NAME_PATTERN = "([a-zA-Z]|_\\w)+\\w*";
+    private static final String NAME_PATTERN = "w*([a-zA-Z]|_\\w)+\\w*";
 
     // Pattern's
     private static Pattern typePattern = Pattern.compile(TYPES_PATTERN);
@@ -190,7 +190,7 @@ class Variable {
      * @param value The value to check.
      * @return true if the value represent integer value, false otherwise.
      */
-    public static boolean isInt(String value) {
+    private boolean isInt(String value) {
         try {
             int helper = Integer.parseInt(value);
             return true;
