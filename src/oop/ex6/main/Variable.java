@@ -21,7 +21,8 @@ class Variable {
 
     private final String TYPE;
     private final String NAME;
-    private boolean hasValue;
+    private final boolean FINAL;
+    private boolean hasValue = false;
 
     /**
      * Create variable and initialized the value of the variable.
@@ -32,12 +33,14 @@ class Variable {
      * @param originLine The line number of the creation of the variable.
      * @throws IllegalException The value that given was un valid.
      */
-    Variable(String type, String name, String value, int originLine) throws IllegalException {
+    Variable(String type, String name, String value, int originLine, boolean isFinal) throws
+            IllegalException {
         if (!isLegalityVariableType(type)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
         }
         TYPE = type;
         NAME = name;
+        FINAL = isFinal;
         setValue(value, originLine);
     }
 
@@ -53,6 +56,7 @@ class Variable {
         }
         TYPE = type;
         NAME = name;
+        FINAL = false;
         hasValue = false;
     }
 
@@ -137,6 +141,9 @@ class Variable {
      * @throws IllegalException The new value is illegal.
      */
     void setValue(String value, int lineNumber) throws IllegalException {
+        if (FINAL && hasValue) {
+            throw new IllegalException("Final variable can't change", lineNumber);
+        }
         try {
             switch (TYPE) {
                 case INT:
