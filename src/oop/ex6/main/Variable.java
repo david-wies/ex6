@@ -9,16 +9,24 @@ import java.util.regex.Pattern;
  */
 class Variable {
 
+    // Useful value's.
     private final static String INT = "int", DOUBLE = "double";
     private final static String CHAR = "char", STRING = "String", BOOLEAN = "boolean";
+    private final static String TRUE = "true", FALSE = "false";
+
+    // Errors string's.
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
     private final static String NAME_ERROR_MESSAGE = "Illegal name variable name";
-    private final static String TRUE = "true", FALSE = "false";
+
+    // Pattern's string's.
     private static final String TYPES_PATTERN = "int|double|String|boolean|char";
     private static final String NAME_PATTERN = "([a-zA-Z]|_\\w)+\\w*";
+
+    // Pattern's
     private static Pattern typePattern = Pattern.compile(TYPES_PATTERN);
     private static Pattern namePattern = Pattern.compile(NAME_PATTERN);
 
+    // Field's of Variable.
     private final String TYPE;
     private final String NAME;
     private final boolean FINAL;
@@ -117,14 +125,14 @@ class Variable {
         return hasValue;
     }
 
-    /**
-     * Change the HasValue value.
-     *
-     * @param hasValue The new hasValue value.
-     */
-    void setHasValue(boolean hasValue) {
-        this.hasValue = hasValue;
-    }
+//    /**
+//     * Change the HasValue value.
+//     *
+//     * @param hasValue The new hasValue value.
+//     */
+//    void setHasValue(boolean hasValue) {
+//        this.hasValue = hasValue;
+//    }
 
     /**
      * @return The name of the variable.

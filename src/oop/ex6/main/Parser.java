@@ -85,7 +85,7 @@ class Parser {
             line = line.substring(line.indexOf(FINAL)+FINAL.length());
         }
         String varType = extractFirstWord(line,lineNumber);
-        if (!Variable.isLegalityVariableType(varType)){
+        if (!Variable.isLegalVariableType(varType)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
         line = line.substring(line.indexOf(varType));
@@ -146,7 +146,7 @@ class Parser {
             }
             line = line.substring(matcher.end());
             if (rows == null) {
-                if (Variable.isLegalityVariableType(word) || word.equals("final")) { // This line create a
+                if (Variable.isLegalVariableType(word) || word.equals("final")) { // This line create a
                     // variable.
                     updateVariables(globalVariables, line, lineNumber);
                     // while and if blocks must be in method in s-java,
