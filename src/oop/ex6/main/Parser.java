@@ -13,34 +13,44 @@ import java.util.regex.Pattern;
  */
 class Parser {
 
+    // Errors string's.
     static final private String BAD_FORMAT_ERROR = "bad format line";
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
+
+    // Useful value's.
+    private final String FINAL = "final";
+
+    // Pattern's string's.
     private static final String FIRST_WORD = "(\\b\\w+\\b)";
     private static final String LEGAL_END = "[^;]*;\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
     private static final String START_BLOCK = "\\s*\\{\\s*";
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
+
+    // Pattern's string's.
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
     private static Pattern firstWordPattern = Pattern.compile(FIRST_WORD);
     private static Pattern legalEnd = Pattern.compile(LEGAL_END);
     private static Pattern endBlock = Pattern.compile(END_BLOCK);
     private static Pattern startBlock = Pattern.compile(START_BLOCK);
+
+    // Field's of Parser.
     private HashMap<String, Method> methods;
     private HashMap<String, Variable> globalVariables;
-    private final String FINAL = "final";
 
     /**
      * @param filePath The path to the s-java file.
      * @throws IOException
      */
     Parser(String filePath) throws IOException {
-
+        methods = new HashMap<>();
+        globalVariables = new HashMap<>();
     }
 
     /**
      * Extract the string that describe the parameter's from the line.
      *
-     * @param line The line that contain the describe of the parameter's.
+     * @param line       The line that contain the describe of the parameter's.
      * @param numberLine The number of the line in the file.
      * @return String of the parameter's.
      * @throws IllegalException
@@ -72,44 +82,42 @@ class Parser {
 
     /**
      * get line of variable initialing and update the variable array.
+     *
      * @param line
      * @param lineNumber
      * @throws IllegalException
      */
-    public void updateVariables(HashMap<String,Variable> variables, String line, int lineNumber)
-            throws IllegalException{
-        boolean isFinal=false;
-        String firstWord = extractFirstWord(line,lineNumber);
-        if (firstWord.equals(FINAL)){
-            isFinal=true;
-            line = line.substring(line.indexOf(FINAL)+FINAL.length());
+    public void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
+            throws IllegalException {
+        boolean isFinal = false;
+        String firstWord = extractFirstWord(line, lineNumber);
+        if (firstWord.equals(FINAL)) {
+            isFinal = true;
+            line = line.substring(line.indexOf(FINAL) + FINAL.length());
         }
-        String varType = extractFirstWord(line,lineNumber);
+        String varType = extractFirstWord(line, lineNumber);
         if (!Variable.isLegalVariableType(varType)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
         line = line.substring(line.indexOf(varType));
         String[] parts = line.split(",");
-        for (String part:parts){
-            if (!part.contains("=")){ //var assignment without value.
+        for (String part : parts) {
+            if (!part.contains("=")) { //var assignment without value.
                 Matcher matcher = singleName.matcher(part);
-                if (matcher.matches()){
-                    String varName = extractFirstWord(part,lineNumber);
-                    Variable newVar = new Variable(varType,varName,lineNumber);
-                    variables.put(newVar.getName(),newVar);
-                }
-                else {
+                if (matcher.matches()) {
+                    String varName = extractFirstWord(part, lineNumber);
+                    Variable newVar = new Variable(varType, varName, lineNumber);
+                    variables.put(newVar.getName(), newVar);
+                } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
-            }
-            else{ //var assignment with value.
+            } else { //var assignment with value.
                 String[] parameters = part.split("=");
-                if (parameters.length==2){
-                    Variable.verifyLegalityVariableName(parameters[0],lineNumber,variables);
-                    Variable newVar = new Variable(varType,parameters[0],parameters[1],lineNumber,isFinal);
-                    variables.put(newVar.getName(),newVar);
-                }
-                else{
+                if (parameters.length == 2) {
+                    Variable.verifyLegalityVariableName(parameters[0], lineNumber, variables);
+                    Variable newVar = new Variable(varType, parameters[0], parameters[1], lineNumber, isFinal);
+                    variables.put(newVar.getName(), newVar);
+                } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
 
@@ -122,7 +130,7 @@ class Parser {
      * Go other all of the s-java file and do the first analysis.
      *
      * @param path The path tp the s-java file.
-     * @throws IOException The file does'nt exist.
+     * @throws IOException      The file does'nt exist.
      * @throws IllegalException The file contain illegal command.
      */
     void analyzerFile(String path) throws IOException, IllegalException {
