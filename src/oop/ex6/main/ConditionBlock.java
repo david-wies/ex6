@@ -30,13 +30,18 @@ class ConditionBlock extends Block {
      * @param condition The string that describe the condition of the block.
      * @throws IllegalException
      */
-    private void analysisCondition(String condition) throws IllegalException {
+    private void analysisCondition(String conditions) throws IllegalException {
         variables.add(new HashMap<>());
-        int start;
-        int end;
-        String spliter = "(\\&{2})|(\\|{2})";
-        Pattern legalEnd = Pattern.compile(spliter);
-        String[] parts = condition.split("||");
+        String splitter = "(\\&{2})|(\\|{2})";
+        Pattern splitterPattern = Pattern.compile(splitter);
+        String[] parts = conditions.split(splitter);
+        for (String condition : parts) {
+            if (condition.equals("true") || condition.equals("false")) {
+                continue;
+            } else {
+
+            }
+        }
 //        for (String part : parts) {
 //            if ()
 //            Matcher m1 = pattern1.matcher(part);
