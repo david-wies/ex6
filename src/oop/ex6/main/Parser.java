@@ -70,7 +70,7 @@ class Parser {
      * @param lineNumber
      * @throws IllegalException
      */
-    public void updateVaribales(HashMap<String,Variable> variables,String line, int lineNumber)
+    public void updateVariables(HashMap<String,Variable> variables, String line, int lineNumber)
             throws IllegalException{
         String variableType = extractFirstWord(line,lineNumber);
         line = line.substring(variableType.length());
@@ -101,15 +101,15 @@ class Parser {
             }
             line = line.substring(matcher.end());
             if (rows == null) {
-                if (Variable.isLegalityVariableType(word)) { // This line create a variable.
+                if (Variable.isLegalityVariableType(word)) { // This line create a variable. 
                     String type = word;
                     String name = extractFirstWord(line, lineNumber);
                     Variable.verifyLegalityVariableName(name, lineNumber, globalVariables);
 
                     // while and if blocks must be in method in s-java,
-                } else if (word.equals("}") || word.equals("if") || word.equals("while")) {
+                } else if (word.equals("}") || word.equals("if") || word.equals("while")) { // done!
                     throw new IllegalException("", lineNumber);
-                } else if (word.equals("void")) {
+                } else if (word.equals("void")) { // done !
                     rows = new ArrayList<>();
                     firstMethodLine = lineNumber;
                     parameters = extractParameters(line, lineNumber);

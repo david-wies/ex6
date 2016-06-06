@@ -92,8 +92,9 @@ class Method extends Block {
         if (parameters.size() != this.parameters.size()) {
             throw new IllegalException(PARAMETERS_ERROR, lineNumber);
         }
-        for (int i = 0; i < parameters.size(); i++) {
-            if (!this.parameters.get(i).getTYPE().equals(parameters.get(i).getTYPE())) {
+        for (int index = 0; index < parameters.size(); index++) {
+            if (!this.parameters.get(index).getTYPE().equals(parameters.get(index).getTYPE()) &&
+                    parameters.get(index).hasValue()) {
                 throw new IllegalException(PARAMETERS_ERROR, lineNumber);
             }
         }
