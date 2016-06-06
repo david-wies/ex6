@@ -99,7 +99,6 @@ class Parser {
         if (!Variable.isLegalVariableType(varType)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
-        System.out.println(line.indexOf(varType));
         line = line.substring(line.indexOf(varType)+varType.length());
         String[] parts = line.split(",");
         for (String part : parts) {
@@ -116,7 +115,7 @@ class Parser {
                 String[] parameters = part.split("=");
                 if (parameters.length == 2) {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, variables);
-                    Variable newVar = new Variable(varType, parameters[0], parameters[1], lineNumber, isFinal);
+                    Variable newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],lineNumber), lineNumber, isFinal);
                     variables.put(newVar.getName(), newVar);
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);

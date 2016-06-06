@@ -15,7 +15,5 @@ public class DavidTester {
 //        } catch (IllegalException e) {
 //            e.printStackTrace();
 //        }
-        boolean a = Variable.isInt("2");
-        System.out.println(a);
     }
 }
