@@ -27,7 +27,7 @@ class ConditionBlock extends Block {
     /**
      * Convert the string of parameter into variables to be use.
      *
-     * @param parameters The string that describe the parameter's of the method.
+     * @param condition The string that describe the condition of the block.
      * @throws IllegalException
      */
     private void analysisCondition(String condition) throws IllegalException {
