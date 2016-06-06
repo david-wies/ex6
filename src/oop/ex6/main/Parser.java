@@ -90,11 +90,11 @@ class Parser {
     public void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
             throws IllegalException {
         Matcher legalEndMatcher = legalEnd.matcher(line);
-        if (!legalEndMatcher.matches()){
-            throw new IllegalException(BAD_FORMAT_ERROR,lineNumber);
+        if (!legalEndMatcher.matches()) {
+            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
         }
         int indexOfSemiColon = line.indexOf(";");
-        line = line.substring(0,indexOfSemiColon);
+        line = line.substring(0, indexOfSemiColon);
         boolean isFinal = false;
         String firstWord = extractFirstWord(line, lineNumber);
         if (firstWord.equals(FINAL)) {
@@ -105,7 +105,7 @@ class Parser {
         if (!Variable.isLegalVariableType(varType)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
-        line = line.substring(line.indexOf(varType)+varType.length());
+        line = line.substring(line.indexOf(varType) + varType.length());
         String[] parts = line.split(",");
         for (String part : parts) {
             if (!part.contains("=")) { //var assignment without value.
