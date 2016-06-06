@@ -190,7 +190,7 @@ class Variable {
      * @param value The value to check.
      * @return true if the value represent integer value, false otherwise.
      */
-    private boolean isInt(String value) {
+    public static boolean isInt(String value) {
         try {
             int helper = Integer.parseInt(value);
             return true;
