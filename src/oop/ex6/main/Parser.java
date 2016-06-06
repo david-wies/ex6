@@ -21,7 +21,7 @@ class Parser {
     private final String FINAL = "final";
 
     // Pattern's string's.
-    private static final String FIRST_WORD = "(\\b\\w+\\b)";
+    private static final String FIRST_WORD = "(\\b\\S+\\b)";
     private static final String LEGAL_END = "[^;]*;\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
     private static final String START_BLOCK = "\\s*\\{\\s*";
@@ -72,7 +72,7 @@ class Parser {
      * @return the first word in the string
      * @throws IllegalException
      */
-    private static String extractFirstWord(String string, int numberLine) throws IllegalException {
+    public static String extractFirstWord(String string, int numberLine) throws IllegalException {
         Matcher matcher = firstWordPattern.matcher(string);
         if (matcher.find()) {
             return string.substring(matcher.start(), matcher.end());
@@ -122,7 +122,8 @@ class Parser {
                 String[] parameters = part.split("=");
                 if (parameters.length == 2) {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, variables);
-                    Variable newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],lineNumber), lineNumber, isFinal);
+                    Variable newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
+                            lineNumber), lineNumber, isFinal);
                     variables.put(newVar.getName(), newVar);
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
