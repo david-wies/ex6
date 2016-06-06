@@ -89,6 +89,12 @@ class Parser {
      */
     public void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
             throws IllegalException {
+        Matcher legalEndMatcher = legalEnd.matcher(line);
+        if (!legalEndMatcher.matches()){
+            throw new IllegalException(BAD_FORMAT_ERROR,lineNumber);
+        }
+        int indexOfSemiColon = line.indexOf(";");
+        line = line.substring(0,indexOfSemiColon);
         boolean isFinal = false;
         String firstWord = extractFirstWord(line, lineNumber);
         if (firstWord.equals(FINAL)) {
@@ -103,8 +109,8 @@ class Parser {
         String[] parts = line.split(",");
         for (String part : parts) {
             if (!part.contains("=")) { //var assignment without value.
-                Matcher matcher = singleName.matcher(part);
-                if (matcher.matches()) {
+                Matcher singleNameMatcher = singleName.matcher(part);
+                if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber);
                     Variable newVar = new Variable(varType, varName, lineNumber);
                     variables.put(newVar.getName(), newVar);
