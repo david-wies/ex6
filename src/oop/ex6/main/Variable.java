@@ -228,8 +228,7 @@ class Variable {
      * @return true if the value represent char value, false otherwise.
      */
     private boolean isChar(String value) {
-        char[] helper = value.toCharArray();
-        return helper.length == 1;
+        return value.indexOf('\'') == 0 && value.lastIndexOf('\'') == 2 && value.length() == 3;
     }
 
     /*

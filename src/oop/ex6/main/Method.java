@@ -10,42 +10,50 @@ import java.util.regex.Pattern;
  */
 class Method extends Block {
 
-    static final private String NAME_ERROR = "illegal method name";
-    static final private String PARAMETERS_ERROR = "unmatched paremeters";
-    private final String parameterPattern1 = "\\s*(int|double|String|boolean|char)\\s+\\S+\\s*";
-    private final String parameterPattern2 = "\\S+\\s\\S+";
+    // Errors string's.
+    static final private String NAME_ERROR = "illegal method NAME";
+    static final private String PARAMETERS_ERROR = "unmatched parameter's";
+
+    // Pattern's string.
+    private final static String TYPES_AND_NAMES_PARTAKEN = "\\s*(int|double|String|boolean|char)\\s+\\S+\\s*";
+    private final static String SEPARATED_WORDS = "\\S+\\s\\S+";
+    private final static String NAME_PATTERN = "[a-zA-Z]+\\w*";
+
+    // Pattern's
+    private static Pattern pattern1 = Pattern.compile(TYPES_AND_NAMES_PARTAKEN);
+    private static Pattern pattern2 = Pattern.compile(SEPARATED_WORDS);
+    private static Pattern namePattern = Pattern.compile(NAME_PATTERN);
+
+    // Field's of Method.
     private ArrayList<Variable> parameters;
-    private int originLine;
-    private String name;
-    private Pattern pattern1 = Pattern.compile(parameterPattern1);
-    private Pattern pattern2 = Pattern.compile(parameterPattern2);
+    private final int ORIGIN_LINE;
+    private final String NAME;
+
 
     /**
      * The constructor.
      *
      * @param rows       The string's of this method.
-     * @param name       The name of this method.
+     * @param name       The NAME of this method.
      * @param originLine The number of th e first line in the original file.
      * @param variables  The variable's that this method known.
-     * @throws Exception
+     * @throws IllegalException The Parameter's ar illegal.
      */
     Method(ArrayList<String> rows, String name, int originLine, ArrayList<HashMap<String, Variable>>
             variables, String parameters) throws IllegalException {
         super(rows, originLine, variables);
-        this.originLine = originLine;
-        this.name = name;
+        ORIGIN_LINE = originLine;
+        NAME = name;
         analysisParameters(parameters);
     }
 
     /**
-     * Check if the method name was legal.
+     * Check if the method NAME was legal.
      *
      * @throws IllegalException
      */
     static void verifyLegalityMethodName(String name, int originLine) throws IllegalException {
-        String namePattern = "[a-zA-Z]+\\w*";
-        Pattern pattern = Pattern.compile(namePattern);
-        Matcher m = pattern.matcher(name);
+        Matcher m = namePattern.matcher(name);
         if (!m.matches() || Reserved.isReserved(name)) {
             throw new IllegalException(NAME_ERROR, originLine);
         }
@@ -57,7 +65,7 @@ class Method extends Block {
      * @param parameters The string that describe the parameter's of the method.
      * @throws IllegalException
      */
-    void analysisParameters(String parameters) throws IllegalException {
+    private void analysisParameters(String parameters) throws IllegalException {
         variables.add(new HashMap<>());
         this.parameters = new ArrayList<>();
         int start;
@@ -72,11 +80,11 @@ class Method extends Block {
                 end = m2.end();
                 String newPart = part.substring(start, end);
                 String[] typeAndName = newPart.split("\\s");
-                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], originLine);
+                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], ORIGIN_LINE);
                 variables.get(0).put(newVar.getName(), newVar);
                 this.parameters.add(newVar);
             } else
-                throw new IllegalException(NAME_ERROR, originLine);
+                throw new IllegalException(NAME_ERROR, ORIGIN_LINE);
         }
     }
 
@@ -101,7 +109,7 @@ class Method extends Block {
         }
     }
 
-    public String getName() {
-        return name;
+    String getName() {
+        return NAME;
     }
 }
