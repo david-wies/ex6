@@ -82,13 +82,13 @@ class Parser {
         String firstWord = extractFirstWord(line,lineNumber);
         if (firstWord.equals(FINAL)){
             isFinal=true;
-            line = line.substring(line.indexOf(FINAL)+FINAL.length()-1);
+            line = line.substring(line.indexOf(FINAL)+FINAL.length());
         }
         String varType = extractFirstWord(line,lineNumber);
         if (!Variable.isLegalityVariableType(varType)){
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
-        line = line.substring(line.indexOf(varType)-1);
+        line = line.substring(line.indexOf(varType));
         String[] parts = line.split(",");
         for (String part:parts){
             if (!part.contains("=")){ //var assignment without value.
