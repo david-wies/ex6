@@ -18,6 +18,8 @@ class Parser {
     private static final String LEGAL_END = "[^;]*;\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
     private static final String START_BLOCK = "\\s*\\{\\s*";
+    private static final String SINGLE_NAME = "\\s*\\S+\\s*";
+    private static Pattern singleName = Pattern.compile(SINGLE_NAME);
     private static Pattern firstWordPattern = Pattern.compile(FIRST_WORD);
     private static Pattern legalEnd = Pattern.compile(LEGAL_END);
     private static Pattern endBlock = Pattern.compile(END_BLOCK);
@@ -72,9 +74,20 @@ class Parser {
      */
     public void updateVaribales(HashMap<String,Variable> variables,String line, int lineNumber)
             throws IllegalException{
-        String variableType = extractFirstWord(line,lineNumber);
-        line = line.substring(variableType.length());
+        String varType = extractFirstWord(line,lineNumber);
+        line = line.substring(varType.length());
         String[] parts = line.split(",");
+        for (String part:parts){
+            if (part.contains("=")){
+                Matcher matcher = singleName.matcher(part);
+                if (matcher.matches()){
+                    String varName = extractFirstWord(part,lineNumber);
+                    Variable newVar = new Variable(varType,varName,lineNumber);
+                    variables.put(newVar.getName(),newVar);
+                }
+                throw new
+            }
+        }
     }
 
     /**
