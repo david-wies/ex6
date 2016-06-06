@@ -35,7 +35,7 @@ class Variable {
      */
     Variable(String type, String name, String value, int originLine, boolean isFinal) throws
             IllegalException {
-        if (!isLegalityVariableType(type)) {
+        if (!isLegalVariableType(type)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
         }
         TYPE = type;
@@ -51,7 +51,7 @@ class Variable {
      * @param name The name of the variable.
      */
     Variable(String type, String name, int originLine) throws IllegalException {
-        if (!isLegalityVariableType(type)) {
+        if (!isLegalVariableType(type)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
         }
         TYPE = type;
@@ -94,11 +94,11 @@ class Variable {
     }
 
     /**
-     * Verifying the legality of the variable type.
+     * Check if the type of the variable is legal.
      *
      * @param type The type of the variable.
      */
-    static boolean isLegalityVariableType(String type) {
+    static boolean isLegalVariableType(String type) {
         Matcher matcher = typePattern.matcher(type);
         return matcher.matches();
     }
