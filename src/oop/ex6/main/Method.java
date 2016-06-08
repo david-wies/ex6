@@ -28,6 +28,7 @@ class Method extends Block {
     private ArrayList<Variable> parameters;
     private final int ORIGIN_LINE;
     private final String NAME;
+    private final String FINAL = "final";
 
 
     /**
@@ -64,12 +65,16 @@ class Method extends Block {
      * @throws IllegalException
      */
     private void analysisParameters(String parameters) throws IllegalException {// TODO support finals variables.
-        Parser.variables.add(new HashMap<>());
         this.parameters = new ArrayList<>();
         int start;
         int end;
         String[] parts = parameters.split(",");
         for (String part : parts) {
+            boolean isFinal = false;
+            if (Parser.extractFirstWord(part,ORIGIN_LINE,false).equals(FINAL)){
+                isFinal= true;
+                part = part.substring(part.indexOf(FINAL)+FINAL.length());
+            }
             Matcher typeAndNameMatcher = typeAndName.matcher(part);
             Matcher separatedWordsMatcher = separatedWords.matcher(part);
             if (typeAndNameMatcher.matches()) {
@@ -78,7 +83,7 @@ class Method extends Block {
                 end = separatedWordsMatcher.end();
                 String newPart = part.substring(start, end);
                 String[] typeAndName = newPart.split("\\s");
-                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], ORIGIN_LINE);
+                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], ORIGIN_LINE,isFinal);
                 Parser.variables.get(0).put(newVar.getName(), newVar);
                 this.parameters.add(newVar);
             } else
