@@ -120,7 +120,7 @@ class Parser {
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber, false);
                     Variable.verifyLegalityVariableName(varName, lineNumber, scopeVariables);
-                    Variable newVar = new Variable(varType, varName, lineNumber,isFinal);
+                    Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
                     scopeVariables.put(newVar.getName(), newVar);
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
