@@ -20,9 +20,10 @@ class ConditionBlock extends Block {
      * @param variables  The variable's that this method known.
      */
     ConditionBlock(ArrayList<String> rows, int originLine, ArrayList<HashMap<String, Variable>> variables,
-                   String condition) {
+                   String condition) throws IllegalException {
         super(rows, originLine, variables);
         CONDITION = condition;
+        analysisCondition(condition);
     }
 
     /**
@@ -31,36 +32,22 @@ class ConditionBlock extends Block {
      * @param conditions The string that describe the condition of the block.
      * @throws IllegalException
      */
-    private void analysisCondition(String conditions) throws IllegalException {
+    void analysisCondition(String conditions) throws IllegalException {
         variables.add(new HashMap<>());
-        String type, name;
+        String name;
         String[] parts = conditions.split(SPLITTER);
         for (String condition : parts) {
             if (!condition.equals("true") && !condition.equals("false")) {
-                while (condition.length() > 0) {
-                    type = Parser.extractFirstWord(condition, getOriginLineNumber(), false);
-                    if (Variable.isLegalVariableType(type)) {
-
-                    }
+                name = Parser.extractFirstWord(condition, getOriginLineNumber(), false);
+                Variable variable = getVariable(name);
+                if (variable == null || !(variable.isBooleanExpression())) {
+                    throw new IllegalException("Variable doesn't exists", getOriginLineNumber());
+                } else {
+                    variables.get(variables.size()).put(variable.getName(), variable);
                 }
             }
+
         }
-//        for (String part : parts) {
-//            if ()
-//            Matcher m1 = pattern1.matcher(part);
-//            Matcher m2 = pattern2.matcher(part);
-//            if (m1.matches()) {
-//                m2.find();
-//                start = m2.start();
-//                end = m2.end();
-//                String newPart = part.substring(start, end);
-//                String[] typeAndName = newPart.split("\\s");
-//                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], ORIGIN_LINE);
-//                variables.get(0).put(newVar.getName(), newVar);
-//                this.parameters.add(newVar);
-//            } else
-//                throw new IllegalException(NAME_ERROR, ORIGIN_LINE);
-//        }
     }
 
     /**
@@ -69,4 +56,22 @@ class ConditionBlock extends Block {
     public String getCondition() {
         return CONDITION;
     }
+
+    /**
+     * Find the variable.
+     *
+     * @param name The variable name.
+     * @return The variable if exists, else null.
+     */
+    Variable getVariable(String name) {
+        Variable variable = null;
+        for (int index = variables.size() - 1; index >= 0; index--) {
+            variable = variables.get(index).get(name);
+            if (variable != null) {
+                break;
+            }
+        }
+        return variable;
+    }
+
 }

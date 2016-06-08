@@ -290,4 +290,8 @@ class Variable {
         }
         return isLegal;
     }
+
+    boolean isBooleanExpression() {
+        return hasValue && (TYPE.equals(BOOLEAN) || TYPE.equals(INT) || TYPE.equals(DOUBLE));
+    }
 }

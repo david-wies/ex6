@@ -1,19 +1,23 @@
 package oop.ex6.main;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by David .
  */
 public class DavidTester {
     public static void main(String[] args) {
-//        try {
-//            System.out.println(Variable.verifyLegalityVariableName("legal", 1));
-//        } catch (IllegalException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            System.out.println(Variable.verifyLegalityVariableName("_ ", 1));
-//        } catch (IllegalException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Variable variable = new Variable("int", "a", 1);
+            HashMap<String, Variable> hashMap = new HashMap<>();
+            hashMap.put(variable.getName(), variable);
+            ArrayList<HashMap<String, Variable>> variables = new ArrayList<>();
+            variables.add(hashMap);
+            ConditionBlock condition = new ConditionBlock(new ArrayList<>(), 2, variables, "a");
+            System.out.println("done");
+        } catch (IllegalException e) {
+            e.printStackTrace();
+        }
     }
 }
