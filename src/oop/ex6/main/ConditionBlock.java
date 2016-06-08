@@ -1,15 +1,21 @@
 package oop.ex6.main;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by David and Roi.
  */
 class ConditionBlock extends Block {
 
+    // Pattern's string's.
     private static final String SPLITTER = "(&{2})|(\\|{2})";
 
+    // Errors string's.
+    private final static String BOOLEAN_EXPRESSION_ERROR_MESSAGE = "Variable doesn't legal boolean " +
+            "expression";
+
+    // Useful value's.
+    private final static String TRUE = "true", FALSE = "false";
 
     /**
      * The constructor.
@@ -20,12 +26,6 @@ class ConditionBlock extends Block {
     ConditionBlock(ArrayList<String> rows, int originLine, String condition, int depth) throws
             IllegalException {
         super(rows, originLine, depth);
-        if (Parser.variables.size() < getDepth() + 1) {
-            Parser.variables.add(new HashMap<>());
-        } else {
-            Parser.variables.remove(getDepth());
-            Parser.variables.add(getDepth(), new HashMap<>());
-        }
         analysisCondition(condition);
     }
 
@@ -39,11 +39,11 @@ class ConditionBlock extends Block {
         String name;
         String[] parts = conditions.split(SPLITTER);
         for (String condition : parts) {
-            if (!condition.equals("true") && !condition.equals("false")) {
+            if (!condition.equals(TRUE) && !condition.equals(FALSE)) {
                 name = Parser.extractFirstWord(condition, getOriginLineNumber(), false);
                 Variable variable = Parser.getVariable(name);
                 if (variable == null || !(variable.isBooleanExpression())) {
-                    throw new IllegalException("Variable doesn't exists", getOriginLineNumber());
+                    throw new IllegalException(BOOLEAN_EXPRESSION_ERROR_MESSAGE, getOriginLineNumber());
                 } else {
                     Parser.variables.get(getDepth()).put(variable.getName(), variable);
                 }

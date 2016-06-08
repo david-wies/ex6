@@ -23,6 +23,7 @@ class Parser {
     private static final String END_BLOCK = "\\s*}\\s*";
     private static final String START_BLOCK = "\\s*\\{\\s*";
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
+    private static final String IS_STRING = "\".*\"";
 
     // Pattern's string's.
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
@@ -38,10 +39,11 @@ class Parser {
     private static final int GLOBAL_DEPTH = 0;
 
     /**
-     * @param filePath The path to the s-java file.
+     * The constructor.
+     *
      * @throws IOException
      */
-    Parser(String filePath) throws IOException {
+    Parser() throws IOException {
         methods = new HashMap<>();
         globalVariables = new HashMap<>();
         variables = new ArrayList<>();
@@ -76,7 +78,7 @@ class Parser {
         Matcher matcher = firstWordPattern.matcher(string);
         if (matcher.find()) {
             if (withEdges)
-                return string.substring(matcher.start()-1, matcher.end()+1);
+                return string.substring(matcher.start() - 1, matcher.end() + 1);
             return string.substring(matcher.start(), matcher.end());
         }
         throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
@@ -85,7 +87,7 @@ class Parser {
     /**
      * get line of variable initialing and update the variable array.
      *
-     * @param line The line of the declare of the variable's.
+     * @param line       The line of the declare of the variable's.
      * @param lineNumber the number line of the string.
      * @throws IllegalException
      */
@@ -98,13 +100,13 @@ class Parser {
         int indexOfSemiColon = line.indexOf(";");
         line = line.substring(0, indexOfSemiColon);
         boolean isFinal = false;
-        String firstWord = extractFirstWord(line, lineNumber,false);
+        String firstWord = extractFirstWord(line, lineNumber, false);
         String FINAL = "final";
         if (firstWord.equals(FINAL)) {
             isFinal = true;
             line = line.substring(line.indexOf(FINAL) + FINAL.length());
         }
-        String varType = extractFirstWord(line, lineNumber,false);
+        String varType = extractFirstWord(line, lineNumber, false);
         if (!Variable.isLegalVariableType(varType)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
@@ -114,7 +116,7 @@ class Parser {
             if (!part.contains("=")) { //var assignment without value.
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
-                    String varName = extractFirstWord(part, lineNumber,false);
+                    String varName = extractFirstWord(part, lineNumber, false);
                     Variable.verifyLegalityVariableName(varName, lineNumber, variables);
                     Variable newVar = new Variable(varType, varName, lineNumber);
                     variables.put(newVar.getName(), newVar);
@@ -126,11 +128,10 @@ class Parser {
                 if (parameters.length == 2) {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, variables);
                     Variable newVar;
-                    if (varType.equals("String")||varType.equals("char")) {
+                    if (varType.equals("String") || varType.equals("char")) {
                         newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
                                 lineNumber, true), lineNumber, isFinal); // TODO: don't work on string with space!!!
-                    }
-                    else{
+                    } else {
                         newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
                                 lineNumber, false), lineNumber, isFinal);
                     }
@@ -182,7 +183,7 @@ class Parser {
                     rows = new ArrayList<>();
                     firstMethodLine = lineNumber;
                     parameters = extractParameters(line, lineNumber);
-                    methodName = extractFirstWord(line, lineNumber,false);
+                    methodName = extractFirstWord(line, lineNumber, false);
                     Method.verifyLegalityMethodName(methodName, lineNumber);
                     Matcher startBlockMatcher = startBlock.matcher(line);
                     if (!startBlockMatcher.find(line.indexOf('(') + 1)) {
