@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class DavidTester {
     public static void main(String[] args) {
         try {
-            Variable variable = new Variable("int", "a", 1);
+            Variable variable = new Variable("int", "a", "2", 1, false);
             HashMap<String, Variable> hashMap = new HashMap<>();
             hashMap.put(variable.getName(), variable);
             ArrayList<HashMap<String, Variable>> variables = new ArrayList<>();
