@@ -16,7 +16,7 @@ public class roiTests {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-        String line = "String b=\"hi\" ,c ;";
+        String line = "String b=\"hello\" ,c ;";
         Parser pars = new Parser("C:\\Users\\roishtivi\\IdeaProjects\\ex6\\src\\oop\\ex6\\main");
         try {
             pars.updateVariables(vars, line, 5);

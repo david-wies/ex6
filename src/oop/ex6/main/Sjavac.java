@@ -17,11 +17,11 @@ public class Sjavac {
             parser.parser();
             System.out.println(LEGAL_FILE);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         } catch (IOException e) {
             System.out.println(FILE_ERROR);
         } catch (IllegalException e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
             System.out.println(ILLEGAL_FILE);
         }
     }

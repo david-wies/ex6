@@ -69,9 +69,11 @@ class Parser {
      * @return the first word in the string
      * @throws IllegalException
      */
-    static String extractFirstWord(String string, int numberLine) throws IllegalException {
+    static String extractFirstWord(String string, int numberLine, boolean withhEdges) throws IllegalException {
         Matcher matcher = firstWordPattern.matcher(string);
         if (matcher.find()) {
+            if (withhEdges)
+                return string.substring(matcher.start()-1, matcher.end()+1);
             return string.substring(matcher.start(), matcher.end());
         }
         throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
@@ -93,13 +95,13 @@ class Parser {
         int indexOfSemiColon = line.indexOf(";");
         line = line.substring(0, indexOfSemiColon);
         boolean isFinal = false;
-        String firstWord = extractFirstWord(line, lineNumber);
+        String firstWord = extractFirstWord(line, lineNumber,false);
         String FINAL = "final";
         if (firstWord.equals(FINAL)) {
             isFinal = true;
             line = line.substring(line.indexOf(FINAL) + FINAL.length());
         }
-        String varType = extractFirstWord(line, lineNumber);
+        String varType = extractFirstWord(line, lineNumber,false);
         if (!Variable.isLegalVariableType(varType)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
@@ -109,7 +111,7 @@ class Parser {
             if (!part.contains("=")) { //var assignment without value.
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
-                    String varName = extractFirstWord(part, lineNumber);
+                    String varName = extractFirstWord(part, lineNumber,false);
                     Variable.verifyLegalityVariableName(varName, lineNumber, variables);
                     Variable newVar = new Variable(varType, varName, lineNumber);
                     variables.put(newVar.getName(), newVar);
@@ -120,8 +122,15 @@ class Parser {
                 String[] parameters = part.split("=");
                 if (parameters.length == 2) {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, variables);
-                    Variable newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
-                            lineNumber), lineNumber, isFinal); // TODO: don't work on string with space!!!
+                    Variable newVar;
+                    if (varType.equals("String")||varType.equals("char")) {
+                        newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
+                                lineNumber, true), lineNumber, isFinal); // TODO: don't work on string with space!!!
+                    }
+                    else{
+                        newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
+                                lineNumber, false), lineNumber, isFinal);
+                    }
                     variables.put(newVar.getName(), newVar);
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
@@ -170,7 +179,7 @@ class Parser {
                     rows = new ArrayList<>();
                     firstMethodLine = lineNumber;
                     parameters = extractParameters(line, lineNumber);
-                    methodName = extractFirstWord(line, lineNumber);
+                    methodName = extractFirstWord(line, lineNumber,false);
                     Method.verifyLegalityMethodName(methodName, lineNumber);
                     Matcher startBlockMatcher = startBlock.matcher(line);
                     if (!startBlockMatcher.find(line.indexOf('(') + 1)) {
