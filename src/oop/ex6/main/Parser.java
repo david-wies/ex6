@@ -198,7 +198,7 @@ class Parser {
                 } else {
                     ArrayList<HashMap<String, Variable>> variables = new ArrayList<>();
                     variables.add(globalVariables);
-                    Method method = new Method(rows, methodName, firstMethodLine, variables, parameters,
+                    Method method = new Method(rows, methodName, firstMethodLine, parameters,
                             GLOBAL_DEPTH + 1);
                     methods.put(method.getName(), method);
                     rows = null;

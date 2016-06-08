@@ -2,6 +2,7 @@ package oop.ex6.main;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class roiTests {
@@ -25,6 +26,12 @@ public class roiTests {
             e.printStackTrace();
             System.out.println(e.getMessage());
         }
+//        ArrayList<Integer> array = new ArrayList<>();
+//        array.add(3);
+//        array.add(2);
+//        array.add(1);
+//        array.remove(1);
+//        array.add(1,5);
 
 
     }
