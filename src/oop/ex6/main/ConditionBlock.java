@@ -16,11 +16,10 @@ class ConditionBlock extends Block {
      *
      * @param rows       The row's of this bock.
      * @param originLine the line where the block begin.
-     * @param variables  The variable's that this method known.
      */
-    ConditionBlock(ArrayList<String> rows, int originLine, ArrayList<HashMap<String, Variable>> variables,
-                   String condition, int depth) throws IllegalException {
-        super(rows, originLine, variables, depth);
+    ConditionBlock(ArrayList<String> rows, int originLine, String condition, int depth) throws
+            IllegalException {
+        super(rows, originLine, depth);
         analysisCondition(condition);
     }
 
@@ -31,7 +30,7 @@ class ConditionBlock extends Block {
      * @throws IllegalException
      */
     private void analysisCondition(String conditions) throws IllegalException {
-        variables.add(new HashMap<>());
+        Parser.variables.add(new HashMap<>());
         String name;
         String[] parts = conditions.split(SPLITTER);
         for (String condition : parts) {
@@ -41,7 +40,7 @@ class ConditionBlock extends Block {
                 if (variable == null || !(variable.isBooleanExpression())) {
                     throw new IllegalException("Variable doesn't exists", getOriginLineNumber());
                 } else {
-                    variables.get(variables.size() - 1).put(variable.getName(), variable);
+                    Parser.variables.get(Parser.variables.size() - 1).put(variable.getName(), variable);
                 }
             }
 

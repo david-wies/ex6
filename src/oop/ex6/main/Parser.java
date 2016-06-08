@@ -34,7 +34,8 @@ class Parser {
     // Field's of Parser.
     private HashMap<String, Method> methods;
     private HashMap<String, Variable> globalVariables;
-    private static ArrayList<HashMap<String, Variable>> variables;
+    static ArrayList<HashMap<String, Variable>> variables;
+    private static final int GLOBAL_DEPTH = 0;
 
     /**
      * @param filePath The path to the s-java file.
@@ -197,7 +198,8 @@ class Parser {
                 } else {
                     ArrayList<HashMap<String, Variable>> variables = new ArrayList<>();
                     variables.add(globalVariables);
-                    Method method = new Method(rows, methodName, firstMethodLine, variables, parameters);
+                    Method method = new Method(rows, methodName, firstMethodLine, variables, parameters,
+                            GLOBAL_DEPTH + 1);
                     methods.put(method.getName(), method);
                     rows = null;
                 }
