@@ -25,9 +25,8 @@ class Method extends Block {
 
     // Field's of Method.
     private ArrayList<Variable> parameters;
-    private final int ORIGIN_LINE;
     private final String NAME;
-    private final String FINAL = "final";
+    private static final String FINAL = "final";
 
 
     /**
@@ -40,7 +39,6 @@ class Method extends Block {
      */
     Method(ArrayList<String> rows, String name, int originLine, String parameters, int depth) throws IllegalException {
         super(rows, originLine, depth);
-        ORIGIN_LINE = originLine;
         NAME = name;
         analysisParameters(parameters);
     }
@@ -63,30 +61,31 @@ class Method extends Block {
      * @param parameters The string that describe the parameter's of the method.
      * @throws IllegalException
      */
-    public void analysisParameters(String parameters) throws IllegalException {
+    void analysisParameters(String parameters) throws IllegalException {
         this.parameters = new ArrayList<>();
         int start;
         int end;
+        boolean helper;
         String[] parts = parameters.split(",");
         for (String part : parts) {
             boolean isFinal = false;
-            if (Parser.extractFirstWord(part, ORIGIN_LINE, false).equals(FINAL)) {
+            if (Parser.extractFirstWord(part, getOriginLine(), false).equals(FINAL)) {
                 isFinal = true;
                 part = part.substring(part.indexOf(FINAL) + FINAL.length());
             }
             Matcher typeAndNameMatcher = typeAndName.matcher(part);
             Matcher separatedWordsMatcher = separatedWords.matcher(part);
             if (typeAndNameMatcher.matches()) {
-                separatedWordsMatcher.find();
+                helper = separatedWordsMatcher.find();
                 start = separatedWordsMatcher.start();
                 end = separatedWordsMatcher.end();
                 String newPart = part.substring(start, end);
                 String[] typeAndName = newPart.split("\\s");
-                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], ORIGIN_LINE, isFinal);
+                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], getOriginLine(), isFinal);
                 Parser.variables.get(getDepth()).put(newVar.getName(), newVar);
                 this.parameters.add(newVar);
             } else
-                throw new IllegalException(NAME_ERROR, ORIGIN_LINE);
+                throw new IllegalException(NAME_ERROR, getOriginLine());
         }
     }
 
