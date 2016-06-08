@@ -1,5 +1,6 @@
 package oop.ex6.main;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -95,8 +96,9 @@ class Variable {
      * @param lineNumber The line of the creation of the variable.
      * @throws IllegalException The name is illegal.
      */
-    static void verifyLegalityVariableName(String name, int lineNumber, HashMap<String, Variable> variables)
+    static void verifyLegalityVariableName(String name, int lineNumber, int depth)
             throws IllegalException {
+        HashMap<String,Variable> variables = Parser.variables.get(depth);
         Matcher matcher = namePattern.matcher(name);
         if (!matcher.matches()) {
             throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);

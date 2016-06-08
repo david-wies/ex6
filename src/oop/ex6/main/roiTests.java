@@ -7,7 +7,6 @@ import java.util.HashMap;
 public class roiTests {
     public static void main(String[] args) throws IOException {
 //        Parser parser = new Parser();
-        HashMap<String, Variable> vars = new HashMap<String, Variable>();
 //        String name="hello";
 //        String para = "final int a ,    double b , char c    ";
 ////        String[] keys = {"void", "final", "if", "while", "true", "false", "return", "int", "double", "boolean", "char", "String"};
@@ -21,7 +20,7 @@ public class roiTests {
         String line = " char a ='r',b, c='r' ;";
         Parser pars = new Parser();
         try {
-            pars.updateVariables(vars, line, 5);
+            pars.updateVariables(0, line, 5);
             System.out.println("update variable is done");
         } catch (IllegalException e) {
             e.printStackTrace();
