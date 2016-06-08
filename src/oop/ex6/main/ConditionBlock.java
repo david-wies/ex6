@@ -38,7 +38,7 @@ class ConditionBlock extends Block {
         for (String condition : parts) {
             if (!condition.equals("true") && !condition.equals("false")) {
                 while (condition.length() > 0) {
-                    type = Parser.extractFirstWord(condition, getOriginLineNumber());
+                    type = Parser.extractFirstWord(condition, getOriginLineNumber(), false);
                     if (Variable.isLegalVariableType(type)) {
 
                     }
