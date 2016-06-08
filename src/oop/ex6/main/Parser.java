@@ -21,7 +21,7 @@ class Parser {
     private final String FINAL = "final";
 
     // Pattern's string's.
-    private static final String FIRST_WORD = "(\\b\\S+\\b)";
+    private static final String FIRST_WORD = "\\b(\\S +)\\b";
     private static final String LEGAL_END = "[^;]*;\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
     private static final String START_BLOCK = "\\s*\\{\\s*";

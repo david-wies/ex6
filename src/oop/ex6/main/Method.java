@@ -65,7 +65,7 @@ class Method extends Block {
      * @param parameters The string that describe the parameter's of the method.
      * @throws IllegalException
      */
-    private void analysisParameters(String parameters) throws IllegalException {
+    private void analysisParameters(String parameters) throws IllegalException {// TODO support finals variables.
         variables.add(new HashMap<>());
         this.parameters = new ArrayList<>();
         int start;
