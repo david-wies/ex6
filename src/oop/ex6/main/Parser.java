@@ -93,7 +93,7 @@ class Parser {
      * @param lineNumber the number line of the string.
      * @throws IllegalException
      */
-    private void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
+    public void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
             throws IllegalException {
         Matcher legalEndMatcher = legalEnd.matcher(line);
         if (!legalEndMatcher.matches()) {
@@ -120,7 +120,7 @@ class Parser {
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber, false);
                     Variable.verifyLegalityVariableName(varName, lineNumber, variables);
-                    Variable newVar = new Variable(varType, varName, lineNumber);
+                    Variable newVar = new Variable(varType, varName, lineNumber,isFinal);
                     variables.put(newVar.getName(), newVar);
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
