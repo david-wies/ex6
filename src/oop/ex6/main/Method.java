@@ -83,7 +83,7 @@ class Method extends Block {
                 String newPart = part.substring(start, end);
                 String[] typeAndName = newPart.split("\\s");
                 Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], ORIGIN_LINE, isFinal);
-                Parser.variables.get(0).put(newVar.getName(), newVar);
+                Parser.variables.get(getDepth()).put(newVar.getName(), newVar);
                 this.parameters.add(newVar);
             } else
                 throw new IllegalException(NAME_ERROR, ORIGIN_LINE);

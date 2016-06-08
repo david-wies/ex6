@@ -12,7 +12,7 @@ public class Sjavac {
     public static void main(String[] args) {
         try {
             String path = args[0];
-            Parser parser = new Parser(path);
+            Parser parser = new Parser();
             parser.analyzerFile(path);
             parser.parser();
             System.out.println(LEGAL_FILE);

@@ -47,6 +47,7 @@ class Parser {
         methods = new HashMap<>();
         globalVariables = new HashMap<>();
         variables = new ArrayList<>();
+        variables.add(new HashMap<>());
     }
 
     /**
