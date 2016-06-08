@@ -35,7 +35,7 @@ class Parser {
 
     // Field's of Parser.
     private HashMap<String, Method> methods;
-    private HashMap<String, Variable> globalVariables;
+    //    private HashMap<String, Variable> globalVariables;
     static ArrayList<HashMap<String, Variable>> variables;
     private static final int GLOBAL_DEPTH = 0;
 
@@ -46,7 +46,7 @@ class Parser {
      */
     Parser() throws IOException {
         methods = new HashMap<>();
-        globalVariables = new HashMap<>();
+//        globalVariables = new HashMap<>();
         variables = new ArrayList<>();
         variables.add(new HashMap<>());
     }
@@ -93,8 +93,8 @@ class Parser {
      * @param lineNumber the number line of the string.
      * @throws IllegalException
      */
-    void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
-            throws IllegalException {
+    void updateVariables(int depth, String line, int lineNumber) throws IllegalException {
+        HashMap<String, Variable> scopeVariables = variables.get(depth);
         Matcher legalEndMatcher = legalEnd.matcher(line);
         if (!legalEndMatcher.matches()) {
             throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
@@ -119,16 +119,16 @@ class Parser {
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber, false);
-                    Variable.verifyLegalityVariableName(varName, lineNumber, variables);
+                    Variable.verifyLegalityVariableName(varName, lineNumber, scopeVariables);
                     Variable newVar = new Variable(varType, varName, lineNumber,isFinal);
-                    variables.put(newVar.getName(), newVar);
+                    scopeVariables.put(newVar.getName(), newVar);
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
             } else { //var assignment with value.
                 String[] parameters = part.split("=");
                 if (parameters.length == 2) {
-                    Variable.verifyLegalityVariableName(parameters[0], lineNumber, variables);
+                    Variable.verifyLegalityVariableName(parameters[0], lineNumber, scopeVariables);
                     Variable newVar;
                     if (varType.equals("String")) {
                         Matcher isStringMatcher = isString.matcher(parameters[1]);
@@ -149,7 +149,7 @@ class Parser {
                         newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
                                 lineNumber, false), lineNumber, isFinal);
                     }
-                    variables.put(newVar.getName(), newVar);
+                    scopeVariables.put(newVar.getName(), newVar);
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
@@ -189,7 +189,7 @@ class Parser {
             if (rows == null) {
                 if (Variable.isLegalVariableType(word) || word.equals("final")) { // This line create a
                     // variable.
-                    updateVariables(globalVariables, line, lineNumber);
+                    updateVariables(GLOBAL_DEPTH, line, lineNumber);
                     // while and if blocks must be in method in s-java,
                 } else if (word.equals("}") || word.equals("if") || word.equals("while")) { // done!
                     throw new IllegalException("", lineNumber);
@@ -211,8 +211,8 @@ class Parser {
                     rows.add(line);
                     counterBlocks--;
                 } else {
-                    ArrayList<HashMap<String, Variable>> variables = new ArrayList<>();
-                    variables.add(globalVariables);
+//                    ArrayList<HashMap<String, Variable>> variables = new ArrayList<>();
+//                    variables.add(globalVariables);
                     Method method = new Method(rows, methodName, firstMethodLine, parameters,
                             GLOBAL_DEPTH + 1);
                     methods.put(method.getName(), method);
