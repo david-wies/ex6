@@ -9,13 +9,15 @@ import java.util.HashMap;
 class ConditionBlock extends Block {
 
     private final String CONDITION;
+    private static final String SPLITTER = "(&{2})|(\\|{2})";
+
 
     /**
      * The constructor.
      *
      * @param rows       The row's of this bock.
      * @param originLine the line where the block begin.
-     * @param variables The variable's that this method known.
+     * @param variables  The variable's that this method known.
      */
     ConditionBlock(ArrayList<String> rows, int originLine, ArrayList<HashMap<String, Variable>> variables,
                    String condition) {
@@ -31,14 +33,15 @@ class ConditionBlock extends Block {
      */
     private void analysisCondition(String conditions) throws IllegalException {
         variables.add(new HashMap<>());
-        String splitter = "(\\&{2})|(\\|{2})";
-        String[] parts = conditions.split(splitter);
+        String type, name;
+        String[] parts = conditions.split(SPLITTER);
         for (String condition : parts) {
-            if (condition.equals("true") || condition.equals("false")) {
-                continue;
-            } else {
+            if (!condition.equals("true") && !condition.equals("false")) {
                 while (condition.length() > 0) {
+                    type = Parser.extractFirstWord(condition, getOriginLineNumber());
+                    if (Variable.isLegalVariableType(type)) {
 
+                    }
                 }
             }
         }

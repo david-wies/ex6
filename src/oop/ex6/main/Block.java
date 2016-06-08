@@ -34,7 +34,7 @@ class Block {
     /**
      * @return The line number of the start of this block.
      */
-    int getOriginLine() {
+    int getOriginLineNumber() {
         return ORIGIN_LINE;
     }
 }
