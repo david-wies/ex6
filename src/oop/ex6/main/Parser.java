@@ -31,6 +31,7 @@ class Parser {
     private static Pattern legalEnd = Pattern.compile(LEGAL_END);
     private static Pattern endBlock = Pattern.compile(END_BLOCK);
     private static Pattern startBlock = Pattern.compile(START_BLOCK);
+    private static Pattern isString = Pattern.compile(IS_STRING);
 
     // Field's of Parser.
     private HashMap<String, Method> methods;
@@ -130,8 +131,14 @@ class Parser {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, variables);
                     Variable newVar;
                     if (varType.equals("String") || varType.equals("char")) {
-                        newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
-                                lineNumber, true), lineNumber, isFinal); // TODO: don't work on string with space!!!
+                        Matcher isStringMatcher = isString.matcher(parameters[1]);
+                        boolean stringMatch = isStringMatcher.find();
+                        if (stringMatch) {
+                            newVar = new Variable(varType, parameters[0], parameters[1].substring(isStringMatcher.start(),isStringMatcher.end()), lineNumber, isFinal);
+                        }
+                        else{
+                            throw new IllegalException(TYPE_ERROR_MESSAGE,lineNumber);
+                        }
                     } else {
                         newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
                                 lineNumber, false), lineNumber, isFinal);
