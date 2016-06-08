@@ -10,8 +10,8 @@ import java.util.regex.Pattern;
 class Variable {
 
     // Useful value's.
-    private final static String INT = "int", DOUBLE = "double";
-    private final static String CHAR = "char", STRING = "String", BOOLEAN = "boolean";
+    private final static String INT = "int", DOUBLE = "double", BOOLEAN = "boolean";
+    private final static String CHAR = "char", STRING = "String";
     private final static String TRUE = "true", FALSE = "false";
 
     // Errors string's.
