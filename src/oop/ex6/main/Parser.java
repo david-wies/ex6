@@ -125,7 +125,7 @@ class Parser {
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
-            } else { //var assignment with value.
+            } else { //var assignment with value .
                 String[] parameters = part.split("=");
                 if (parameters.length == 2) {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, scopeVariables);
