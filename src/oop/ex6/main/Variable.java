@@ -180,6 +180,7 @@ class Variable {
                     }
                     break;
             }
+            hasValue = true;
         } catch (Exception e) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }

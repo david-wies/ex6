@@ -40,8 +40,8 @@ class Method extends Block {
      * @throws IllegalException The Parameter's ar illegal.
      */
     Method(ArrayList<String> rows, String name, int originLine, ArrayList<HashMap<String, Variable>>
-            variables, String parameters) throws IllegalException {
-        super(rows, originLine, variables);
+            variables, String parameters, int depth) throws IllegalException {
+        super(rows, originLine, variables, depth);
         ORIGIN_LINE = originLine;
         NAME = name;
         analysisParameters(parameters);

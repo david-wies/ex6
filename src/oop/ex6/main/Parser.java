@@ -34,6 +34,7 @@ class Parser {
     // Field's of Parser.
     private HashMap<String, Method> methods;
     private HashMap<String, Variable> globalVariables;
+    private static ArrayList<HashMap<String, Variable>> variables;
 
     /**
      * @param filePath The path to the s-java file.
@@ -42,6 +43,7 @@ class Parser {
     Parser(String filePath) throws IOException {
         methods = new HashMap<>();
         globalVariables = new HashMap<>();
+        variables = new ArrayList<>();
     }
 
     /**
@@ -247,4 +249,22 @@ class Parser {
         Matcher matcher = pattern.matcher(lastRow);
         return matcher.matches();
     }
+
+    /**
+     * Find the variable.
+     *
+     * @param name The variable name.
+     * @return The variable if exists, else null.
+     */
+    static Variable getVariable(String name) {
+        Variable variable = null;
+        for (int index = variables.size() - 1; index >= 0; index--) {
+            variable = variables.get(index).get(name);
+            if (variable != null) {
+                break;
+            }
+        }
+        return variable;
+    }
+
 }
