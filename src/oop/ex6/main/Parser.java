@@ -13,6 +13,10 @@ import java.util.regex.Pattern;
  */
 class Parser {
 
+    // Useful value's.
+    private final static String CHAR = "char", STRING = "String", FINAL = "final";
+    private final static String START_LOOP = "while", START_CONDITION = "if", START_FUNCTION = "void";
+
     // Errors string's.
     static final private String BAD_FORMAT_ERROR = "bad format line";
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
@@ -25,7 +29,7 @@ class Parser {
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
 
-    // Pattern's string's.
+    // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
     private static Pattern firstWordPattern = Pattern.compile(FIRST_WORD);
     private static Pattern legalEnd = Pattern.compile(LEGAL_END);
@@ -103,7 +107,6 @@ class Parser {
         line = line.substring(0, indexOfSemiColon);
         boolean isFinal = false;
         String firstWord = extractFirstWord(line, lineNumber, false);
-        String FINAL = "final";
         if (firstWord.equals(FINAL)) {
             isFinal = true;
             line = line.substring(line.indexOf(FINAL) + FINAL.length());
@@ -131,7 +134,7 @@ class Parser {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, scopeVariables);
                     Variable newVar;
                     switch (varType) {
-                        case "String":
+                        case STRING:
                             Matcher isStringMatcher = isString.matcher(parameters[1]);
                             boolean stringMatch = isStringMatcher.find();
                             if (stringMatch) {
@@ -141,7 +144,7 @@ class Parser {
                                 throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
                             }
                             break;
-                        case "char":
+                        case CHAR:
                             newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
                                     lineNumber, true), lineNumber, isFinal);
                             break;
@@ -188,13 +191,13 @@ class Parser {
             }
             line = line.substring(matcher.end());
             if (rows == null) {
-                if (Variable.isLegalVariableType(word) || word.equals("final")) { // This line create a
+                if (Variable.isLegalVariableType(word) || word.equals(FINAL)) { // This line create a
                     // variable.
                     updateVariables(GLOBAL_DEPTH, line, lineNumber);
                     // while and if blocks must be in method in s-java,
-                } else if (word.equals("}") || word.equals("if") || word.equals("while")) { // done!
+                } else if (word.equals("}") || word.equals(START_CONDITION) || word.equals(START_LOOP)) {
                     throw new IllegalException("", lineNumber);
-                } else if (word.equals("void")) { // done !
+                } else if (word.equals(START_FUNCTION)) {
                     rows = new ArrayList<>();
                     firstMethodLine = lineNumber;
                     parameters = extractParameters(line, lineNumber);
