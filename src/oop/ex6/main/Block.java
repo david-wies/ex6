@@ -35,4 +35,8 @@ class Block {
     int getOriginLineNumber() {
         return ORIGIN_LINE;
     }
+
+    public int getDepth() {
+        return DEPTH;
+    }
 }
