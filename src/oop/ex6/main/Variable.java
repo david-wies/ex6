@@ -52,7 +52,7 @@ class Variable {
         TYPE = type;
         NAME = name;
         this.isFinal = isFinal;
-        setValue(value, originLine);
+        setValue(value, originLine, 0);
     }
 
     /**
@@ -81,9 +81,10 @@ class Variable {
      * @param name The name of the parameter.
      * @return An Variable object which represent the parameter.
      */
-    static Variable createParameter(String type, String name, int lineNumber, boolean isFinal) throws
+    static Variable createParameter(String type, String name, int lineNumber, boolean isFinal, int depth)
+            throws
             IllegalException {
-        verifyLegalityVariableName(name, lineNumber, new HashMap<>());
+        verifyLegalityVariableName(name, lineNumber, depth);
         Variable variable = new Variable(type, name, lineNumber, isFinal);
         variable.hasValue = true;
         return variable;
@@ -156,39 +157,53 @@ class Variable {
      * @param lineNumber The line number of change the variable value.
      * @throws IllegalException The new value is illegal.
      */
-    void setValue(String value, int lineNumber) throws IllegalException {
+    void setValue(String value, int lineNumber, int depth) throws IllegalException {
         if (isFinal && hasValue) {
             throw new IllegalException("Final variable can't change", lineNumber);
         }
+        ArrayList<HashMap<String, Variable>> variables = Parser.getVariables();
+        boolean isValue;
         try {
-            switch (TYPE) {
-                case INT:
-                    if (!isInt(value)) {
-                        throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
-                    }
-                    break;
-                case DOUBLE:
-                    if (!isDouble(value)) {
-                        throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
-                    }
-                    break;
-                case BOOLEAN:
-                    if (!isBoolean(value)) {
-                        throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
-                    }
-                    break;
-                case CHAR:
-                    if (!isChar(value)) {
-                        throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
-                    }
-                    break;
-                case STRING:
-                    if (!isString(value)) {
-                        throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
-                    }
-                    break;
+            verifyLegalityVariableName(value, lineNumber, depth);
+            isValue = false;
+        } catch (IllegalException e) {
+            isValue = true;
+        }
+        try {
+            if (isValue) {
+                switch (TYPE) {
+                    case INT:
+                        if (!isInt(value)) {
+                            throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+                        }
+                        break;
+                    case DOUBLE:
+                        if (!isDouble(value)) {
+                            throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+                        }
+                        break;
+                    case BOOLEAN:
+                        if (!isBoolean(value)) {
+                            throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+                        }
+                        break;
+                    case CHAR:
+                        if (!isChar(value)) {
+                            throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+                        }
+                        break;
+                    case STRING:
+                        if (!isString(value)) {
+                            throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+                        }
+                        break;
+                }
+                hasValue = true;
+            } else {
+                Variable variable = Parser.getVariable(value);
+                copyValue(variable.getTYPE());
             }
-            hasValue = true;
+
         } catch (Exception e) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
@@ -261,7 +276,7 @@ class Variable {
      * @param copyVariableType The type of the other variable.
      * @return true if the copy succeed, false otherwise.
      */
-    boolean copyValue(String copyVariableType) {
+    private boolean copyValue(String copyVariableType) {
         boolean isLegal = false;
         switch (TYPE) {
             case INT:
@@ -304,18 +319,18 @@ class Variable {
         return hasValue && (TYPE.equals(BOOLEAN) || TYPE.equals(INT) || TYPE.equals(DOUBLE));
     }
 
-    Variable createDeafaultVeriable(String value, int numberLine) throws IllegalException {
+    Variable createDeafaultVeriable(String value, int numberLine, int depth) throws IllegalException {
         Variable variable;
         if (isInt(value)) {
-            variable = createParameter(INT, "DefaultInt", numberLine, true);
+            variable = createParameter(INT, "DefaultInt", numberLine, true, depth);
         } else if (isDouble(value)) {
-            variable = createParameter(DOUBLE, "DefaultDouble", numberLine, true);
+            variable = createParameter(DOUBLE, "DefaultDouble", numberLine, true, depth);
         } else if (isChar(value)) {
-            variable = createParameter(CHAR, "DefaultChar", numberLine, true);
+            variable = createParameter(CHAR, "DefaultChar", numberLine, true, depth);
         } else if (isBoolean(value)) {
-            variable = createParameter(BOOLEAN, "DefaultBoolean", numberLine, true);
+            variable = createParameter(BOOLEAN, "DefaultBoolean", numberLine, true, depth);
         } else if (isString(value)) {
-            variable = createParameter(STRING, "DefaultString", numberLine, true);
+            variable = createParameter(STRING, "DefaultString", numberLine, true, depth);
         } else {
             throw new IllegalException(VALUE_ERROR_MESSAGE, numberLine);
         }

@@ -288,4 +288,7 @@ class Parser {
         return variable;
     }
 
+    static ArrayList<HashMap<String, Variable>> getVariables() {
+        return variables;
+    }
 }
