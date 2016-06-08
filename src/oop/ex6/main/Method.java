@@ -1,7 +1,6 @@
 package oop.ex6.main;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -71,9 +70,9 @@ class Method extends Block {
         String[] parts = parameters.split(",");
         for (String part : parts) {
             boolean isFinal = false;
-            if (Parser.extractFirstWord(part,ORIGIN_LINE,false).equals(FINAL)){
-                isFinal= true;
-                part = part.substring(part.indexOf(FINAL)+FINAL.length());
+            if (Parser.extractFirstWord(part, ORIGIN_LINE, false).equals(FINAL)) {
+                isFinal = true;
+                part = part.substring(part.indexOf(FINAL) + FINAL.length());
             }
             Matcher typeAndNameMatcher = typeAndName.matcher(part);
             Matcher separatedWordsMatcher = separatedWords.matcher(part);
@@ -83,7 +82,7 @@ class Method extends Block {
                 end = separatedWordsMatcher.end();
                 String newPart = part.substring(start, end);
                 String[] typeAndName = newPart.split("\\s");
-                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], ORIGIN_LINE,isFinal);
+                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], ORIGIN_LINE, isFinal);
                 Parser.variables.get(0).put(newVar.getName(), newVar);
                 this.parameters.add(newVar);
             } else

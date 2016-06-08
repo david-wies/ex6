@@ -1,6 +1,7 @@
 package oop.ex6.main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by David and Roi.
@@ -20,6 +21,12 @@ class Block {
         this.rows = rows;
         ORIGIN_LINE = originLine;
         DEPTH = depth;
+        if (Parser.variables.size() < DEPTH + 1) {
+            Parser.variables.add(new HashMap<>());
+        } else {
+            Parser.variables.remove(getDepth());
+            Parser.variables.add(DEPTH, new HashMap<>());
+        }
     }
 
     /**
