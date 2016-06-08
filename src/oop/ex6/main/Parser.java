@@ -17,9 +17,6 @@ class Parser {
     static final private String BAD_FORMAT_ERROR = "bad format line";
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
 
-    // Useful value's.
-    private final String FINAL = "final";
-
     // Pattern's string's.
     private static final String FIRST_WORD = "\\b\\S+\\b";
     private static final String LEGAL_END = "[^;]*;\\s*";
@@ -83,8 +80,8 @@ class Parser {
     /**
      * get line of variable initialing and update the variable array.
      *
-     * @param line
-     * @param lineNumber
+     * @param line The line of the declare of the variable's.
+     * @param lineNumber the number line of the string.
      * @throws IllegalException
      */
     public void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
@@ -97,6 +94,7 @@ class Parser {
         line = line.substring(0, indexOfSemiColon);
         boolean isFinal = false;
         String firstWord = extractFirstWord(line, lineNumber);
+        String FINAL = "final";
         if (firstWord.equals(FINAL)) {
             isFinal = true;
             line = line.substring(line.indexOf(FINAL) + FINAL.length());
