@@ -16,7 +16,9 @@ class Variable {
 
     // Errors string's.
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
-    private final static String NAME_ERROR_MESSAGE = "Illegal name variable name";
+    private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
+    private final static String VALUE_ERROR_MESSAGE = "Illegal value variable";
+    private final static String INITIALIZE_ERROR_MESSAGE = "Final must initialize";
 
     // Pattern's string's.
     private static final String TYPES_PATTERN = "int|double|String|boolean|char";
@@ -58,13 +60,16 @@ class Variable {
      * @param type The type of the variable.
      * @param name The name of the variable.
      */
-    Variable(String type, String name, int originLine) throws IllegalException {
+    Variable(String type, String name, int originLine, boolean isFinal) throws IllegalException {
+        if (isFinal) {
+            throw new IllegalException(INITIALIZE_ERROR_MESSAGE, originLine);
+        }
         if (!isLegalVariableType(type)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
         }
         TYPE = type;
         NAME = name;
-        isFinal = false;
+        this.isFinal = false;
         hasValue = false;
     }
 
@@ -78,9 +83,8 @@ class Variable {
     static Variable createParameter(String type, String name, int lineNumber, boolean isFinal) throws
             IllegalException {
         verifyLegalityVariableName(name, lineNumber, new HashMap<>());
-        Variable variable = new Variable(type, name, lineNumber);
+        Variable variable = new Variable(type, name, lineNumber, isFinal);
         variable.hasValue = true;
-        variable.isFinal = isFinal;
         return variable;
     }
 
@@ -297,7 +301,26 @@ class Variable {
     boolean isBooleanExpression() {
         return hasValue && (TYPE.equals(BOOLEAN) || TYPE.equals(INT) || TYPE.equals(DOUBLE));
     }
-    public String toString(){
-        return (TYPE+" "+NAME+" "+hasValue);
+
+    Variable createDeafaultVeriable(String value, int numberLine) throws IllegalException {
+        Variable variable;
+        if (isInt(value)) {
+            variable = createParameter(INT, "DefaultInt", numberLine, true);
+        } else if (isDouble(value)) {
+            variable = createParameter(DOUBLE, "DefaultDouble", numberLine, true);
+        } else if (isChar(value)) {
+            variable = createParameter(CHAR, "DefaultChar", numberLine, true);
+        } else if (isBoolean(value)) {
+            variable = createParameter(BOOLEAN, "DefaultBoolean", numberLine, true);
+        } else if (isString(value)) {
+            variable = createParameter(STRING, "DefaultString", numberLine, true);
+        } else {
+            throw new IllegalException(VALUE_ERROR_MESSAGE, numberLine);
+        }
+        return variable;
+    }
+
+    public String toString() {
+        return (TYPE + " " + NAME + " " + hasValue);
     }
 }
