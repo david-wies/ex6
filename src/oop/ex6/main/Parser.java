@@ -69,10 +69,10 @@ class Parser {
      * @return the first word in the string
      * @throws IllegalException
      */
-    static String extractFirstWord(String string, int numberLine, boolean withhEdges) throws IllegalException {
+    static String extractFirstWord(String string, int numberLine, boolean withEdges) throws IllegalException {
         Matcher matcher = firstWordPattern.matcher(string);
         if (matcher.find()) {
-            if (withhEdges)
+            if (withEdges)
                 return string.substring(matcher.start()-1, matcher.end()+1);
             return string.substring(matcher.start(), matcher.end());
         }

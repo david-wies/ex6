@@ -16,10 +16,11 @@ public class roiTests {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-        String line = "String b=\"hello\" ,c ;";
+        String line = "String b=\"hellohii\" ,c ;";
         Parser pars = new Parser("C:\\Users\\roishtivi\\IdeaProjects\\ex6\\src\\oop\\ex6\\main");
         try {
             pars.updateVariables(vars, line, 5);
+            System.out.println("hi");
         } catch (IllegalException e) {
             e.printStackTrace();
             System.out.println(e.getMessage());

@@ -294,4 +294,7 @@ class Variable {
     boolean isBooleanExpression() {
         return hasValue && (TYPE.equals(BOOLEAN) || TYPE.equals(INT) || TYPE.equals(DOUBLE));
     }
+    public String toString(){
+        return (TYPE+" "+NAME+" "+hasValue);
+    }
 }
