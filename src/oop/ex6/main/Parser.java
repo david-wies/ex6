@@ -130,24 +130,25 @@ class Parser {
                 if (parameters.length == 2) {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, scopeVariables);
                     Variable newVar;
-                    if (varType.equals("String")) {
-                        Matcher isStringMatcher = isString.matcher(parameters[1]);
-                        boolean stringMatch = isStringMatcher.find();
-                        if (stringMatch) {
-                            String par = parameters[1].substring(isStringMatcher.start(),isStringMatcher.end());
-                            newVar = new Variable(varType, parameters[0], par, lineNumber, isFinal);
-                        }
-                        else{
-                            throw new IllegalException(TYPE_ERROR_MESSAGE,lineNumber);
-                        }
-                    }
-                    else if (varType.equals("char")){
-                        newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
-                                lineNumber, true), lineNumber, isFinal);
-                    }
-                    else {
-                        newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
-                                lineNumber, false), lineNumber, isFinal);
+                    switch (varType) {
+                        case "String":
+                            Matcher isStringMatcher = isString.matcher(parameters[1]);
+                            boolean stringMatch = isStringMatcher.find();
+                            if (stringMatch) {
+                                String par = parameters[1].substring(isStringMatcher.start(), isStringMatcher.end());
+                                newVar = new Variable(varType, parameters[0], par, lineNumber, isFinal);
+                            } else {
+                                throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+                            }
+                            break;
+                        case "char":
+                            newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
+                                    lineNumber, true), lineNumber, isFinal);
+                            break;
+                        default:
+                            newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
+                                    lineNumber, false), lineNumber, isFinal);
+                            break;
                     }
                     scopeVariables.put(newVar.getName(), newVar);
                 } else {
