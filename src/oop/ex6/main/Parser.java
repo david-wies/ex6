@@ -28,6 +28,7 @@ class Parser {
     private static final String START_BLOCK = "\\s*\\{\\s*";
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
+    private static final String functionEnd = "\breturn\b\\s*";
 
     // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
@@ -36,6 +37,7 @@ class Parser {
     private static Pattern endBlock = Pattern.compile(END_BLOCK);
     private static Pattern startBlock = Pattern.compile(START_BLOCK);
     private static Pattern isString = Pattern.compile(IS_STRING);
+    private static Pattern returnPattern = Pattern.compile(functionEnd);
 
     // Field's of Parser.
     private HashMap<String, Method> methods;
@@ -265,9 +267,7 @@ class Parser {
      * @return true if this line of return is legal, false otherwise.
      */
     boolean endWithReturn(String lastRow) {
-        String rePattern = "\breturn\b\\s*";
-        Pattern pattern = Pattern.compile(rePattern);
-        Matcher matcher = pattern.matcher(lastRow);
+        Matcher matcher = returnPattern.matcher(lastRow);
         return matcher.matches();
     }
 
