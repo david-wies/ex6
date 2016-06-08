@@ -241,7 +241,7 @@ class Variable {
         if (firstIndex == -1 || firstIndex == lastIndex) {
             return false;
         } else {
-            value = value.substring(firstIndex, lastIndex);
+            value = value.substring(firstIndex + 1, lastIndex);
             return !value.contains("\"");
         }
     }
