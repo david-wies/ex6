@@ -94,7 +94,7 @@ class Variable {
     static void verifyLegalityVariableName(String name, int lineNumber, HashMap<String, Variable> variables)
             throws IllegalException {
         Matcher matcher = namePattern.matcher(name);
-        if (!matcher.matches() || Reserved.isReserved(name)) {
+        if (!matcher.matches()) {
             throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
         } else if (Reserved.isReserved(name)) {
             throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);

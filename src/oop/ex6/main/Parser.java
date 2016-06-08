@@ -92,7 +92,7 @@ class Parser {
      * @param lineNumber the number line of the string.
      * @throws IllegalException
      */
-    public void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
+    private void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
             throws IllegalException {
         Matcher legalEndMatcher = legalEnd.matcher(line);
         if (!legalEndMatcher.matches()) {
