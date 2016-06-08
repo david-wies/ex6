@@ -18,7 +18,7 @@ public class roiTests {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-        String line = "final int a = 1,b, c=2 ;";
+        String line = " char a ='r',b, c='r' ;";
         Parser pars = new Parser();
         try {
             pars.updateVariables(vars, line, 5);

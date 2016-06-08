@@ -93,7 +93,7 @@ class Parser {
      * @param lineNumber the number line of the string.
      * @throws IllegalException
      */
-    public void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
+    void updateVariables(HashMap<String, Variable> variables, String line, int lineNumber)
             throws IllegalException {
         Matcher legalEndMatcher = legalEnd.matcher(line);
         if (!legalEndMatcher.matches()) {
@@ -130,16 +130,22 @@ class Parser {
                 if (parameters.length == 2) {
                     Variable.verifyLegalityVariableName(parameters[0], lineNumber, variables);
                     Variable newVar;
-                    if (varType.equals("String") || varType.equals("char")) {
+                    if (varType.equals("String")) {
                         Matcher isStringMatcher = isString.matcher(parameters[1]);
                         boolean stringMatch = isStringMatcher.find();
                         if (stringMatch) {
-                            newVar = new Variable(varType, parameters[0], parameters[1].substring(isStringMatcher.start(),isStringMatcher.end()), lineNumber, isFinal);
+                            String par = parameters[1].substring(isStringMatcher.start(),isStringMatcher.end());
+                            newVar = new Variable(varType, parameters[0], par, lineNumber, isFinal);
                         }
                         else{
                             throw new IllegalException(TYPE_ERROR_MESSAGE,lineNumber);
                         }
-                    } else {
+                    }
+                    else if (varType.equals("char")){
+                        newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
+                                lineNumber, true), lineNumber, isFinal);
+                    }
+                    else {
                         newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
                                 lineNumber, false), lineNumber, isFinal);
                     }
