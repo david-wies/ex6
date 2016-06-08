@@ -36,7 +36,7 @@ class Block {
         return ORIGIN_LINE;
     }
 
-    public int getDepth() {
+    int getDepth() {
         return DEPTH;
     }
 }

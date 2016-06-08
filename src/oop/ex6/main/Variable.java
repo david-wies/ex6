@@ -29,7 +29,7 @@ class Variable {
     // Field's of Variable.
     private final String TYPE;
     private final String NAME;
-    private final boolean FINAL;
+    private boolean isFinal;
     private boolean hasValue = false;
 
     /**
@@ -48,7 +48,7 @@ class Variable {
         }
         TYPE = type;
         NAME = name;
-        FINAL = isFinal;
+        this.isFinal = isFinal;
         setValue(value, originLine);
     }
 
@@ -64,7 +64,7 @@ class Variable {
         }
         TYPE = type;
         NAME = name;
-        FINAL = false;
+        isFinal = false;
         hasValue = false;
     }
 
@@ -75,10 +75,12 @@ class Variable {
      * @param name The name of the parameter.
      * @return An Variable object which represent the parameter.
      */
-    static Variable createParameter(String type, String name, int lineNumber) throws IllegalException {
+    static Variable createParameter(String type, String name, int lineNumber, boolean isFinal) throws
+            IllegalException {
         verifyLegalityVariableName(name, lineNumber, new HashMap<>());
         Variable variable = new Variable(type, name, lineNumber);
         variable.hasValue = true;
+        variable.isFinal = isFinal;
         return variable;
     }
 
@@ -149,7 +151,7 @@ class Variable {
      * @throws IllegalException The new value is illegal.
      */
     void setValue(String value, int lineNumber) throws IllegalException {
-        if (FINAL && hasValue) {
+        if (isFinal && hasValue) {
             throw new IllegalException("Final variable can't change", lineNumber);
         }
         try {
