@@ -58,6 +58,10 @@ class Parser {
         variables.add(new HashMap<>());
     }
 
+    private boolean isLegalFile(String path) {
+        return path.endsWith(".sjava");
+    }
+
     /**
      * Extract the string that describe the parameter's from the line.
      *
@@ -178,6 +182,9 @@ class Parser {
      * @throws IllegalException The file contain illegal command.
      */
     void analyzerFile(String path) throws IOException, IllegalException {
+        if (!isLegalFile(path)) {
+            throw new IOException("Un support type of file");
+        }
         File sJavaFile = new File(path);
         Scanner input = new Scanner(sJavaFile);
         String line;
@@ -248,8 +255,8 @@ class Parser {
      */
     boolean parser() throws IllegalException {
 //        ArrayList<HashMap<String,Variable>>;
-        for (HashMap<String, Variable> varScope: variables){
-            for (Variable var:varScope.values()){
+        for (HashMap<String, Variable> varScope : variables) {
+            for (Variable var : varScope.values()) {
                 System.out.println(var);
             }
         }
@@ -300,11 +307,12 @@ class Parser {
         }
         return variable;
     }
-    void  containInSameScope(String name, int depth, int lineNumber) throws IllegalException{
+
+    void containInSameScope(String name, int depth, int lineNumber) throws IllegalException {
         if (variables.get(depth).containsKey(name)) {
             return;
         }
-        throw new IllegalException(ALREADY_TOKEN_ERROR_MESSAGE,lineNumber);
+        throw new IllegalException(ALREADY_TOKEN_ERROR_MESSAGE, lineNumber);
 
     }
 

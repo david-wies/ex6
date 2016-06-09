@@ -163,8 +163,8 @@ class Variable {
         } catch (IllegalException e) {
             isValue = true;
         }
-        try {
-            if (isValue) {
+        if (isValue) {
+            try {
                 switch (TYPE) {
                     case INT:
                         if (!isInt(value)) {
@@ -192,14 +192,12 @@ class Variable {
                         }
                         break;
                 }
-                hasValue = true;
-            } else {
-                Variable variable = Parser.getVariable(value);
-                copyValue(variable.getTYPE());
+            } catch (Exception e) {
+                throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
             }
-
-        } catch (Exception e) {
-            throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+        } else {
+            Variable variable = Parser.getVariable(value);
+            copyValue(variable.getTYPE());
         }
     }
 
