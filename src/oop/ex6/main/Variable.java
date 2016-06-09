@@ -338,6 +338,6 @@ class Variable {
     }
 
     public String toString() {
-        return (TYPE + " " + NAME + " " + hasValue);
+        return (TYPE + " " + NAME + " has Value: " + hasValue+" is final: "+isFinal);
     }
 }

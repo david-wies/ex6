@@ -246,6 +246,12 @@ class Parser {
      * @throws IllegalException
      */
     boolean parser() throws IllegalException {
+//        ArrayList<HashMap<String,Variable>>;
+        for (HashMap<String, Variable> varScope: variables){
+            for (Variable var:varScope.values()){
+                System.out.println(var);
+            }
+        }
 //        if (parseBlock() && endWithReturn()) {
 //
 //        } else {
