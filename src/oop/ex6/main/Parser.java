@@ -33,7 +33,7 @@ class Parser {
     private static final String START_BLOCK = "\\s*\\{\\s*";
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
-    private static final String LEGAL_RETURN = "\\breturn\\b\\s*;\\s*";
+    private static final String LEGAL_RETURN = "\\breturn\\b\\s*";
 
     // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
@@ -101,7 +101,6 @@ class Parser {
         }
         throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
     }
-
     static String extractFirstName(String string, int numberLine) throws IllegalException {
         Matcher matcher = firstNamePattern.matcher(string);
         if (string.equals(""))
