@@ -148,23 +148,24 @@ class Parser {
         if (parameters.length == 2) {
             Variable.verifyLegalityVariableName(parameters[0], lineNumber);
             Variable newVar;
+            String varName = extractFirstWord(parameters[0],lineNumber,false);
             switch (type) {
                 case STRING:
                     Matcher isStringMatcher = isString.matcher(parameters[1]);
                     boolean stringMatch = isStringMatcher.find();
                     if (stringMatch) {
                         String par = parameters[1].substring(isStringMatcher.start(), isStringMatcher.end());
-                        newVar = new Variable(type, parameters[0], par, lineNumber, isFinal);
+                        newVar = new Variable(type, varName, par, lineNumber, isFinal);
                     } else {
                         throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
                     }
                     break;
                 case CHAR:
-                    newVar = new Variable(type, parameters[0], extractFirstWord(parameters[1],
+                    newVar = new Variable(type, varName, extractFirstWord(parameters[1],
                             lineNumber, true), lineNumber, isFinal);
                     break;
                 default:
-                    newVar = new Variable(type, parameters[0], extractFirstWord(parameters[1],
+                    newVar = new Variable(type, varName, extractFirstWord(parameters[1],
                             lineNumber, false), lineNumber, isFinal);
                     break;
             }
