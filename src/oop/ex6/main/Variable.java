@@ -99,7 +99,7 @@ class Variable {
      */
     static void verifyLegalityVariableName(String name, int lineNumber, int depth)
             throws IllegalException {
-        HashMap<String,Variable> variables = Parser.variables.get(depth);
+        HashMap<String, Variable> variables = Parser.variables.get(depth);
         Matcher matcher = namePattern.matcher(name);
         if (!matcher.matches()) {
             throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
@@ -338,6 +338,6 @@ class Variable {
     }
 
     public String toString() {
-        return (TYPE + " " + NAME + " has Value: " + hasValue+" is final: "+isFinal);
+        return (TYPE + ", " + NAME + ", has Value: " + hasValue + ", is final: " + isFinal);
     }
 }

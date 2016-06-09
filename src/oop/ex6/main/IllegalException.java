@@ -14,6 +14,6 @@ class IllegalException extends Exception {
      * @param line    The number of the line that the error happened.
      */
     IllegalException(String message, int line) {
-        super(ERROR_MESSAGE + line + "\t" + message);
+        super(ERROR_MESSAGE + " " + line + ", \t" + message);
     }
 }
