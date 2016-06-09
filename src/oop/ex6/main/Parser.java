@@ -33,7 +33,7 @@ class Parser {
     private static final String START_BLOCK = "\\s*\\{\\s*";
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
-    private static final String LEGAL_RETURN = "\\breturn\\b\\s*";
+    private static final String LEGAL_RETURN = "\\breturn\\b\\s*;\\s*";
 
     // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
@@ -212,10 +212,6 @@ class Parser {
         String word = "", parameters = "", methodName = "", subLine;
         while (input.hasNext()) {
             line = input.nextLine();
-//            word = extractFirstName(line, lineNumber);
-//            if (word.equals("")) { //
-//                lineNumber++;
-//                continue;
             Matcher matcher = firstWordPattern.matcher(line);
             if (matcher.find()) {
                 word = line.substring(matcher.start(), matcher.end());
@@ -311,11 +307,11 @@ class Parser {
     /**
      * Check if the last row is legal return.
      *
-     * @param lastRow The last row of the function
+     * @param row The last row of the function
      * @return true if this line of return is legal, false otherwise.
      */
-    boolean isLegalReturn(String lastRow) {
-        Matcher matcher = returnPattern.matcher(lastRow);
+    boolean isLegalReturn(String row) {
+        Matcher matcher = returnPattern.matcher(row);
         return matcher.matches();
     }
 
