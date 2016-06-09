@@ -81,7 +81,7 @@ class Method extends Block {
                 end = separatedWordsMatcher.end();
                 String newPart = part.substring(start, end);
                 String[] typeAndName = newPart.split("\\s");
-                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], getOriginLine(), isFinal);
+                Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], getOriginLine(), isFinal ,getDepth());
                 Parser.variables.get(getDepth()).put(newVar.getName(), newVar);
                 this.parameters.add(newVar);
             } else
