@@ -1,7 +1,5 @@
 package oop.ex6.main;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -52,7 +50,7 @@ class Variable {
         TYPE = type;
         NAME = name;
         this.isFinal = isFinal;
-        setValue(value, originLine, 0);
+        setValue(value, originLine);
     }
 
     /**
@@ -81,10 +79,10 @@ class Variable {
      * @param name The name of the parameter.
      * @return An Variable object which represent the parameter.
      */
-    static Variable createParameter(String type, String name, int lineNumber, boolean isFinal, int depth)
+    static Variable createParameter(String type, String name, int lineNumber, boolean isFinal)
             throws
             IllegalException {
-        verifyLegalityVariableName(name, lineNumber, depth);
+        verifyLegalityVariableName(name, lineNumber);
         Variable variable = new Variable(type, name, lineNumber, isFinal);
         variable.hasValue = true;
         return variable;
@@ -97,15 +95,12 @@ class Variable {
      * @param lineNumber The line of the creation of the variable.
      * @throws IllegalException The name is illegal.
      */
-    static void verifyLegalityVariableName(String name, int lineNumber, int depth)
+    static void verifyLegalityVariableName(String name, int lineNumber)
             throws IllegalException {
-        HashMap<String, Variable> variables = Parser.variables.get(depth);
         Matcher matcher = namePattern.matcher(name);
         if (!matcher.matches()) {
             throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
         } else if (Reserved.isReserved(name)) {
-            throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
-        } else if (variables.containsKey(name)) {
             throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
         }
     }
@@ -157,14 +152,13 @@ class Variable {
      * @param lineNumber The line number of change the variable value.
      * @throws IllegalException The new value is illegal.
      */
-    void setValue(String value, int lineNumber, int depth) throws IllegalException {
+    void setValue(String value, int lineNumber) throws IllegalException {
         if (isFinal && hasValue) {
             throw new IllegalException("Final variable can't change", lineNumber);
         }
-        ArrayList<HashMap<String, Variable>> variables = Parser.getVariables();
         boolean isValue;
         try {
-            verifyLegalityVariableName(value, lineNumber, depth);
+            verifyLegalityVariableName(value, lineNumber);
             isValue = false;
         } catch (IllegalException e) {
             isValue = true;
@@ -319,18 +313,18 @@ class Variable {
         return hasValue && (TYPE.equals(BOOLEAN) || TYPE.equals(INT) || TYPE.equals(DOUBLE));
     }
 
-    Variable createDeafaultVeriable(String value, int numberLine, int depth) throws IllegalException {
+    Variable createDeafaultVeriable(String value, int numberLine) throws IllegalException {
         Variable variable;
         if (isInt(value)) {
-            variable = createParameter(INT, "DefaultInt", numberLine, true, depth);
+            variable = createParameter(INT, "DefaultInt", numberLine, true);
         } else if (isDouble(value)) {
-            variable = createParameter(DOUBLE, "DefaultDouble", numberLine, true, depth);
+            variable = createParameter(DOUBLE, "DefaultDouble", numberLine, true);
         } else if (isChar(value)) {
-            variable = createParameter(CHAR, "DefaultChar", numberLine, true, depth);
+            variable = createParameter(CHAR, "DefaultChar", numberLine, true);
         } else if (isBoolean(value)) {
-            variable = createParameter(BOOLEAN, "DefaultBoolean", numberLine, true, depth);
+            variable = createParameter(BOOLEAN, "DefaultBoolean", numberLine, true);
         } else if (isString(value)) {
-            variable = createParameter(STRING, "DefaultString", numberLine, true, depth);
+            variable = createParameter(STRING, "DefaultString", numberLine, true);
         } else {
             throw new IllegalException(VALUE_ERROR_MESSAGE, numberLine);
         }

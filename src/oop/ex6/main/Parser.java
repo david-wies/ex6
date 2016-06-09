@@ -125,7 +125,7 @@ class Parser {
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber, false);
-                    Variable.verifyLegalityVariableName(varName, lineNumber, depth);
+                    Variable.verifyLegalityVariableName(varName, lineNumber);
                     Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
                     scopeVariables.put(newVar.getName(), newVar);
                 } else {
@@ -142,7 +142,7 @@ class Parser {
         HashMap<String, Variable> scopeVariables = variables.get(depth);
         String[] parameters = assignment.split("=");
         if (parameters.length == 2) {
-            Variable.verifyLegalityVariableName(parameters[0], lineNumber, depth);
+            Variable.verifyLegalityVariableName(parameters[0], lineNumber);
             Variable newVar;
             switch (type) {
                 case STRING:
