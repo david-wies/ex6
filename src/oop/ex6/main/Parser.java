@@ -35,6 +35,8 @@ class Parser {
     private static final String IS_STRING = "\".*\"";
     private static final String LEGAL_RETURN = "\\breturn\\b\\s*";
     private static final String EMPTY_ROW = "\\s*;?\\s*";
+    private static final String SPACE_ROW = "\\s*";
+
 
     // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
@@ -46,6 +48,7 @@ class Parser {
     private static Pattern isString = Pattern.compile(IS_STRING);
     private static Pattern returnPattern = Pattern.compile(LEGAL_RETURN);
     private static Pattern emptyRowPattern = Pattern.compile(EMPTY_ROW);
+    private static Pattern spaceRowPattern = Pattern.compile(SPACE_ROW);
 
     // Field's of Parser.
     private HashMap<String, Method> methods;
@@ -169,25 +172,32 @@ class Parser {
             containInSameScope(parameters[0], depth, lineNumber);
             Variable newVar;
             String varName = extractFirstWord(parameters[0], lineNumber, false);
+            String varValue;
             switch (type) {
                 case STRING:
                     Matcher isStringMatcher = isString.matcher(parameters[1]);
                     boolean stringMatch = isStringMatcher.find();
                     if (stringMatch) {
-                        String par = parameters[1].substring(isStringMatcher.start(), isStringMatcher.end());
-                        newVar = new Variable(type, varName, par, lineNumber, isFinal);
+
+                        varValue = parameters[1].substring(isStringMatcher.start(), isStringMatcher.end());
                     } else {
                         throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
                     }
                     break;
                 case CHAR:
-                    newVar = new Variable(type, varName, extractFirstWord(parameters[1],
-                            lineNumber, true), lineNumber, isFinal);
+                    varValue = extractFirstWord(parameters[1], lineNumber, true);
                     break;
                 default:
-                    newVar = new Variable(type, varName, extractFirstWord(parameters[1],
-                            lineNumber, false), lineNumber, isFinal);
+                    varValue = extractFirstWord(parameters[1], lineNumber, false);
                     break;
+            }
+            parameters[1] = parameters[1].substring(parameters[1].indexOf(varValue) + varValue.length());
+            Matcher spaceRowMatcher = spaceRowPattern.matcher(parameters[1]);
+            if (spaceRowMatcher.matches()){
+                newVar = new Variable(type, varName,varValue , lineNumber, isFinal);
+            }
+            else{
+                throw new IllegalException(BAD_FORMAT_ERROR,lineNumber);
             }
             scopeVariables.put(newVar.getName(), newVar);
         } else {
@@ -302,7 +312,7 @@ class Parser {
      * @param lineNumber The number of the line in the full s-java file.
      * @throws IllegalException The line is not legal.
      */
-    private void analyzeRow(String row, int depth, int lineNumber) throws IllegalException {
+    void analyzeRow(String row, int depth, int lineNumber) throws IllegalException {
         Matcher endRowMatcher = legalEnd.matcher(row);
         if (!endRowMatcher.matches() || row.contains("}")) {
             throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
