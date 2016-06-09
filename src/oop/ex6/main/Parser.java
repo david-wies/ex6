@@ -187,7 +187,7 @@ class Parser {
             line = input.nextLine();
             Matcher matcher = firstWordPattern.matcher(line);
             if (matcher.find()) {
-                word = line.substring(matcher.start(), matcher.end());
+                word = line.substring(matcher.start(), matcher.end()); // TODO: chang to use the function to get word
             } else if (line.startsWith("//")) { //if the line is a comment line.
                 lineNumber++;
                 continue;
@@ -195,7 +195,7 @@ class Parser {
                 lineNumber++;
                 continue;
             }
-            line = line.substring(matcher.end());
+            String subLine = line.substring(matcher.end());
             if (rows == null) {
                 if (Variable.isLegalVariableType(word) || word.equals(FINAL)) { // This line create a
                     // variable.
@@ -206,8 +206,8 @@ class Parser {
                 } else if (word.equals(START_FUNCTION)) {
                     rows = new ArrayList<>();
                     firstMethodLine = lineNumber;
-                    parameters = extractParameters(line, lineNumber);
-                    methodName = extractFirstWord(line, lineNumber, false);
+                    parameters = extractParameters(subLine, lineNumber);
+                    methodName = extractFirstWord(subLine, lineNumber, false);
                     Method.verifyLegalityMethodName(methodName, lineNumber);
                     Matcher startBlockMatcher = startBlock.matcher(line);
                     if (!startBlockMatcher.find(line.indexOf('(') + 1)) {
