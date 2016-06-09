@@ -100,6 +100,8 @@ class Parser {
     }
     static String extractFirstName(String string, int numberLine) throws IllegalException {
         Matcher matcher = firstNamePattern.matcher(string);
+        if (string.equals(""))
+            return string;
         if (matcher.find()) {
             return string.substring(matcher.start(), matcher.end());
         }
