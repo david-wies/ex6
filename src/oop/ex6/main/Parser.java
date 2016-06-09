@@ -16,7 +16,7 @@ class Parser {
     // Useful value's.
     private final static String CHAR = "char", STRING = "String", FINAL = "final";
     private final static String START_LOOP = "while", START_CONDITION = "if", START_FUNCTION = "void";
-    private final static String RETURN = "return", END_FILE_NAME = ".sjava";
+    private final static String RETURN = "return", END_FILE_NAME = ".sjava", START_COMMENT = "//";
 
     // Errors string's.
     private final static String BAD_FORMAT_ERROR = "bad format line";
@@ -34,6 +34,7 @@ class Parser {
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
     private static final String LEGAL_RETURN = "\\breturn\\b\\s*";
+    private static final String EMPTY_ROW = "\\s*;?\\s*";
 
     // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
@@ -44,6 +45,7 @@ class Parser {
     private static Pattern startBlock = Pattern.compile(START_BLOCK);
     private static Pattern isString = Pattern.compile(IS_STRING);
     private static Pattern returnPattern = Pattern.compile(LEGAL_RETURN);
+    private static Pattern emptyRowPattern = Pattern.compile(EMPTY_ROW);
 
     // Field's of Parser.
     private HashMap<String, Method> methods;
@@ -291,19 +293,38 @@ class Parser {
     }
 
 
-    private void analyseRow(String row, int depth, int lineNumber) throws IllegalException {
-        String firstWord, subRow;
-        Matcher matcher = firstWordPattern.matcher(row);
-        if (matcher.find()) {
-            firstWord = row.substring(matcher.start(), matcher.end());
-            subRow = row.substring(matcher.end());
-        } else if (row.startsWith("//")) { //if the line is a comment line.
-            lineNumber++;
+    /**
+     * Analyze one row, assuming that the row isn't start of block or the end of the block.
+     *
+     * @param row        THe row to analyze.
+     * @param depth      The depth of the block that the row of his rows.
+     * @param lineNumber The number of the line in the full s-java file.
+     * @throws IllegalException The line is not legal.
+     */
+    private void analyzeRow(String row, int depth, int lineNumber) throws IllegalException {
+        Matcher endRowMatcher = legalEnd.matcher(row);
+        if (!endRowMatcher.matches() || row.contains("}")) {
+            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+        }
+        String firstWord;
+        Matcher emptyRowMatcher = emptyRowPattern.matcher(row);
+        Matcher firstWordMatcher = firstWordPattern.matcher(row);
+        if (firstWordMatcher.find()) {
+            firstWord = row.substring(firstWordMatcher.start(), firstWordMatcher.end());
+        } else if (row.startsWith(START_COMMENT) || emptyRowMatcher.matches()) {
             return;
         } else {
-            subRow = row;
+            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
         }
-        int a;
+        if (firstWord.equals(RETURN)) {
+            if (!isLegalReturn(row)) {
+                throw new IllegalException(RETURN_ERROR, lineNumber);
+            }
+        } else if (firstWord.equals(FINAL) || Variable.isLegalVariableType(firstWord)) {
+            updateVariables(depth, row, lineNumber, firstWord);
+        } else {
+            throw new IllegalException("Unsupported command", lineNumber);
+        }
     }
 
     /**
@@ -313,7 +334,7 @@ class Parser {
         int numberLine = block.getOriginLine();
         ArrayList<String> rows = block.getRows();
         for (String row : rows) {
-            analyseRow(row, block.getDepth(), numberLine++);
+            analyzeRow(row, block.getDepth(), numberLine++);
         }
     }
 

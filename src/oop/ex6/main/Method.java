@@ -61,7 +61,7 @@ class Method extends Block {
      * @param parameters The string that describe the parameter's of the method.
      * @throws IllegalException
      */
-    void analysisParameters(String parameters) throws IllegalException {
+    private void analysisParameters(String parameters) throws IllegalException {
         this.parameters = new ArrayList<>();
         int start;
         int end;
