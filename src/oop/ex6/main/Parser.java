@@ -148,7 +148,7 @@ class Parser {
         String[] parameters = assignment.split("=");
         if (parameters.length == 2) {
             Variable.verifyLegalityVariableName(parameters[0], lineNumber);
-            containInSameScope(parameters[0], lineNumber, depth);
+            containInSameScope(parameters[0], depth, lineNumber);
             Variable newVar;
             String varName = extractFirstWord(parameters[0], lineNumber, false);
             switch (type) {
@@ -256,7 +256,6 @@ class Parser {
      * @return true if al of the ,method's was valid, false otherwise.
      */
     boolean parser() {
-//        ArrayList<HashMap<String,Variable>>;
         for (HashMap<String, Variable> varScope : variables) {
             varScope.values().forEach(System.out::println);
         }
@@ -310,8 +309,7 @@ class Parser {
 
     private void containInSameScope(String name, int depth, int lineNumber) throws IllegalException {
         if (variables.get(depth).containsKey(name)) {
-            return;
+            throw new IllegalException(ALREADY_TOKEN_ERROR_MESSAGE, lineNumber);
         }
-        throw new IllegalException(ALREADY_TOKEN_ERROR_MESSAGE, lineNumber);
     }
 }
