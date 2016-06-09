@@ -130,6 +130,7 @@ class Parser {
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber, false);
                     Variable.verifyLegalityVariableName(varName, lineNumber);
+                    containInSameScope(varName, depth, lineNumber);
                     Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
                     scopeVariables.put(newVar.getName(), newVar);
                 } else {
@@ -147,6 +148,7 @@ class Parser {
         String[] parameters = assignment.split("=");
         if (parameters.length == 2) {
             Variable.verifyLegalityVariableName(parameters[0], lineNumber);
+            containInSameScope(parameters[0], lineNumber, depth);
             Variable newVar;
             String varName = extractFirstWord(parameters[0],lineNumber,false);
             switch (type) {
@@ -309,7 +311,7 @@ class Parser {
         return variable;
     }
 
-    void containInSameScope(String name, int depth, int lineNumber) throws IllegalException {
+    private void containInSameScope(String name, int depth, int lineNumber) throws IllegalException {
         if (variables.get(depth).containsKey(name)) {
             return;
         }
