@@ -20,6 +20,7 @@ class Parser {
     // Errors string's.
     static final private String BAD_FORMAT_ERROR = "bad format line";
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
+    private final static String ALREADY_TOKEN_ERROR_MESSAGE = "Already taken variable";
 
     // Pattern's string's.
     private static final String FIRST_WORD = "\\b\\S+\\b";
@@ -298,6 +299,13 @@ class Parser {
             }
         }
         return variable;
+    }
+    void  containInSameScope(String name, int depth, int lineNumber) throws IllegalException{
+        if (variables.get(depth).containsKey(name)) {
+            return;
+        }
+        throw new IllegalException(ALREADY_TOKEN_ERROR_MESSAGE,lineNumber);
+
     }
 
     static ArrayList<HashMap<String, Variable>> getVariables() {
