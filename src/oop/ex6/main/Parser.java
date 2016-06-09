@@ -24,7 +24,7 @@ class Parser {
     private final static String ALREADY_TOKEN_ERROR_MESSAGE = "Already taken variable";
     private final static String COMMENT_ERROR = "Un legal comment format";
     private final static String RETURN_ERROR = "Un legal return format";
-
+    private final static String BAD_METHOD_FORMAT_ERROR = "bad method format";
     // Pattern's string's.
     private static final String FIRST_WORD = "\\b\\S+\\b";
     private static final String FIRST_NAME = "\\b\\w+\\b";
@@ -370,5 +370,17 @@ class Parser {
         if (variables.get(depth).containsKey(name)) {
             throw new IllegalException(ALREADY_TOKEN_ERROR_MESSAGE, lineNumber);
         }
+    }
+
+    void parseMethod(Method method) throws IllegalException {
+        int lastRowIndex = method.getRows().size()-1;
+        String lastLine = method.getRows().get(lastRowIndex);
+        Matcher endWithReturnMatcher = returnPattern.matcher(lastLine);
+        if (endWithReturnMatcher.find()){
+            method.getRows().remove(lastRowIndex);
+            parseBlock(method);
+        }
+        throw new IllegalException(BAD_METHOD_FORMAT_ERROR,method.getOriginLine());
+
     }
 }
