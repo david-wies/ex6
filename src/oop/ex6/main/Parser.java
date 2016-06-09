@@ -103,6 +103,7 @@ class Parser {
         }
         throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
     }
+
     static String extractFirstName(String string, int numberLine) throws IllegalException {
         Matcher matcher = firstNamePattern.matcher(string);
         if (string.equals(""))
