@@ -205,6 +205,7 @@ class Parser {
         String word, parameters = "", methodName = "";
         while (input.hasNext()) {
             line = input.nextLine();
+            word = extractFirstName(line, lineNumber);
             Matcher matcher = firstWordPattern.matcher(line);
             if (matcher.find()) {
                 word = line.substring(matcher.start(), matcher.end()); // TODO: chang to use the function to get word
