@@ -33,7 +33,7 @@ class Parser {
     private static final String START_BLOCK = "\\s*\\{\\s*";
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
-    private static final String LEGAL_RETURN = "\\breturn\\b\\s*;\\s*";
+    private static final String LEGAL_RETURN = "\\breturn\\s*";
 
     // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
@@ -226,7 +226,6 @@ class Parser {
 //                lineNumber++;
 //                continue;
 //            }
-//            String subLine = line.substring(line.indexOf(word) + word.length());
 //            String subLine = line.substring(matcher.end());
             if (word.equals(RETURN) && !isLegalReturn(line)) {
                 throw new IllegalException(RETURN_ERROR, lineNumber);
@@ -293,15 +292,30 @@ class Parser {
     }
 
 
+    private void analyseRow(String row, int depth, int lineNumber) throws IllegalException {
+        String firstWord, subRow;
+        Matcher matcher = firstWordPattern.matcher(row);
+        if (matcher.find()) {
+            firstWord = row.substring(matcher.start(), matcher.end());
+            subRow = row.substring(matcher.end());
+        } else if (row.startsWith("//")) { //if the line is a comment line.
+            lineNumber++;
+            return;
+        } else {
+            subRow = row;
+        }
+
+    }
+
     /**
      * Parse a single block.
-     *
-     * @param depth The depth of the block.
-     * @param block The block to parse.
      */
-    boolean parseBlock(Block block, int depth) {
-
-        return true;
+    void parseBlock(Block block) throws IllegalException {
+        int numberLine = block.getOriginLine();
+        ArrayList<String> rows = block.getRows();
+        for (String row : rows) {
+            analyseRow(row, block.getDepth(), numberLine++);
+        }
     }
 
     /**
@@ -310,7 +324,7 @@ class Parser {
      * @param row The last row of the function
      * @return true if this line of return is legal, false otherwise.
      */
-    boolean isLegalReturn(String row) {
+    private boolean isLegalReturn(String row) {
         Matcher matcher = returnPattern.matcher(row);
         return matcher.matches();
     }
