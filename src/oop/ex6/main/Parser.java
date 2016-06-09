@@ -131,37 +131,41 @@ class Parser {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
             } else { //var assignment with value .
-                String[] parameters = part.split("=");
-                if (parameters.length == 2) {
-                    Variable.verifyLegalityVariableName(parameters[0], lineNumber, depth);
-                    Variable newVar;
-                    switch (varType) {
-                        case STRING:
-                            Matcher isStringMatcher = isString.matcher(parameters[1]);
-                            boolean stringMatch = isStringMatcher.find();
-                            if (stringMatch) {
-                                String par = parameters[1].substring(isStringMatcher.start(), isStringMatcher.end());
-                                newVar = new Variable(varType, parameters[0], par, lineNumber, isFinal);
-                            } else {
-                                throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
-                            }
-                            break;
-                        case CHAR:
-                            newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
-                                    lineNumber, true), lineNumber, isFinal);
-                            break;
-                        default:
-                            newVar = new Variable(varType, parameters[0], extractFirstWord(parameters[1],
-                                    lineNumber, false), lineNumber, isFinal);
-                            break;
-                    }
-                    scopeVariables.put(newVar.getName(), newVar);
-                } else {
-                    throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
-                }
-
-
+                assignmentVariableValue(part, varType, depth, lineNumber, isFinal);
             }
+        }
+    }
+
+    private void assignmentVariableValue(String assignment, String type, int depth, int lineNumber, boolean
+            isFinal) throws IllegalException {
+        HashMap<String, Variable> scopeVariables = variables.get(depth);
+        String[] parameters = assignment.split("=");
+        if (parameters.length == 2) {
+            Variable.verifyLegalityVariableName(parameters[0], lineNumber, depth);
+            Variable newVar;
+            switch (type) {
+                case STRING:
+                    Matcher isStringMatcher = isString.matcher(parameters[1]);
+                    boolean stringMatch = isStringMatcher.find();
+                    if (stringMatch) {
+                        String par = parameters[1].substring(isStringMatcher.start(), isStringMatcher.end());
+                        newVar = new Variable(type, parameters[0], par, lineNumber, isFinal);
+                    } else {
+                        throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+                    }
+                    break;
+                case CHAR:
+                    newVar = new Variable(type, parameters[0], extractFirstWord(parameters[1],
+                            lineNumber, true), lineNumber, isFinal);
+                    break;
+                default:
+                    newVar = new Variable(type, parameters[0], extractFirstWord(parameters[1],
+                            lineNumber, false), lineNumber, isFinal);
+                    break;
+            }
+            scopeVariables.put(newVar.getName(), newVar);
+        } else {
+            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
         }
     }
 
@@ -250,13 +254,15 @@ class Parser {
         return false;
     }
 
+
     /**
      * Parse a single block.
      *
-     * @param block     The block to parse.
-     * @param variables the variable's that the block know.
+     * @param depth The depth of the block.
+     * @param block The block to parse.
      */
-    boolean parseBlock(Block block, HashMap<String, Variable> variables) {
+    boolean parseBlock(Block block, int depth) {
+
         return true;
     }
 
