@@ -20,8 +20,9 @@ public class roiTests {
         String line = " char a ='r',b, c='r' ;";
         Parser pars = new Parser();
         try {
-            pars.updateVariables(0, line, 5);
-            System.out.println("update variable is done");
+            System.out.println(Parser.extractFirstName("foo(int a",3));
+//            pars.updateVariables(0, line, 5);
+//            System.out.println("update variable is done");
         } catch (IllegalException e) {
             e.printStackTrace();
             System.out.println(e.getMessage());

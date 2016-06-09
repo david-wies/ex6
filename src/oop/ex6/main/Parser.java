@@ -24,6 +24,7 @@ class Parser {
 
     // Pattern's string's.
     private static final String FIRST_WORD = "\\b\\S+\\b";
+    private static final String FIRST_NAME = "\\b\\w+\\b";
     private static final String LEGAL_END = "[^;]*;\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
     private static final String START_BLOCK = "\\s*\\{\\s*";
@@ -34,6 +35,7 @@ class Parser {
     // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
     private static Pattern firstWordPattern = Pattern.compile(FIRST_WORD);
+    private static Pattern firstNamePattern = Pattern.compile(FIRST_NAME);
     private static Pattern legalEnd = Pattern.compile(LEGAL_END);
     private static Pattern endBlock = Pattern.compile(END_BLOCK);
     private static Pattern startBlock = Pattern.compile(START_BLOCK);
@@ -92,6 +94,13 @@ class Parser {
         if (matcher.find()) {
             if (withEdges)
                 return string.substring(matcher.start() - 1, matcher.end() + 1);
+            return string.substring(matcher.start(), matcher.end());
+        }
+        throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
+    }
+    static String extractFirstName(String string, int numberLine) throws IllegalException {
+        Matcher matcher = firstNamePattern.matcher(string);
+        if (matcher.find()) {
             return string.substring(matcher.start(), matcher.end());
         }
         throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
