@@ -162,12 +162,20 @@ class Parser {
             } else { //var assignment with value .
                 String varName = extractFirstWord(part, lineNumber, false);
                 Variable newVar = new Variable(varType,varName,lineNumber,isFinal);
-                assignmentVariableValue(part, newVar, depth, lineNumber);
+                assignmentValue(part, newVar, lineNumber);
             }
         }
     }
 
-    private void assignmentVariableValue(String assignment, Variable variable, int lineNumber) throws IllegalException {
+    /**
+     * Assignment value to variable.
+     *
+     * @param assignment THe String of what to assignment to the variable.
+     * @param variable   The variable to assignment the value.
+     * @param lineNumber The number line of the string.
+     * @throws IllegalException THe line format was illegal.
+     */
+    private void assignmentValue(String assignment, Variable variable, int lineNumber) throws IllegalException {
         String[] parameters = assignment.split("=");
         String varValue;
         if (parameters.length == 2) {
