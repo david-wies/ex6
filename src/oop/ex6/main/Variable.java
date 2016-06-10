@@ -177,7 +177,11 @@ class Variable {
             if (variable == null) {
                 throw new IllegalException("Try to copy a value from variable that doesn't exist.",
                         lineNumber);
-            } else {
+            }
+            else if (!variable.hasValue){
+                throw new IllegalException("try to assignment with put value",lineNumber);
+            }
+            else {
                 copyValue(variable.getType());
             }
         }

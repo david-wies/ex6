@@ -28,6 +28,7 @@ class Parser {
     private final static String UNSUPPORTED_COMMAND = "Unsupported command";
     private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
     private final static String INITIALIZE_ERROR_MESSAGE = "Final must initialize";
+    private final static String ILLEGAL_METHOD_CALL_ERROR ="UNKNOWN METHOD CALL";
 
 
     // Pattern's string's.
@@ -36,12 +37,15 @@ class Parser {
     private static final String FIRST_NAME = "\\b\\w+\\b";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
-    private static final String START_BLOCK = "\\s*\\S*\\s*\\{\\s*";
+    private static final String START_BLOCK = "\\s*\\S+\\s*\\{\\s*"; // \\S+ and not \\S* dose not work on while/if
+    private static final String START_BLOCK_NEW = ".+\\{"; //  working on while/if ( need to see if to use it in the other places)
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
     private static final String LEGAL_RETURN = "\\breturn\\b\\s*";
     private static final String EMPTY_ROW = "\\s*;?\\s*";
     private static final String SPACE_ROW = "\\s*";
+    private static final String METHOD_CALL = "[a-zA-Z]+\\w*\\(";
+    private static final String LEGAL_METHOD_RETURN = "\\s*return\\s*;\\s*";
 
 
     // Patterns
@@ -56,6 +60,10 @@ class Parser {
     private static Pattern returnPattern = Pattern.compile(LEGAL_RETURN);
     private static Pattern emptyRowPattern = Pattern.compile(EMPTY_ROW);
     private static Pattern spaceRowPattern = Pattern.compile(SPACE_ROW);
+    private static Pattern methodCallPattern = Pattern.compile(METHOD_CALL);
+    private static Pattern legalMethodReturn = Pattern.compile(LEGAL_METHOD_RETURN);
+    private static Pattern newStartBlock = Pattern.compile(START_BLOCK_NEW);
+
 
     // Field's of Parser.
     private HashMap<String, Method> methods;
@@ -91,7 +99,7 @@ class Parser {
     private static String extractParameters(String line, int numberLine) throws IllegalException {
         int startIndex = line.indexOf('('), endIndex = line.indexOf(')');
         if (startIndex < endIndex) {
-            return line.substring(startIndex, endIndex);
+            return line.substring(startIndex +1, endIndex); // was returning the parameters with " ( "
         } else {
             throw new IllegalException("Un legal method declaration", numberLine);
         }
@@ -122,12 +130,14 @@ class Parser {
             Matcher matcher = firstWordPattern.matcher(string);
             Matcher matcherWithBraces = firstBracesWord.matcher(string);
             if (withEdges) {
-                if (matcherWithBraces.find())
-                    return string.substring(matcher.start() , matcher.end() );
+                if (matcherWithBraces.find()) {
+                    return string.substring(matcherWithBraces.start(), matcherWithBraces.end());
+                }
             }
             else{
-                if (matcher.find())
-                    return string.substring(matcher.start() , matcher.end() );
+                if (matcher.find()) {
+                    return string.substring(matcher.start(), matcher.end());
+                }
             }
             throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         } catch (StringIndexOutOfBoundsException e) {
@@ -188,6 +198,7 @@ class Parser {
             } else { //var assignment with value .
                 String varName = extractFirstWord(part, lineNumber, false);
                 Variable newVar = new Variable(varType,varName,lineNumber,isFinal);
+                scopeVariables.put(newVar.getName(), newVar);
                 part = part.substring(part.indexOf(varName) + varName.length());
                 assignmentValue(part, newVar, lineNumber);
             }
@@ -257,7 +268,7 @@ class Parser {
         int lineNumber = 1, counterBlocks = 0, firstMethodLine = 1;
         ArrayList<String> rows = null;
         String word, parameters = "", methodName = "", subLine;
-        Matcher startBlock, endRow, firstWord;
+        Matcher startBlock, endBlock, firstWord;
         while (input.hasNext()) {
             row = input.nextLine();
             if (rows == null) {
@@ -265,6 +276,8 @@ class Parser {
                 if (firstWord.find()) {
                     word = row.substring(firstWord.start(), firstWord.end());
                     switch (word) {
+                        case START_COMMENT : // check if a row is comment.
+                            break;
                         case START_CONDITION:
                             throw new IllegalException("Cant start if condition out of a method.", lineNumber);
                         case START_LOOP:
@@ -287,21 +300,25 @@ class Parser {
                     }
                 }
             } else {
-                startBlock = startBlockPattern.matcher(row);
-                endRow = endBlockPattern.matcher(row);
+                startBlock = newStartBlock.matcher(row);
+                endBlock = endBlockPattern.matcher(row); // endBlock and not endRow.
                 if (startBlock.matches()) {
                     counterBlocks++;
                     rows.add(row);
-                } else if (endRow.matches()) {
+                } else if (endBlock.matches()) {
                     counterBlocks--;
                     if (counterBlocks > 0) {
                         rows.add(row);
                     } else {
+                        //not getting the line "return;" in rows.
                         Method method = new Method(rows, methodName, firstMethodLine, parameters,
                                 GLOBAL_DEPTH + 1);
                         rows = null;
                         methods.put(method.getName(), method);
                     }
+                }
+                else{ // if not start of block and not end of block the line is in the block.
+                    rows.add(row);
                 }
             }
             lineNumber++;
@@ -331,6 +348,7 @@ class Parser {
      */
     private void analyzeRow(String row, int depth, int lineNumber, String firstWord) throws IllegalException {
         Matcher endRow = legalEnd.matcher(row);
+        Matcher methodCallMatcher = methodCallPattern.matcher(row);
         if (endRow.find()) {
             row = row.substring(0, endRow.start());
         } else {
@@ -350,7 +368,13 @@ class Parser {
                 row = row.substring(row.indexOf(firstWord) + firstWord.length());
                 assignmentValue(row, variable, lineNumber);
             }
-        } else {
+        } else if (methodCallMatcher.find()){ // check if a known method has been called.
+            String methodName = row.substring(methodCallMatcher.start(),methodCallMatcher.end()-1);
+            if (!methods.containsKey(methodName)){
+                throw new IllegalException(ILLEGAL_METHOD_CALL_ERROR,lineNumber);
+            }
+        }
+        else {
             throw new IllegalException(UNSUPPORTED_COMMAND, lineNumber);
         }
     }
@@ -364,7 +388,7 @@ class Parser {
         String firstWord;
         for (String row : rows) {
             Matcher endRowMatcher = legalEnd.matcher(row);
-            if (!endRowMatcher.matches() || row.contains("}")) {
+            if (!endRowMatcher.find() || row.contains("}")) { // changed to find() instead of matches()
                 throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
             }
             Matcher emptyRowMatcher = emptyRowPattern.matcher(row);
@@ -427,12 +451,14 @@ class Parser {
     private void parseMethod(Method method) throws IllegalException {
         int lastRowIndex = method.getRows().size() - 1;
         String lastLine = method.getRows().get(lastRowIndex);
-        Matcher endWithReturnMatcher = returnPattern.matcher(lastLine);
-        if (endWithReturnMatcher.find()) {
+        Matcher legalEnd = legalMethodReturn.matcher(lastLine);
+        if (legalEnd.matches()) {
             method.getRows().remove(lastRowIndex);
             parseBlock(method);
         }
-        throw new IllegalException(BAD_METHOD_FORMAT_ERROR, method.getOriginLine());
+        else {
+            throw new IllegalException(BAD_METHOD_FORMAT_ERROR, method.getOriginLine());
+        }
 
     }
 }
