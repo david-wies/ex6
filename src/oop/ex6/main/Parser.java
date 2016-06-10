@@ -27,6 +27,8 @@ class Parser {
     private final static String BAD_METHOD_FORMAT_ERROR = "bad method format";
     private final static String UNSUPPORTED_COMMAND = "Unsupported command";
     private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
+    private final static String INITIALIZE_ERROR_MESSAGE = "Final must initialize";
+
 
     // Pattern's string's.
     private static final String FIRST_WORD = "\\S+";
@@ -150,6 +152,9 @@ class Parser {
         String[] parts = line.split(",");
         for (String part : parts) {
             if (!part.contains("=")) { //var assignment without value.
+                if (isFinal){
+                    throw new IllegalException(INITIALIZE_ERROR_MESSAGE,lineNumber);
+                }
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber, false);
