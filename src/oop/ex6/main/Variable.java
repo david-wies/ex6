@@ -88,8 +88,7 @@ class Variable {
     /**
      * Verifying the legality of the variable name.
      *
-     * @param name       The name to check.
-     * @throws IllegalException The name is illegal.
+     * @param name The name to check.
      */
     static boolean isLegalVariableName(String name) {
         Matcher matcher = namePattern.matcher(name);
@@ -139,11 +138,7 @@ class Variable {
             throw new IllegalException("Final variable can't change", lineNumber);
         }
         boolean isValue;
-        if (isLegalVariableName(value)) {
-            isValue = false;
-        } else {
-            isValue = true;
-        }
+        isValue = !isLegalVariableName(value);
         if (isValue) {
             try {
                 switch (TYPE) {
@@ -298,6 +293,14 @@ class Variable {
         return hasValue && (TYPE.equals(BOOLEAN) || TYPE.equals(INT) || TYPE.equals(DOUBLE));
     }
 
+    /**
+     * Create default variable.
+     *
+     * @param value      The value that the variable has.
+     * @param numberLine THe line to call this function.
+     * @return A variable match to the parameters.
+     * @throws IllegalException The value wasn't legal.
+     */
     Variable createDeafaultVeriable(String value, int numberLine) throws IllegalException {
         Variable variable;
         if (isInt(value)) {

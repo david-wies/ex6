@@ -165,44 +165,41 @@ class Parser {
         }
     }
 
-    private void assignmentVariableValue(String assignment, Variable variable, int depth, int lineNumber) throws IllegalException {
-//        HashMap<String, Variable> scopeVariables = variables.get(depth);
+    private void assignmentVariableValue(String assignment, Variable variable, int lineNumber) throws IllegalException {
         String[] parameters = assignment.split("=");
+        String varValue;
         if (parameters.length == 2) {
-            if (!Variable.isLegalVariableName(parameters[0])) {
-                throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
-            }
-            containInSameScope(parameters[0], depth, lineNumber);
-//            Variable newVar;
-//            String varName = extractFirstWord(parameters[0], lineNumber, false);
-            String varValue;
-            switch (variable.getType()) {
-                case STRING:
-                    Matcher isStringMatcher = isString.matcher(parameters[1]);
-                    boolean stringMatch = isStringMatcher.find();
-                    if (stringMatch) {
-                        varValue = parameters[1].substring(isStringMatcher.start(), isStringMatcher.end());
-                    } else {
-                        throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
-                    }
-                    break;
-                case CHAR:
-                    varValue = extractFirstWord(parameters[1], lineNumber, true);
-                    break;
-                default:
-                    varValue = extractFirstWord(parameters[1], lineNumber, false);
-                    break;
-            }
-            parameters[1] = parameters[1].substring(parameters[1].indexOf(varValue) + varValue.length());
-            Matcher spaceRowMatcher = spaceRowPattern.matcher(parameters[1]);
-            if (spaceRowMatcher.matches()) {
-                variable.setValue(varValue, lineNumber);
+            Matcher matcher = spaceRowPattern.matcher(parameters[0]);
+            if (matcher.matches()) {
+                switch (variable.getType()) {
+                    case STRING:
+                        Matcher isStringMatcher = isString.matcher(parameters[1]);
+                        boolean stringMatch = isStringMatcher.find();
+                        if (stringMatch) {
+                            varValue = parameters[1].substring(isStringMatcher.start(), isStringMatcher.end());
+                        } else {
+                            throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+                        }
+                        break;
+                    case CHAR:
+                        varValue = extractFirstWord(parameters[1], lineNumber, true);
+                        break;
+                    default:
+                        varValue = extractFirstWord(parameters[1], lineNumber, false);
+                        break;
+                }
+                parameters[1] = parameters[1].substring(parameters[1].indexOf(varValue) + varValue.length());
+                Matcher spaceRowMatcher = spaceRowPattern.matcher(parameters[1]);
+                if (spaceRowMatcher.matches()) {
+                    variable.setValue(varValue, lineNumber);
+                } else {
+                    throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+                }
             } else {
                 throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
             }
-//            scopeVariables.put(newVar.getName(), newVar);
-//        } else {
-//            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+        } else {
+            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
         }
     }
 
@@ -310,7 +307,11 @@ class Parser {
             updateVariables(depth, row, lineNumber, firstWord);
         } else if (Variable.isLegalVariableName(firstWord)) {
             Variable variable = getVariable(firstWord);
-            // TODO: 10/06/2016 get the variable the value.
+            if (variable == null) {
+                throw new IllegalException("Variable doesn't exists.", lineNumber);
+            } else {
+                // TODO: 10/06/2016 get the variable the value.
+            }
         } else {
             throw new IllegalException(UNSUPPORTED_COMMAND, lineNumber);
         }
