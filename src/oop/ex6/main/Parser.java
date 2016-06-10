@@ -25,6 +25,8 @@ class Parser {
     private final static String COMMENT_ERROR = "Un legal comment format";
     private final static String RETURN_ERROR = "Un legal return format";
     private final static String BAD_METHOD_FORMAT_ERROR = "bad method format";
+    private final static String UNSUPPORTED_COMMAND = "Unsupported command";
+
     // Pattern's string's.
     private static final String FIRST_WORD = "\\b\\S+\\b";
     private static final String FIRST_NAME = "\\b\\w+\\b";
@@ -52,6 +54,7 @@ class Parser {
 
     // Field's of Parser.
     private HashMap<String, Method> methods;
+    private ArrayList<Block> blocks;
     //    private HashMap<String, Variable> globalVariables;
     static ArrayList<HashMap<String, Variable>> variables;
     private static final int GLOBAL_DEPTH = 0;
@@ -291,10 +294,13 @@ class Parser {
      *
      * @return true if al of the ,method's was valid, false otherwise.
      */
-    boolean parser() {
-        for (HashMap<String, Variable> varScope : variables) {
-            varScope.values().forEach(System.out::println);
+    boolean parser() throws IllegalException {
+        for (Method method : methods.values()) {
+            parseMethod(method);
         }
+//        for (HashMap<String, Variable> varScope : variables) {
+//            varScope.values().forEach(System.out::println);
+//        }
 //        if (parseBlock() && isLegalReturn()) {
 //
 //        } else {
@@ -304,7 +310,7 @@ class Parser {
     }
 
 
-    /**
+    /*
      * Analyze one row, assuming that the row isn't start of block or the end of the block.
      *
      * @param row        THe row to analyze.
@@ -312,21 +318,21 @@ class Parser {
      * @param lineNumber The number of the line in the full s-java file.
      * @throws IllegalException The line is not legal.
      */
-    void analyzeRow(String row, int depth, int lineNumber) throws IllegalException {
-        Matcher endRowMatcher = legalEnd.matcher(row);
-        if (!endRowMatcher.matches() || row.contains("}")) {
-            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
-        }
-        String firstWord;
-        Matcher emptyRowMatcher = emptyRowPattern.matcher(row);
-        Matcher firstWordMatcher = firstWordPattern.matcher(row);
-        if (firstWordMatcher.find()) {
-            firstWord = row.substring(firstWordMatcher.start(), firstWordMatcher.end());
-        } else if (row.startsWith(START_COMMENT) || emptyRowMatcher.matches()) {
-            return;
-        } else {
-            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
-        }
+    private void analyzeRow(String row, int depth, int lineNumber, String firstWord) throws IllegalException {
+//        Matcher endRowMatcher = legalEnd.matcher(row);
+//        if (!endRowMatcher.matches() || row.contains("}")) {
+//            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+//        }
+//        String firstWord;
+//        Matcher emptyRowMatcher = emptyRowPattern.matcher(row);
+//        Matcher firstWordMatcher = firstWordPattern.matcher(row);
+//        if (firstWordMatcher.find()) {
+//            firstWord = row.substring(firstWordMatcher.start(), firstWordMatcher.end());
+//        } else if (row.startsWith(START_COMMENT) || emptyRowMatcher.matches()) {
+//            return;
+//        } else {
+//            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+//        }
         if (firstWord.equals(RETURN)) {
             if (!isLegalReturn(row)) {
                 throw new IllegalException(RETURN_ERROR, lineNumber);
@@ -334,19 +340,43 @@ class Parser {
         } else if (firstWord.equals(FINAL) || Variable.isLegalVariableType(firstWord)) {
             updateVariables(depth, row, lineNumber, firstWord);
         } else {
-            throw new IllegalException("Unsupported command", lineNumber);
+            throw new IllegalException(UNSUPPORTED_COMMAND, lineNumber);
         }
     }
 
     /**
      * Parse a single block.
      */
-    void parseBlock(Block block) throws IllegalException {
-        int numberLine = block.getOriginLine();
+    private void parseBlock(Block block) throws IllegalException {
+        int lineNumber = block.getOriginLine();
         ArrayList<String> rows = block.getRows();
+        String firstWord;
         for (String row : rows) {
-            analyzeRow(row, block.getDepth(), numberLine++);
+            Matcher endRowMatcher = legalEnd.matcher(row);
+            if (!endRowMatcher.matches() || row.contains("}")) {
+                throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+            }
+            Matcher emptyRowMatcher = emptyRowPattern.matcher(row);
+            Matcher firstWordMatcher = firstWordPattern.matcher(row);
+            if (firstWordMatcher.find()) {
+                firstWord = row.substring(firstWordMatcher.start(), firstWordMatcher.end());
+            } else if (row.startsWith(START_COMMENT) || emptyRowMatcher.matches()) {
+                return;
+            } else {
+                throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+            }
+            switch (firstWord) {
+                case START_FUNCTION:
+                    throw new IllegalException("Can't create method in another method.", lineNumber);
+                case START_CONDITION:
+                case START_LOOP:
+                    break;
+                default:
+                    analyzeRow(row, block.getDepth(), lineNumber, firstWord);
+                    break;
+            }
         }
+
     }
 
     /**
@@ -383,15 +413,15 @@ class Parser {
         }
     }
 
-    void parseMethod(Method method) throws IllegalException {
-        int lastRowIndex = method.getRows().size()-1;
+    private void parseMethod(Method method) throws IllegalException {
+        int lastRowIndex = method.getRows().size() - 1;
         String lastLine = method.getRows().get(lastRowIndex);
         Matcher endWithReturnMatcher = returnPattern.matcher(lastLine);
-        if (endWithReturnMatcher.find()){
+        if (endWithReturnMatcher.find()) {
             method.getRows().remove(lastRowIndex);
             parseBlock(method);
         }
-        throw new IllegalException(BAD_METHOD_FORMAT_ERROR,method.getOriginLine());
+        throw new IllegalException(BAD_METHOD_FORMAT_ERROR, method.getOriginLine());
 
     }
 }

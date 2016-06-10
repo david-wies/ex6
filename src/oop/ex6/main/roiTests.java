@@ -2,7 +2,6 @@ package oop.ex6.main;
 
 
 import java.io.IOException;
-import java.util.HashMap;
 
 public class roiTests {
     public static void main(String[] args) throws IOException {
@@ -14,7 +13,7 @@ public class roiTests {
 ////        String[] keys = {"void", "final", "if", "while", "true", "false", "return", "int", "double", "boolean", "char", "String"};
         try {
 //            Method testMethod = new Method(null, name, 6, row, 1);
-            pars.analyzeRow(row,0,2);
+//            pars.analyzeRow(row,0,2);
 //            System.out.println("done");
         } catch (Exception e) {
             e.printStackTrace();

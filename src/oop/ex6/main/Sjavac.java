@@ -18,14 +18,14 @@ public class Sjavac {
             parser.parser();
             System.out.println(LEGAL_FILE);
         } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             System.err.println(e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             System.err.println(FILE_ERROR_MESSAGE);
             System.out.println(FILE_ERROR);
         } catch (IllegalException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             System.err.println(e.getMessage());
             System.out.println(ILLEGAL_FILE);
         }
