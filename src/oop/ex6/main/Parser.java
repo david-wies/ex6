@@ -29,7 +29,7 @@ class Parser {
     private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
 
     // Pattern's string's.
-    private static final String FIRST_WORD = "\\b\\S+";
+    private static final String FIRST_WORD = "[^s]S+[^s]";
     private static final String FIRST_NAME = "\\b\\w+\\b";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
@@ -132,21 +132,9 @@ class Parser {
      * @param lineNumber the number line of the string.
      * @throws IllegalException
      */
-    void updateVariables(int depth, String line, int lineNumber, String firstWord) throws
-            IllegalException {
+    private void updateVariables(int depth, String line, int lineNumber, String firstWord) throws IllegalException {
         HashMap<String, Variable> scopeVariables = variables.get(depth);
-
-        //check for semicolon ending, relevant before the update 13:36PM 10/6/16
-//        Matcher legalEndMatcher = legalEnd.matcher(line);
-//        if (!legalEndMatcher.matches()) {
-//            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
-//        }
-//        int indexOfSemiColon = line.indexOf(";");
-//        line = line.substring(0, indexOfSemiColon);
-
-
         boolean isFinal = false;
-//        String firstWord = extractFirstWord(line, lineNumber, false);
         if (firstWord.equals(FINAL)) {
             isFinal = true;
             line = line.substring(line.indexOf(FINAL) + FINAL.length());
@@ -162,8 +150,8 @@ class Parser {
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber, false);
-                    if (!Variable.verifyLegalityVariableName(varName)){
-                        throw new IllegalException(NAME_ERROR_MESSAGE,lineNumber);
+                    if (!Variable.verifyLegalityVariableName(varName)) {
+                        throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
                     }
                     containInSameScope(varName, depth, lineNumber);
                     Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
@@ -182,8 +170,8 @@ class Parser {
         HashMap<String, Variable> scopeVariables = variables.get(depth);
         String[] parameters = assignment.split("=");
         if (parameters.length == 2) {
-            if (!Variable.verifyLegalityVariableName(parameters[0])){
-                throw new IllegalException(NAME_ERROR_MESSAGE,lineNumber);
+            if (!Variable.verifyLegalityVariableName(parameters[0])) {
+                throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
             }
             containInSameScope(parameters[0], depth, lineNumber);
             Variable newVar;
@@ -323,7 +311,7 @@ class Parser {
         } else if (firstWord.equals(FINAL) || Variable.isLegalVariableType(firstWord)) {
             updateVariables(depth, row, lineNumber, firstWord);
         } else if (Variable.verifyLegalityVariableName(firstWord)) {
-            getVariable(firstWord);
+            Variable variable = getVariable(firstWord);
             // TODO: 10/06/2016 get the variable the value.
         } else {
             throw new IllegalException(UNSUPPORTED_COMMAND, lineNumber);

@@ -60,15 +60,15 @@ class Variable {
      * @param name The name of the variable.
      */
     Variable(String type, String name, int originLine, boolean isFinal) throws IllegalException {
-        if (isFinal) {
-            throw new IllegalException(INITIALIZE_ERROR_MESSAGE, originLine);
-        }
-        if (!isLegalVariableType(type)) {
-            throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
-        }
+//        if (isFinal) {
+//            throw new IllegalException(INITIALIZE_ERROR_MESSAGE, originLine);
+//        }
+//        if (!isLegalVariableType(type)) {
+//            throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
+//        }
         TYPE = type;
         NAME = name;
-        this.isFinal = false;
+        this.isFinal = isFinal;
     }
 
     /**
