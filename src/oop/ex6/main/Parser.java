@@ -26,9 +26,10 @@ class Parser {
     private final static String RETURN_ERROR = "Un legal return format";
     private final static String BAD_METHOD_FORMAT_ERROR = "bad method format";
     private final static String UNSUPPORTED_COMMAND = "Unsupported command";
+    private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
 
     // Pattern's string's.
-    private static final String FIRST_WORD = "\\b\\S+\\b";
+    private static final String FIRST_WORD = "\\b\\S+";
     private static final String FIRST_NAME = "\\b\\w+\\b";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
@@ -131,7 +132,7 @@ class Parser {
      * @param lineNumber the number line of the string.
      * @throws IllegalException
      */
-    private void updateVariables(int depth, String line, int lineNumber, String firstWord) throws
+    void updateVariables(int depth, String line, int lineNumber, String firstWord) throws
             IllegalException {
         HashMap<String, Variable> scopeVariables = variables.get(depth);
 
@@ -161,7 +162,9 @@ class Parser {
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber, false);
-                    Variable.verifyLegalityVariableName(varName, lineNumber);
+                    if (!Variable.verifyLegalityVariableName(varName)){
+                        throw new IllegalException(NAME_ERROR_MESSAGE,lineNumber);
+                    }
                     containInSameScope(varName, depth, lineNumber);
                     Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
                     scopeVariables.put(newVar.getName(), newVar);
@@ -179,7 +182,9 @@ class Parser {
         HashMap<String, Variable> scopeVariables = variables.get(depth);
         String[] parameters = assignment.split("=");
         if (parameters.length == 2) {
-            Variable.verifyLegalityVariableName(parameters[0], lineNumber);
+            if (!Variable.verifyLegalityVariableName(parameters[0])){
+                throw new IllegalException(NAME_ERROR_MESSAGE,lineNumber);
+            }
             containInSameScope(parameters[0], depth, lineNumber);
             Variable newVar;
             String varName = extractFirstWord(parameters[0], lineNumber, false);
