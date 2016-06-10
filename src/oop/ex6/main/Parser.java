@@ -160,7 +160,9 @@ class Parser {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
             } else { //var assignment with value .
-                assignmentVariableValue(part, varType, depth, lineNumber, isFinal);
+                String varName = extractFirstWord(part, lineNumber, false);
+                Variable newVar = new Variable(varType,varName,lineNumber,isFinal);
+                assignmentVariableValue(part, newVar, depth, lineNumber);
             }
         }
     }
