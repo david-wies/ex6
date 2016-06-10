@@ -103,7 +103,7 @@ class Method extends Block {
             throw new IllegalException(PARAMETERS_ERROR, lineNumber);
         }
         for (int index = 0; index < parameters.size(); index++) {
-            if (!this.parameters.get(index).getTYPE().equals(parameters.get(index).getTYPE()) &&
+            if (!this.parameters.get(index).getType().equals(parameters.get(index).getType()) &&
                     parameters.get(index).hasValue()) {
                 throw new IllegalException(PARAMETERS_ERROR, lineNumber);
             }

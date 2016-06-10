@@ -165,24 +165,22 @@ class Parser {
         }
     }
 
-    private void assignmentVariableValue(String assignment, String type, int depth, int lineNumber, boolean
-            isFinal) throws IllegalException {
-        HashMap<String, Variable> scopeVariables = variables.get(depth);
+    private void assignmentVariableValue(String assignment, Variable variable, int depth, int lineNumber) throws IllegalException {
+//        HashMap<String, Variable> scopeVariables = variables.get(depth);
         String[] parameters = assignment.split("=");
         if (parameters.length == 2) {
             if (!Variable.verifyLegalityVariableName(parameters[0])) {
                 throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
             }
             containInSameScope(parameters[0], depth, lineNumber);
-            Variable newVar;
-            String varName = extractFirstWord(parameters[0], lineNumber, false);
+//            Variable newVar;
+//            String varName = extractFirstWord(parameters[0], lineNumber, false);
             String varValue;
-            switch (type) {
+            switch (variable.getType()) {
                 case STRING:
                     Matcher isStringMatcher = isString.matcher(parameters[1]);
                     boolean stringMatch = isStringMatcher.find();
                     if (stringMatch) {
-
                         varValue = parameters[1].substring(isStringMatcher.start(), isStringMatcher.end());
                     } else {
                         throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
@@ -198,13 +196,13 @@ class Parser {
             parameters[1] = parameters[1].substring(parameters[1].indexOf(varValue) + varValue.length());
             Matcher spaceRowMatcher = spaceRowPattern.matcher(parameters[1]);
             if (spaceRowMatcher.matches()) {
-                newVar = new Variable(type, varName, varValue, lineNumber, isFinal);
+                variable.setValue(varValue, lineNumber);
             } else {
                 throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
             }
-            scopeVariables.put(newVar.getName(), newVar);
-        } else {
-            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+//            scopeVariables.put(newVar.getName(), newVar);
+//        } else {
+//            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
         }
     }
 

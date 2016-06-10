@@ -33,25 +33,25 @@ class Variable {
     private boolean isFinal;
     private boolean hasValue = false;
 
-    /**
-     * Create variable and initialized the value of the variable.
-     *
-     * @param type       The type of the variable.
-     * @param name       The name of the variable.
-     * @param value      The value of the variable.
-     * @param originLine The line number of the creation of the variable.
-     * @throws IllegalException The value that given was un valid.
-     */
-    Variable(String type, String name, String value, int originLine, boolean isFinal) throws
-            IllegalException {
-        if (!isLegalVariableType(type)) {
-            throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
-        }
-        TYPE = type;
-        NAME = name;
-        this.isFinal = isFinal;
-        setValue(value, originLine);
-    }
+//    /**
+//     * Create variable and initialized the value of the variable.
+//     *
+//     * @param type       The type of the variable.
+//     * @param name       The name of the variable.
+//     * @param value      The value of the variable.
+//     * @param originLine The line number of the creation of the variable.
+//     * @throws IllegalException The value that given was un valid.
+//     */
+//    Variable(String type, String name, String value, int originLine, boolean isFinal) throws
+//            IllegalException {
+//        if (!isLegalVariableType(type)) {
+//            throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
+//        }
+//        TYPE = type;
+//        NAME = name;
+//        this.isFinal = isFinal;
+//        setValue(value, originLine);
+//    }
 
     /**
      * Create variable without initialized the value of the variable.
@@ -60,12 +60,9 @@ class Variable {
      * @param name The name of the variable.
      */
     Variable(String type, String name, int originLine, boolean isFinal) throws IllegalException {
-//        if (isFinal) {
-//            throw new IllegalException(INITIALIZE_ERROR_MESSAGE, originLine);
-//        }
-//        if (!isLegalVariableType(type)) {
-//            throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
-//        }
+        if (!isLegalVariableType(type)) {
+            throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
+        }
         TYPE = type;
         NAME = name;
         this.isFinal = isFinal;
@@ -112,7 +109,7 @@ class Variable {
     /**
      * @return The type of the variable.
      */
-    String getTYPE() {
+    String getType() {
         return TYPE;
     }
 
@@ -186,7 +183,7 @@ class Variable {
                 throw new IllegalException("Try to copy a value from variable that doesn't exist.",
                         lineNumber);
             } else {
-                copyValue(variable.getTYPE());
+                copyValue(variable.getType());
             }
         }
     }
