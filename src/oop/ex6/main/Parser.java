@@ -101,13 +101,17 @@ class Parser {
      * @throws IllegalException
      */
     static String extractFirstWord(String string, int numberLine, boolean withEdges) throws IllegalException {
-        Matcher matcher = firstWordPattern.matcher(string);
-        if (matcher.find()) {
-            if (withEdges)
-                return string.substring(matcher.start() - 1, matcher.end() + 1);
-            return string.substring(matcher.start(), matcher.end());
+        try {
+            Matcher matcher = firstWordPattern.matcher(string);
+            if (matcher.find()) {
+                if (withEdges)
+                    return string.substring(matcher.start() - 1, matcher.end() + 1);
+                return string.substring(matcher.start(), matcher.end());
+            }
+            throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
+        } catch (StringIndexOutOfBoundsException e) {
+            throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         }
-        throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
     }
 
     static String extractFirstName(String string, int numberLine) throws IllegalException {
