@@ -162,7 +162,7 @@ class Parser {
             } else { //var assignment with value .
                 String varName = extractFirstWord(part, lineNumber, false);
                 Variable newVar = new Variable(varType,varName,lineNumber,isFinal);
-                assignmentVariableValue(part, newVar, depth, lineNumber);
+                assignmentVariableValue(part, newVar, lineNumber);
             }
         }
     }
