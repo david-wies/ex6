@@ -197,7 +197,12 @@ class Variable {
             }
         } else {
             Variable variable = Parser.getVariable(value);
-            copyValue(variable.getTYPE());
+            if (variable == null) {
+                throw new IllegalException("Try to copy a value from variable that doesn't exist.",
+                        lineNumber);
+            } else {
+                copyValue(variable.getTYPE());
+            }
         }
     }
 

@@ -24,9 +24,10 @@ public class Tester {
         File directory = new File(path);
         if (directory.isDirectory()) {
             for (File file : directory.listFiles()) {
-                System.out.println("Tester " + file.getName() + ":\n");
+                System.out.println("Tester " + file.getName() + ":");
                 String[] parameters = {file.getAbsolutePath()};
                 oop.ex6.main.Sjavac.main(parameters);
+                System.out.println("\n");
             }
         } else {
             System.err.println("Path " + path + " is not directory.");
