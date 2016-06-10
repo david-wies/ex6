@@ -150,7 +150,7 @@ class Parser {
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber, false);
-                    if (!Variable.verifyLegalityVariableName(varName)) {
+                    if (!Variable.isLegalVariableName(varName)) {
                         throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
                     }
                     containInSameScope(varName, depth, lineNumber);
@@ -169,7 +169,7 @@ class Parser {
 //        HashMap<String, Variable> scopeVariables = variables.get(depth);
         String[] parameters = assignment.split("=");
         if (parameters.length == 2) {
-            if (!Variable.verifyLegalityVariableName(parameters[0])) {
+            if (!Variable.isLegalVariableName(parameters[0])) {
                 throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
             }
             containInSameScope(parameters[0], depth, lineNumber);
@@ -308,7 +308,7 @@ class Parser {
             }
         } else if (firstWord.equals(FINAL) || Variable.isLegalVariableType(firstWord)) {
             updateVariables(depth, row, lineNumber, firstWord);
-        } else if (Variable.verifyLegalityVariableName(firstWord)) {
+        } else if (Variable.isLegalVariableName(firstWord)) {
             Variable variable = getVariable(firstWord);
             // TODO: 10/06/2016 get the variable the value.
         } else {

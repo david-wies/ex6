@@ -77,7 +77,7 @@ class Variable {
      */
     static Variable createParameter(String type, String name, int lineNumber, boolean isFinal)
             throws IllegalException {
-        if (!verifyLegalityVariableName(name)) {
+        if (!isLegalVariableName(name)) {
             throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
         }
         Variable variable = new Variable(type, name, lineNumber, isFinal);
@@ -91,7 +91,7 @@ class Variable {
      * @param name       The name to check.
      * @throws IllegalException The name is illegal.
      */
-    static boolean verifyLegalityVariableName(String name) {
+    static boolean isLegalVariableName(String name) {
         Matcher matcher = namePattern.matcher(name);
         return matcher.matches() && !Reserved.isReserved(name);
     }
@@ -139,7 +139,7 @@ class Variable {
             throw new IllegalException("Final variable can't change", lineNumber);
         }
         boolean isValue;
-        if (verifyLegalityVariableName(value)) {
+        if (isLegalVariableName(value)) {
             isValue = false;
         } else {
             isValue = true;
