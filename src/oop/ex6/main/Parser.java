@@ -29,7 +29,7 @@ class Parser {
     private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
 
     // Pattern's string's.
-    private static final String FIRST_WORD = "[^s]S+[^s]";
+    private static final String FIRST_WORD = "\\S+";
     private static final String FIRST_NAME = "\\b\\w+\\b";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
@@ -134,12 +134,15 @@ class Parser {
      */
     private void updateVariables(int depth, String line, int lineNumber, String firstWord) throws IllegalException {
         HashMap<String, Variable> scopeVariables = variables.get(depth);
+        String varType;
         boolean isFinal = false;
         if (firstWord.equals(FINAL)) {
             isFinal = true;
             line = line.substring(line.indexOf(FINAL) + FINAL.length());
+            varType = extractFirstWord(line, lineNumber, false);
+        } else {
+            varType = firstWord;
         }
-        String varType = extractFirstWord(line, lineNumber, false);
         if (!Variable.isLegalVariableType(varType)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
