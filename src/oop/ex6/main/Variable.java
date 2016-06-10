@@ -129,15 +129,6 @@ class Variable {
         return hasValue;
     }
 
-//    /**
-//     * Change the HasValue value.
-//     *
-//     * @param hasValue The new hasValue value.
-//     */
-//    void setHasValue(boolean hasValue) {
-//        this.hasValue = hasValue;
-//    }
-
     /**
      * @return The name of the variable.
      */
@@ -192,6 +183,7 @@ class Variable {
                         }
                         break;
                 }
+                hasValue = true;
             } catch (Exception e) {
                 throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
             }
