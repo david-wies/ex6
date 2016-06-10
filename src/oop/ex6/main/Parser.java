@@ -134,12 +134,16 @@ class Parser {
     private void updateVariables(int depth, String line, int lineNumber, String firstWord) throws
             IllegalException {
         HashMap<String, Variable> scopeVariables = variables.get(depth);
-        Matcher legalEndMatcher = legalEnd.matcher(line);
-        if (!legalEndMatcher.matches()) {
-            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
-        }
-        int indexOfSemiColon = line.indexOf(";");
-        line = line.substring(0, indexOfSemiColon);
+
+        //check for semicolon ending, relevant before the update 13:36PM 10/6/16
+//        Matcher legalEndMatcher = legalEnd.matcher(line);
+//        if (!legalEndMatcher.matches()) {
+//            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+//        }
+//        int indexOfSemiColon = line.indexOf(";");
+//        line = line.substring(0, indexOfSemiColon);
+
+
         boolean isFinal = false;
 //        String firstWord = extractFirstWord(line, lineNumber, false);
         if (firstWord.equals(FINAL)) {
