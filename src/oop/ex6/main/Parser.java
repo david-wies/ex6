@@ -32,7 +32,7 @@ class Parser {
 
     // Pattern's string's.
     private static final String FIRST_WORD = "\\S+";
-    private static final String FIRST_BRACES_WORD = "['\"]{1}\\S+['\"]{1}";
+    private static final String FIRST_BRACES_WORD = "['\"]\\S+['\"]{1}";
     private static final String FIRST_NAME = "\\b\\w+\\b";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
@@ -120,17 +120,18 @@ class Parser {
 
         try {
             Matcher matcher = firstWordPattern.matcher(string);
-            Matcher matcherWithBraces = firstBracesWord.matcher(string);
             if (withEdges) {
+                Matcher matcherWithBraces = firstBracesWord.matcher(string);
                 if (matcherWithBraces.find())
-                    return string.substring(matcher.start() , matcher.end() );
+                    return string.substring(matcherWithBraces.start(), matcherWithBraces.end());
             }
             else{
                 if (matcher.find())
-                    return string.substring(matcher.start() , matcher.end() );
+                    return string.substring(1, matcher.end());
             }
             throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         } catch (StringIndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
             throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         }
     }
@@ -160,11 +161,11 @@ class Parser {
             isFinal = true;
             line = line.substring(line.indexOf(FINAL) + FINAL.length());
             varType = extractFirstWord(line, lineNumber, false);
+            if (!Variable.isLegalVariableType(varType)) {
+                throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+            }
         } else {
             varType = firstWord;
-        }
-        if (!Variable.isLegalVariableType(varType)) {
-            throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
         line = line.substring(line.indexOf(varType) + varType.length());
         String[] parts = line.split(",");
