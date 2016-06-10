@@ -30,9 +30,9 @@ class Parser {
     // Pattern's string's.
     private static final String FIRST_WORD = "\\b\\S+\\b";
     private static final String FIRST_NAME = "\\b\\w+\\b";
-    private static final String LEGAL_END = "[^;]*;\\s*";
+    private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
-    private static final String START_BLOCK = "\\s*\\{\\s*";
+    private static final String START_BLOCK = "\\s*\\S*\\s*\\{\\s*";
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
     private static final String LEGAL_RETURN = "\\breturn\\b\\s*";
@@ -45,8 +45,8 @@ class Parser {
     private static Pattern firstWordPattern = Pattern.compile(FIRST_WORD);
     private static Pattern firstNamePattern = Pattern.compile(FIRST_NAME);
     private static Pattern legalEnd = Pattern.compile(LEGAL_END);
-    private static Pattern endBlock = Pattern.compile(END_BLOCK);
-    private static Pattern startBlock = Pattern.compile(START_BLOCK);
+    private static Pattern endBlockPattern = Pattern.compile(END_BLOCK);
+    private static Pattern startBlockPattern = Pattern.compile(START_BLOCK);
     private static Pattern isString = Pattern.compile(IS_STRING);
     private static Pattern returnPattern = Pattern.compile(LEGAL_RETURN);
     private static Pattern emptyRowPattern = Pattern.compile(EMPTY_ROW);
@@ -114,7 +114,7 @@ class Parser {
         }
     }
 
-    static String extractFirstName(String string, int numberLine) throws IllegalException {
+    private static String extractFirstName(String string, int numberLine) throws IllegalException {
         Matcher matcher = firstNamePattern.matcher(string);
         if (string.equals(""))
             return string;
@@ -204,11 +204,10 @@ class Parser {
             }
             parameters[1] = parameters[1].substring(parameters[1].indexOf(varValue) + varValue.length());
             Matcher spaceRowMatcher = spaceRowPattern.matcher(parameters[1]);
-            if (spaceRowMatcher.matches()){
-                newVar = new Variable(type, varName,varValue , lineNumber, isFinal);
-            }
-            else{
-                throw new IllegalException(BAD_FORMAT_ERROR,lineNumber);
+            if (spaceRowMatcher.matches()) {
+                newVar = new Variable(type, varName, varValue, lineNumber, isFinal);
+            } else {
+                throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
             }
             scopeVariables.put(newVar.getName(), newVar);
         } else {
@@ -229,70 +228,57 @@ class Parser {
         }
         File sJavaFile = new File(path);
         Scanner input = new Scanner(sJavaFile);
-        String line;
+        String row;
         int lineNumber = 1, counterBlocks = 0, firstMethodLine = 1;
         ArrayList<String> rows = null;
-        String word = "", parameters = "", methodName = "", subLine;
+        String word, parameters = "", methodName = "", subLine;
+        Matcher startBlock, endRow, firstWord;
         while (input.hasNext()) {
-            line = input.nextLine();
-            Matcher matcher = firstWordPattern.matcher(line);
-            if (matcher.find()) {
-                word = line.substring(matcher.start(), matcher.end());
-                subLine = line.substring(matcher.end());
-            } else if (line.startsWith("//")) { //if the line is a comment line.
-                lineNumber++;
-                continue;
-            } else {
-                subLine = line;
-            }
-//            else { // if the line is only with spaces.
-//                lineNumber++;
-//                continue;
-//            }
-//            String subLine = line.substring(matcher.end());
-            if (word.equals(RETURN) && !isLegalReturn(line)) {
-                throw new IllegalException(RETURN_ERROR, lineNumber);
-            }
+            row = input.nextLine();
             if (rows == null) {
-                if (Variable.isLegalVariableType(word) || word.equals(FINAL)) { // This line create a
-                    // variable.
-                    updateVariables(GLOBAL_DEPTH, line, lineNumber, word);
-                    // while and if blocks must be in method in s-java,
-                } else if (word.equals("}") || word.equals(START_CONDITION) || word.equals(START_LOOP)) {
-                    throw new IllegalException("", lineNumber);
-                } else if (word.equals(START_FUNCTION)) {
-                    rows = new ArrayList<>();
-                    firstMethodLine = lineNumber;
-                    parameters = extractParameters(subLine, lineNumber);
-                    methodName = extractFirstName(subLine, lineNumber);
-//                    methodName = extractFirstWord(subLine, lineNumber, false);
-                    Method.verifyLegalityMethodName(methodName, lineNumber);
-                    Matcher startBlockMatcher = startBlock.matcher(line);
-                    if (!startBlockMatcher.find(line.indexOf('(') + 1)) {
-                        throw new IllegalException("", lineNumber);
+                firstWord = firstWordPattern.matcher(row);
+                if (firstWord.find()) {
+                    word = row.substring(firstWord.start(), firstWord.end());
+                    switch (word) {
+                        case START_CONDITION:
+                            throw new IllegalException("Cant start if condition out of a method.", lineNumber);
+                        case START_LOOP:
+                            throw new IllegalException("Cant start loop out of a method.", lineNumber);
+                        case START_FUNCTION:
+                            subLine = row.substring(firstWord.end());
+                            rows = new ArrayList<>();
+                            firstMethodLine = lineNumber;
+                            parameters = extractParameters(subLine, lineNumber);
+                            methodName = extractFirstName(subLine, lineNumber);
+                            Method.verifyLegalityMethodName(methodName, lineNumber);
+                            Matcher startBlockMatcher = startBlockPattern.matcher(row);
+                            if (!startBlockMatcher.find(row.indexOf('(') + 1)) {
+                                throw new IllegalException("", lineNumber);
+                            }
+                            break;
+                        default:
+                            analyzeRow(row, GLOBAL_DEPTH, lineNumber, word);
+                            break;
                     }
-                } else {
-                    throw new IllegalException(COMMENT_ERROR, lineNumber);
-                }
-            } else if (word.equals("}")) {
-                if (counterBlocks > 1) {
-                    rows.add(line);
-                    counterBlocks--;
-                } else {
-//                    ArrayList<HashMap<String, Variable>> variables = new ArrayList<>();
-//                    variables.add(globalVariables);
-                    Method method = new Method(rows, methodName, firstMethodLine, parameters,
-                            GLOBAL_DEPTH + 1);
-                    methods.put(method.getName(), method);
-                    rows = null;
                 }
             } else {
-                rows.add(line);
-                if (line.contains("{")) {
+                startBlock = startBlockPattern.matcher(row);
+                endRow = endBlockPattern.matcher(row);
+                if (startBlock.matches()) {
                     counterBlocks++;
+                    rows.add(row);
+                } else if (endRow.matches()) {
+                    counterBlocks--;
+                    if (counterBlocks > 0) {
+                        rows.add(row);
+                    } else {
+                        Method method = new Method(rows, methodName, firstMethodLine, parameters,
+                                GLOBAL_DEPTH + 1);
+                        rows = null;
+                        methods.put(method.getName(), method);
+                    }
                 }
             }
-
             lineNumber++;
         }
     }
@@ -306,14 +292,6 @@ class Parser {
         for (Method method : methods.values()) {
             parseMethod(method);
         }
-//        for (HashMap<String, Variable> varScope : variables) {
-//            varScope.values().forEach(System.out::println);
-//        }
-//        if (parseBlock() && isLegalReturn()) {
-//
-//        } else {
-//            throw new  IllegalException();
-//        }
         return false;
     }
 
@@ -327,20 +305,12 @@ class Parser {
      * @throws IllegalException The line is not legal.
      */
     private void analyzeRow(String row, int depth, int lineNumber, String firstWord) throws IllegalException {
-//        Matcher endRowMatcher = legalEnd.matcher(row);
-//        if (!endRowMatcher.matches() || row.contains("}")) {
-//            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
-//        }
-//        String firstWord;
-//        Matcher emptyRowMatcher = emptyRowPattern.matcher(row);
-//        Matcher firstWordMatcher = firstWordPattern.matcher(row);
-//        if (firstWordMatcher.find()) {
-//            firstWord = row.substring(firstWordMatcher.start(), firstWordMatcher.end());
-//        } else if (row.startsWith(START_COMMENT) || emptyRowMatcher.matches()) {
-//            return;
-//        } else {
-//            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
-//        }
+        Matcher endRow = legalEnd.matcher(row);
+        if (endRow.find()) {
+            row = row.substring(0, endRow.start());
+        } else {
+            throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+        }
         if (firstWord.equals(RETURN)) {
             if (!isLegalReturn(row)) {
                 throw new IllegalException(RETURN_ERROR, lineNumber);
