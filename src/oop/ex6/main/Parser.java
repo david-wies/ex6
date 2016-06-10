@@ -32,6 +32,7 @@ class Parser {
 
     // Pattern's string's.
     private static final String FIRST_WORD = "\\S+";
+    private static final String FIRST_BRACES_WORD = "['\"]{1}\\S+['\"]{1}";
     private static final String FIRST_NAME = "\\b\\w+\\b";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
@@ -46,6 +47,7 @@ class Parser {
     // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
     private static Pattern firstWordPattern = Pattern.compile(FIRST_WORD);
+    private static Pattern firstBracesWord = Pattern.compile(FIRST_BRACES_WORD);
     private static Pattern firstNamePattern = Pattern.compile(FIRST_NAME);
     private static Pattern legalEnd = Pattern.compile(LEGAL_END);
     private static Pattern endBlockPattern = Pattern.compile(END_BLOCK);
@@ -104,12 +106,28 @@ class Parser {
      * @throws IllegalException
      */
     static String extractFirstWord(String string, int numberLine, boolean withEdges) throws IllegalException {
+//        try {
+//            Matcher matcher = firstWordPattern.matcher(string);
+//            if (matcher.find()) {
+//                if (withEdges)
+//                    return string.substring(matcher.start() - 1, matcher.end() + 1);
+//                return string.substring(matcher.start(), matcher.end());
+//            }
+//            throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
+//        } catch (StringIndexOutOfBoundsException e) {
+//            throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
+//        }
+
         try {
             Matcher matcher = firstWordPattern.matcher(string);
-            if (matcher.find()) {
-                if (withEdges)
-                    return string.substring(matcher.start() - 1, matcher.end() + 1);
-                return string.substring(matcher.start(), matcher.end());
+            Matcher matcherWithBraces = firstBracesWord.matcher(string);
+            if (withEdges) {
+                if (matcherWithBraces.find())
+                    return string.substring(matcher.start() , matcher.end() );
+            }
+            else{
+                if (matcher.find())
+                    return string.substring(matcher.start() , matcher.end() );
             }
             throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         } catch (StringIndexOutOfBoundsException e) {
