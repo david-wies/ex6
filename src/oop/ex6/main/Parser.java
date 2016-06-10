@@ -320,7 +320,8 @@ class Parser {
             if (variable == null) {
                 throw new IllegalException("Variable doesn't exists.", lineNumber);
             } else {
-                // TODO: 10/06/2016 get the variable the value.
+                row = row.substring(row.indexOf(firstWord) + firstWord.length());
+                assignmentValue(row, variable, lineNumber);
             }
         } else {
             throw new IllegalException(UNSUPPORTED_COMMAND, lineNumber);
