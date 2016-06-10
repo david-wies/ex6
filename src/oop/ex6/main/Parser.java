@@ -317,6 +317,9 @@ class Parser {
             }
         } else if (firstWord.equals(FINAL) || Variable.isLegalVariableType(firstWord)) {
             updateVariables(depth, row, lineNumber, firstWord);
+        } else if (Variable.verifyLegalityVariableName(firstWord)) {
+            getVariable(firstWord);
+            // TODO: 10/06/2016 get the variable the value.
         } else {
             throw new IllegalException(UNSUPPORTED_COMMAND, lineNumber);
         }
