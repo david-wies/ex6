@@ -170,7 +170,7 @@ class Variable {
      * @param value The value to check.
      * @return true if the value represent integer value, false otherwise.
      */
-    private boolean isInt(String value) {
+    private static boolean isInt(String value) {
         try {
             int helper = Integer.parseInt(value);
             return true;
@@ -184,7 +184,7 @@ class Variable {
      * @param value The value to check.
      * @return true if the value represent double value, false otherwise.
      */
-    private boolean isDouble(String value) {
+    private static boolean isDouble(String value) {
         try {
             double helper = Double.parseDouble(value);
             return true;
@@ -198,7 +198,7 @@ class Variable {
      * @param value The value to check.
      * @return true if the value represent boolean value, false otherwise.
      */
-    private boolean isBoolean(String value) {
+    private static boolean isBoolean(String value) {
         return value.equals(TRUE) || value.equals(FALSE) || isDouble(value);
     }
 
@@ -207,7 +207,7 @@ class Variable {
      * @param value The value to check.
      * @return true if the value represent char value, false otherwise.
      */
-    private boolean isChar(String value) {
+    private static boolean isChar(String value) {
         return value.indexOf('\'') == 0 && value.lastIndexOf('\'') == 2 && value.length() == 3;
     }
 
@@ -216,7 +216,7 @@ class Variable {
      * @param value The value to check.
      * @return true if the given string represent a string value, false otherwise.
      */
-    private boolean isString(String value) {
+    private static boolean isString(String value) {
         int firstIndex = value.indexOf('"'), lastIndex = value.lastIndexOf('"');
         if (firstIndex == -1 || firstIndex == lastIndex) {
             return false;
@@ -283,7 +283,7 @@ class Variable {
      * @return A variable match to the parameters.
      * @throws IllegalException The value wasn't legal.
      */
-    Variable createDeafaultVeriable(String value, int numberLine) throws IllegalException {
+    static Variable createDefaultVariable(String value, int numberLine) throws IllegalException {
         Variable variable;
         if (isInt(value)) {
             variable = createParameter(INT, "DefaultInt", numberLine, true);

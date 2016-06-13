@@ -42,11 +42,25 @@ class ConditionBlock extends Block {
             if (!condition.equals(TRUE) && !condition.equals(FALSE)) {
                 name = Parser.extractFirstWord(condition, getOriginLine());
                 Variable variable = Parser.getVariable(name);
-                if (variable == null || !(variable.isBooleanExpression())) {
-                    throw new IllegalException(BOOLEAN_EXPRESSION_ERROR_MESSAGE, getOriginLine());
+                if (variable != null) {
+                    if (variable.isBooleanExpression()) {
+                        Parser.variables.get(getDepth()).put(variable.getName(), variable);
+                    } else {
+                        throw new IllegalException(BOOLEAN_EXPRESSION_ERROR_MESSAGE, getOriginLine());
+                    }
                 } else {
-                    Parser.variables.get(getDepth()).put(variable.getName(), variable);
+                    variable = Variable.createDefaultVariable(name, getOriginLine());
+                    if (variable.isBooleanExpression()) {
+                        Parser.variables.get(getDepth()).put(variable.getName(), variable);
+                    } else {
+                        throw new IllegalException(BOOLEAN_EXPRESSION_ERROR_MESSAGE, getOriginLine());
+                    }
                 }
+//                if (variable == null && !(variable.isBooleanExpression())) {
+//                    throw new IllegalException(BOOLEAN_EXPRESSION_ERROR_MESSAGE, getOriginLine());
+//                } else {
+//                    Parser.variables.get(getDepth()).put(variable.getName(), variable);
+//                }
             }
 
         }

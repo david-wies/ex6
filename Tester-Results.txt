@@ -445,14 +445,14 @@ Tester test253.sjava:
 0
 
 Tester test254.sjava:
-error in line: 8, 	bad format line
+error in line: 6, 	Illegal type of value
 1
 
 Tester test255.sjava:
 0
 
 Tester test257.sjava:
-error in line: 9, 	bad format line
+error in line: 7, 	try to assignment with put value
 1
 
 Tester test261.sjava:
@@ -521,8 +521,7 @@ Tester test303.sjava:
 0
 
 Tester test305.sjava:
-error in line: 2, 	Variable doesn't legal boolean expression
-1
+0
 
 Tester test306.sjava:
 error in line: 2, 	Variable doesn't legal boolean expression
@@ -533,7 +532,7 @@ error in line: 3, 	Variable doesn't legal boolean expression
 1
 
 Tester test308.sjava:
-error in line: 10, 	bad format line
+error in line: 8, 	bad method format
 1
 
 Tester test309.sjava:
@@ -554,40 +553,33 @@ Tester test313.sjava:
 0
 
 Tester test314.sjava:
-error in line: 9, 	bad format line
+error in line: 2, 	Illegal value variable
 1
 
 Tester test315.sjava:
-error in line: 2, 	Variable doesn't legal boolean expression
-1
+0
 
 Tester test316.sjava:
 error in line: 2, 	Variable doesn't legal boolean expression
 1
 
 Tester test321.sjava:
-error in line: 2, 	Variable doesn't legal boolean expression
-1
+0
 
 Tester test322.sjava:
-error in line: 2, 	Variable doesn't legal boolean expression
-1
+0
 
 Tester test323.sjava:
-error in line: 2, 	Variable doesn't legal boolean expression
-1
+0
 
 Tester test324.sjava:
-error in line: 2, 	Variable doesn't legal boolean expression
-1
+0
 
 Tester test325.sjava:
-error in line: 3, 	Variable doesn't legal boolean expression
-1
+0
 
 Tester test326.sjava:
-error in line: 2, 	Variable doesn't legal boolean expression
-1
+0
 
 Tester test327.sjava:
 0
@@ -680,12 +672,11 @@ Tester test425.sjava:
 0
 
 Tester test427.sjava:
-error in line: 8, 	bad format line
+error in line: 2, 	Variable doesn't exists.
 1
 
 Tester test428.sjava:
-error in line: 8, 	bad format line
-1
+0
 
 Tester test429.sjava:
 error in line: 2, 	Variable doesn't exists.
@@ -744,15 +735,14 @@ error in line: 1, 	bad format line
 1
 
 Tester test451.sjava:
-error in line: 12, 	bad format line
-1
+0
 
 Tester test452.sjava:
-error in line: 12, 	bad format line
+error in line: 5, 	bad format line
 1
 
 Tester test453.sjava:
-error in line: 12, 	bad format line
+error in line: 5, 	bad format line
 1
 
 Tester test454.sjava:
@@ -827,8 +817,7 @@ Tester test473.sjava:
 0
 
 Tester test474.sjava:
-error in line: 7, 	bad format line
-1
+0
 
 Tester test475.sjava:
 0
@@ -852,7 +841,7 @@ error in line: 2, 	bad format line
 1
 
 Tester test504.sjava:
-error in line: 18, 	bad format line
+error in line: 6, 	bad format line
 1
 
 Tester test505.sjava:
