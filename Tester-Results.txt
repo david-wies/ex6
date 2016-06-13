@@ -672,7 +672,7 @@ java.lang.IllegalStateException: No match available
 	at java.util.regex.Matcher.start(Matcher.java:343)
 	at oop.ex6.main.Method.analysisParameters(Method.java:83)
 	at oop.ex6.main.Method.<init>(Method.java:43)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:311)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:302)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:17)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)

@@ -40,7 +40,7 @@ class ConditionBlock extends Block {
         String[] parts = conditions.split(SPLITTER);
         for (String condition : parts) {
             if (!condition.equals(TRUE) && !condition.equals(FALSE)) {
-                name = Parser.extractFirstWord(condition, getOriginLine(), false);
+                name = Parser.extractFirstWord(condition, getOriginLine());
                 Variable variable = Parser.getVariable(name);
                 if (variable == null || !(variable.isBooleanExpression())) {
                     throw new IllegalException(BOOLEAN_EXPRESSION_ERROR_MESSAGE, getOriginLine());

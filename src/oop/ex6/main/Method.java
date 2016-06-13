@@ -72,7 +72,7 @@ class Method extends Block {
         String[] parts = parameters.split(",");
         for (String part : parts) {
             boolean isFinal = false;
-            if (Parser.extractFirstWord(part, getOriginLine(), false).equals(FINAL)) {
+            if (Parser.extractFirstWord(part, getOriginLine()).equals(FINAL)) {
                 isFinal = true;
                 part = part.substring(part.indexOf(FINAL) + FINAL.length());
             }

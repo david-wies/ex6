@@ -113,7 +113,7 @@ class Parser {
      * @return the first word in the string
      * @throws IllegalException
      */
-    static String extractFirstWord(String string, int numberLine, boolean withEdges) throws IllegalException {
+    static String extractFirstWord(String string, int numberLine) throws IllegalException {
 //        try {
 //            Matcher matcher = firstWordPattern.matcher(string);
 //            if (matcher.find()) {
@@ -128,17 +128,11 @@ class Parser {
 
         try {
             Matcher matcher = firstWordPattern.matcher(string);
-//            Matcher matcherWithBraces = firstBracesWord.matcher(string);
-            if (withEdges) {
-                if (matcher.find()) {
-                    return string.substring(matcher.start(), matcher.end());
-                }
+            if (matcher.find()) {
+                return string.substring(matcher.start(), matcher.end());
             } else {
-                if (matcher.find()) {
-                    return string.substring(matcher.start(), matcher.end());
-                }
+                throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
             }
-            throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         } catch (StringIndexOutOfBoundsException e) {
             throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         }
@@ -168,7 +162,7 @@ class Parser {
         if (firstWord.equals(FINAL)) {
             isFinal = true;
             line = line.substring(line.indexOf(FINAL) + FINAL.length());
-            varType = extractFirstWord(line, lineNumber, false);
+            varType = extractFirstWord(line, lineNumber);
             if (!Variable.isLegalVariableType(varType)) {
                 throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
             }
@@ -184,7 +178,7 @@ class Parser {
                 }
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
-                    String varName = extractFirstWord(part, lineNumber, false);
+                    String varName = extractFirstWord(part, lineNumber);
                     if (!Variable.isLegalVariableName(varName)) {
                         throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
                     }
@@ -195,7 +189,7 @@ class Parser {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
             } else { //var assignment with value .
-                String varName = extractFirstWord(part, lineNumber, false);
+                String varName = extractFirstWord(part, lineNumber);
                 Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
                 scopeVariables.put(newVar.getName(), newVar);
                 part = part.substring(part.indexOf(varName) + varName.length());
@@ -228,11 +222,8 @@ class Parser {
                             throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
                         }
                         break;
-                    case CHAR:
-                        varValue = extractFirstWord(parameters[1], lineNumber, true);
-                        break;
                     default:
-                        varValue = extractFirstWord(parameters[1], lineNumber, false);
+                        varValue = extractFirstWord(parameters[1], lineNumber);
                         break;
                 }
                 parameters[1] = parameters[1].substring(parameters[1].indexOf(varValue) + varValue.length());

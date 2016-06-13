@@ -20,7 +20,7 @@ public class roiTests {
 //        }
         String line = " char a ='r',b, c='r' ";
         try {
-            System.out.println(Parser.extractFirstWord("abc%%",3,false));
+            System.out.println(Parser.extractFirstWord("abc%%", 3));
 //            pars.updateVariables(0, line, 5, "char");
 //            System.out.println("update variable is done");
         } catch (IllegalException e) {
