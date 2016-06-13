@@ -35,6 +35,7 @@ class Parser {
     private static final String FIRST_WORD = "\\S+";
     //    private static final String FIRST_BRACKETS_WORD = "['\"]{1}\\S+['\"]{1}";
     private static final String FIRST_NAME = "\\b\\w+\\b";
+    private static final String METHOD_NAME = "\\S+\\s*\\(";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
     private static final String START_BLOCK = "\\s*\\S+\\s*\\{\\s*"; // \\S+ and not \\S* dose not work on while/if
@@ -51,7 +52,7 @@ class Parser {
     // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
     private static Pattern firstWordPattern = Pattern.compile(FIRST_WORD);
-    //    private static Pattern firstBracesWord = Pattern.compile(FIRST_BRACKETS_WORD);
+    private static Pattern methodName = Pattern.compile(METHOD_NAME);
     private static Pattern firstNamePattern = Pattern.compile(FIRST_NAME);
     private static Pattern legalEnd = Pattern.compile(LEGAL_END);
     private static Pattern endBlockPattern = Pattern.compile(END_BLOCK);
@@ -129,6 +130,16 @@ class Parser {
             return string;
         if (matcher.find()) {
             return string.substring(matcher.start(), matcher.end());
+        }
+        throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
+    }
+
+    private static String extractMethodName(String string, int numberLine) throws IllegalException {
+        Matcher matcher = methodName.matcher(string);
+        if (string.equals(""))
+            throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
+        if (matcher.find()) {
+            return string.substring(matcher.start(), matcher.end() - 1);
         }
         throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
     }
@@ -291,7 +302,7 @@ class Parser {
      *
      * @return true if al of the ,method's was valid, false otherwise.
      */
-    boolean parser() throws IllegalException {
+    boolean parseMethods() throws IllegalException {
         for (Method method : methods.values()) {
             parseMethod(method);
         }

@@ -15,7 +15,7 @@ public class Sjavac {
             String path = args[0];
             Parser parser = new Parser();
             parser.analyzerFile(path);
-            parser.parser();
+            parser.parseMethods();
             System.out.println(LEGAL_FILE);
         } catch (ArrayIndexOutOfBoundsException e) {
 //            e.printStackTrace();
