@@ -33,7 +33,7 @@ class Parser {
 
     // Pattern's string's.
     private static final String FIRST_WORD = "\\S+";
-    private static final String FIRST_BRACES_WORD = "['\"]{1}\\S+['\"]{1}";
+    //    private static final String FIRST_BRACKETS_WORD = "['\"]{1}\\S+['\"]{1}";
     private static final String FIRST_NAME = "\\b\\w+\\b";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
@@ -51,7 +51,7 @@ class Parser {
     // Patterns
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
     private static Pattern firstWordPattern = Pattern.compile(FIRST_WORD);
-    private static Pattern firstBracesWord = Pattern.compile(FIRST_BRACES_WORD);
+    //    private static Pattern firstBracesWord = Pattern.compile(FIRST_BRACKETS_WORD);
     private static Pattern firstNamePattern = Pattern.compile(FIRST_NAME);
     private static Pattern legalEnd = Pattern.compile(LEGAL_END);
     private static Pattern endBlockPattern = Pattern.compile(END_BLOCK);
@@ -67,8 +67,6 @@ class Parser {
 
     // Field's of Parser.
     private HashMap<String, Method> methods;
-    private ArrayList<Block> blocks;
-    //    private HashMap<String, Variable> globalVariables;
     static ArrayList<HashMap<String, Variable>> variables;
     private static final int GLOBAL_DEPTH = 0;
 
@@ -79,7 +77,6 @@ class Parser {
      */
     Parser() throws IOException {
         methods = new HashMap<>();
-//        globalVariables = new HashMap<>();
         variables = new ArrayList<>();
         variables.add(new HashMap<>());
     }
@@ -96,7 +93,7 @@ class Parser {
      * @return String of the parameter's.
      * @throws IllegalException
      */
-    private static String extractParameters(String line, int numberLine) throws IllegalException {
+    private static String extractInnerBrackets(String line, int numberLine) throws IllegalException {
         int startIndex = line.indexOf('('), endIndex = line.indexOf(')');
         if (startIndex < endIndex) {
             return line.substring(startIndex + 1, endIndex); // was returning the parameters with " ( "
@@ -274,7 +271,7 @@ class Parser {
                             subLine = row.substring(firstWord.end());
                             rows = new ArrayList<>();
                             firstMethodLine = lineNumber;
-                            parameters = extractParameters(subLine, lineNumber);
+                            parameters = extractInnerBrackets(subLine, lineNumber);
                             methodName = extractFirstName(subLine, lineNumber);
                             Method.verifyLegalityMethodName(methodName, lineNumber);
                             Matcher startBlockMatcher = startBlockPattern.matcher(row);
@@ -288,25 +285,29 @@ class Parser {
                     }
                 }
             } else {
-                startBlock = newStartBlock.matcher(row);
-                endBlock = endBlockPattern.matcher(row); // endBlock and not endRow.
-                if (startBlock.matches()) {
-                    counterBlocks++;
-                    rows.add(row);
-                } else if (endBlock.matches()) {
-                    counterBlocks--;
-                    if (counterBlocks > 0) {
-                        rows.add(row);
-                    } else {
-                        //not getting the line "return;" in rows.
-                        Method method = new Method(rows, methodName, firstMethodLine, parameters,
-                                GLOBAL_DEPTH + 1);
-                        rows = null;
-                        methods.put(method.getName(), method);
-                    }
-                } else { // if not start of block and not end of block the line is in the block.
-                    rows.add(row);
+                counterBlocks = blockRunner(rows, row, counterBlocks);
+                if (counterBlocks == 0) {
+                    Method method = new Method(rows, methodName, firstMethodLine, parameters,
+                            GLOBAL_DEPTH + 1);
+                    rows = null;
+                    methods.put(method.getName(), method);
                 }
+//                startBlock = newStartBlock.matcher(row);
+//                endBlock = endBlockPattern.matcher(row);
+//                if (startBlock.matches()) {
+//                    counterBlocks++;
+//                    rows.add(row);
+//                } else if (endBlock.matches()) {
+//                    counterBlocks--;
+//                    if (counterBlocks > 0) {
+//                        rows.add(row);
+//                    } else {
+//                        //not getting the line "return;" in rows.
+//
+//                    }
+//                } else { // if not start of block and not end of block the line is in the block.
+//                    rows.add(row);
+//                }
             }
             lineNumber++;
         }
@@ -343,6 +344,7 @@ class Parser {
         } else {
             throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
         }
+        firstWord = extractFirstWord(row, lineNumber);
         if (firstWord.equals(RETURN)) {
             if (!isLegalReturn(row)) {
                 throw new IllegalException(RETURN_ERROR, lineNumber);
@@ -371,14 +373,11 @@ class Parser {
      * Parse a single block.
      */
     private void parseBlock(Block block) throws IllegalException {
-        int lineNumber = block.getOriginLine();
-        ArrayList<String> rows = block.getRows();
-        String firstWord;
-        for (String row : rows) {
+        int lineNumber = block.getOriginLine(), counterBlock = 0, firstNewBlockLine = lineNumber;
+        ArrayList<String> rows = null;
+        String firstWord, condition = "";
+        for (String row : block.getRows()) {
             Matcher endRowMatcher = legalEnd.matcher(row);
-            if (!endRowMatcher.find() || row.contains("}")) { // changed to find() instead of matches()
-                throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
-            }
             Matcher emptyRowMatcher = emptyRowPattern.matcher(row);
             Matcher firstWordMatcher = firstWordPattern.matcher(row);
             if (firstWordMatcher.find()) {
@@ -388,18 +387,61 @@ class Parser {
             } else {
                 throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
             }
-            switch (firstWord) {
-                case START_FUNCTION:
-                    throw new IllegalException("Can't create method in another method.", lineNumber);
-                case START_CONDITION:
-                case START_LOOP:
-                    break;
-                default:
-                    analyzeRow(row, block.getDepth(), lineNumber, firstWord);
-                    break;
+            if (rows == null) {
+                if (!endRowMatcher.find() || row.contains("}")) {
+                    throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+                }
+                switch (firstWord) {
+                    case START_FUNCTION:
+                        throw new IllegalException("Can't create method in another method.", lineNumber);
+                    case START_CONDITION:
+                    case START_LOOP:
+                        rows = new ArrayList<>();
+                        condition = extractInnerBrackets(row, lineNumber);
+                        firstNewBlockLine = lineNumber;
+                        counterBlock++;
+                        break;
+                    default:
+                        analyzeRow(row, block.getDepth(), lineNumber, firstWord);
+                        break;
+                }
+            } else {
+                counterBlock = blockRunner(rows, row, counterBlock);
+                if (counterBlock == 0) {
+                    Block newBlock = new ConditionBlock(rows, firstNewBlockLine, condition, block.getDepth() + 1);
+                    rows = null;
+                    parseBlock(newBlock);
+                }
             }
+            lineNumber++;
         }
 
+    }
+
+    /*
+     * @param rows The array-list of the rows of the new block.
+     * @param row The current line.
+     * @param counterBlocks Counter of depth of the inner blocks. 
+     * @return The update counterBlocks after the current row. 
+     */
+    private int blockRunner(ArrayList<String> rows, String row, int counterBlocks) {
+        Matcher startBlock, endBlock;
+        startBlock = newStartBlock.matcher(row);
+        endBlock = endBlockPattern.matcher(row);
+        if (startBlock.matches()) {
+            counterBlocks++;
+            rows.add(row);
+        } else if (endBlock.matches()) {
+            counterBlocks--;
+            if (counterBlocks > 0) {
+                rows.add(row);
+            } else {
+                return counterBlocks;
+            }
+        } else { // if not start of block and not end of block the line is in the block.
+            rows.add(row);
+        }
+        return counterBlocks;
     }
 
     /**

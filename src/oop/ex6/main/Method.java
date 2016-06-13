@@ -78,8 +78,8 @@ class Method extends Block {
             }
             Matcher typeAndNameMatcher = typeAndName.matcher(part);
             Matcher separatedWordsMatcher = separatedWords.matcher(part);
-            if (typeAndNameMatcher.matches()) {
-                helper = separatedWordsMatcher.find();
+            if (typeAndNameMatcher.matches() && separatedWordsMatcher.find()) {
+//                helper = separatedWordsMatcher.find();
                 start = separatedWordsMatcher.start();
                 end = separatedWordsMatcher.end();
                 String newPart = part.substring(start, end);
