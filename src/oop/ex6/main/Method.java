@@ -15,7 +15,7 @@ class Method extends Block {
 
     // Pattern's string.
     private final static String TYPES_AND_NAMES_PATTERN = "\\s*(int|double|String|boolean|char)\\s+\\S+\\s*";
-    private final static String SEPARATED_WORDS_PATTERNS = "\\S+\\s\\S+";
+    private final static String SEPARATED_WORDS_PATTERNS = "\\S+\\s+\\S+";
     private final static String NAME_PATTERN = "[a-zA-Z]+\\w*";
 
     // Pattern's
@@ -83,7 +83,7 @@ class Method extends Block {
                 start = separatedWordsMatcher.start();
                 end = separatedWordsMatcher.end();
                 String newPart = part.substring(start, end);
-                String[] typeAndName = newPart.split("\\s");
+                String[] typeAndName = newPart.split("\\s+");
                 Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], getOriginLine(), isFinal);
                 Parser.variables.get(getDepth()).put(newVar.getName(), newVar);
                 this.parameters.add(newVar);
