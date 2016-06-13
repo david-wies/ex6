@@ -28,7 +28,7 @@ class Parser {
     private final static String UNSUPPORTED_COMMAND = "Unsupported command";
     private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
     private final static String INITIALIZE_ERROR_MESSAGE = "Final must initialize";
-    private final static String ILLEGAL_METHOD_CALL_ERROR ="UNKNOWN METHOD CALL";
+    private final static String ILLEGAL_METHOD_CALL_ERROR = "UNKNOWN METHOD CALL";
 
 
     // Pattern's string's.
@@ -41,7 +41,7 @@ class Parser {
     private static final String START_BLOCK_NEW = ".+\\{"; //  working on while/if ( need to see if to use it in the other places)
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
-    private static final String LEGAL_RETURN = "\\breturn\\b\\s*";
+    private static final String LEGAL_RETURN = "\\s*\\breturn\\b\\s*";
     private static final String EMPTY_ROW = "\\s*;?\\s*";
     private static final String SPACE_ROW = "\\s*";
     private static final String METHOD_CALL = "[a-zA-Z]+\\w*\\(";
@@ -99,7 +99,7 @@ class Parser {
     private static String extractParameters(String line, int numberLine) throws IllegalException {
         int startIndex = line.indexOf('('), endIndex = line.indexOf(')');
         if (startIndex < endIndex) {
-            return line.substring(startIndex +1, endIndex); // was returning the parameters with " ( "
+            return line.substring(startIndex + 1, endIndex); // was returning the parameters with " ( "
         } else {
             throw new IllegalException("Un legal method declaration", numberLine);
         }
@@ -133,8 +133,7 @@ class Parser {
                 if (matcherWithBraces.find()) {
                     return string.substring(matcherWithBraces.start(), matcherWithBraces.end());
                 }
-            }
-            else{
+            } else {
                 if (matcher.find()) {
                     return string.substring(matcher.start(), matcher.end());
                 }
@@ -170,18 +169,18 @@ class Parser {
             isFinal = true;
             line = line.substring(line.indexOf(FINAL) + FINAL.length());
             varType = extractFirstWord(line, lineNumber, false);
+            if (!Variable.isLegalVariableType(varType)) {
+                throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
+            }
         } else {
             varType = firstWord;
-        }
-        if (!Variable.isLegalVariableType(varType)) {
-            throw new IllegalException(TYPE_ERROR_MESSAGE, lineNumber);
         }
         line = line.substring(line.indexOf(varType) + varType.length());
         String[] parts = line.split(",");
         for (String part : parts) {
             if (!part.contains("=")) { //var assignment without value.
-                if (isFinal){
-                    throw new IllegalException(INITIALIZE_ERROR_MESSAGE,lineNumber);
+                if (isFinal) {
+                    throw new IllegalException(INITIALIZE_ERROR_MESSAGE, lineNumber);
                 }
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
@@ -197,7 +196,7 @@ class Parser {
                 }
             } else { //var assignment with value .
                 String varName = extractFirstWord(part, lineNumber, false);
-                Variable newVar = new Variable(varType,varName,lineNumber,isFinal);
+                Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
                 scopeVariables.put(newVar.getName(), newVar);
                 part = part.substring(part.indexOf(varName) + varName.length());
                 assignmentValue(part, newVar, lineNumber);
@@ -276,7 +275,7 @@ class Parser {
                 if (firstWord.find()) {
                     word = row.substring(firstWord.start(), firstWord.end());
                     switch (word) {
-                        case START_COMMENT : // check if a row is comment.
+                        case START_COMMENT: // check if a row is comment.
                             break;
                         case START_CONDITION:
                             throw new IllegalException("Cant start if condition out of a method.", lineNumber);
@@ -316,8 +315,7 @@ class Parser {
                         rows = null;
                         methods.put(method.getName(), method);
                     }
-                }
-                else{ // if not start of block and not end of block the line is in the block.
+                } else { // if not start of block and not end of block the line is in the block.
                     rows.add(row);
                 }
             }
@@ -368,13 +366,12 @@ class Parser {
                 row = row.substring(row.indexOf(firstWord) + firstWord.length());
                 assignmentValue(row, variable, lineNumber);
             }
-        } else if (methodCallMatcher.find()){ // check if a known method has been called.
-            String methodName = row.substring(methodCallMatcher.start(),methodCallMatcher.end()-1);
-            if (!methods.containsKey(methodName)){
-                throw new IllegalException(ILLEGAL_METHOD_CALL_ERROR,lineNumber);
+        } else if (methodCallMatcher.find()) { // check if a known method has been called.
+            String methodName = row.substring(methodCallMatcher.start(), methodCallMatcher.end() - 1);
+            if (!methods.containsKey(methodName)) {
+                throw new IllegalException(ILLEGAL_METHOD_CALL_ERROR, lineNumber);
             }
-        }
-        else {
+        } else {
             throw new IllegalException(UNSUPPORTED_COMMAND, lineNumber);
         }
     }
@@ -455,8 +452,7 @@ class Parser {
         if (legalEnd.matches()) {
             method.getRows().remove(lastRowIndex);
             parseBlock(method);
-        }
-        else {
+        } else {
             throw new IllegalException(BAD_METHOD_FORMAT_ERROR, method.getOriginLine());
         }
 

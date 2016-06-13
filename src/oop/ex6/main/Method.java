@@ -63,7 +63,7 @@ class Method extends Block {
      */
     private void analysisParameters(String parameters) throws IllegalException {
         this.parameters = new ArrayList<>();
-        if (parameters.equals("")){
+        if (parameters.equals("")) {
             return;
         }
         int start;
