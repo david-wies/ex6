@@ -111,18 +111,6 @@ class Parser {
      * @throws IllegalException
      */
     static String extractFirstWord(String string, int numberLine) throws IllegalException {
-//        try {
-//            Matcher matcher = firstWordPattern.matcher(string);
-//            if (matcher.find()) {
-//                if (withEdges)
-//                    return string.substring(matcher.start() - 1, matcher.end() + 1);
-//                return string.substring(matcher.start(), matcher.end());
-//            }
-//            throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
-//        } catch (StringIndexOutOfBoundsException e) {
-//            throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
-//        }
-
         try {
             Matcher matcher = firstWordPattern.matcher(string);
             if (matcher.find()) {
@@ -252,7 +240,7 @@ class Parser {
         File sJavaFile = new File(path);
         Scanner input = new Scanner(sJavaFile);
         String row;
-        int lineNumber = 1, counterBlocks = 0, firstMethodLine = 1;
+        int lineNumber = 1, counterBlocks = 1, firstMethodLine = 1;
         ArrayList<String> rows = null;
         String word, parameters = "", methodName = "", subLine;
         Matcher firstWord;
@@ -287,27 +275,12 @@ class Parser {
             } else {
                 counterBlocks = blockRunner(rows, row, counterBlocks);
                 if (counterBlocks == 0) {
-                    Method method = new Method(rows, methodName, firstMethodLine, parameters,
-                            GLOBAL_DEPTH + 1);
+                    Method method = new Method(rows, methodName, firstMethodLine, parameters, GLOBAL_DEPTH
+                            + 1);
                     rows = null;
+                    counterBlocks = 1;
                     methods.put(method.getName(), method);
                 }
-//                startBlock = newStartBlock.matcher(row);
-//                endBlock = endBlockPattern.matcher(row);
-//                if (startBlock.matches()) {
-//                    counterBlocks++;
-//                    rows.add(row);
-//                } else if (endBlock.matches()) {
-//                    counterBlocks--;
-//                    if (counterBlocks > 0) {
-//                        rows.add(row);
-//                    } else {
-//                        //not getting the line "return;" in rows.
-//
-//                    }
-//                } else { // if not start of block and not end of block the line is in the block.
-//                    rows.add(row);
-//                }
             }
             lineNumber++;
         }
@@ -373,11 +346,11 @@ class Parser {
      * Parse a single block.
      */
     private void parseBlock(Block block) throws IllegalException {
-        int lineNumber = block.getOriginLine(), counterBlock = 0, firstNewBlockLine = lineNumber;
+        int lineNumber = block.getOriginLine() + 1, counterBlock = 0, firstNewBlockLine = lineNumber;
         ArrayList<String> rows = null;
         String firstWord, condition = "";
         for (String row : block.getRows()) {
-            Matcher endRowMatcher = legalEnd.matcher(row);
+//            Matcher endRowMatcher = legalEnd.matcher(row);
             Matcher emptyRowMatcher = emptyRowPattern.matcher(row);
             Matcher firstWordMatcher = firstWordPattern.matcher(row);
             if (firstWordMatcher.find()) {
@@ -388,7 +361,7 @@ class Parser {
                 throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
             }
             if (rows == null) {
-                if (!endRowMatcher.find() || row.contains("}")) {
+                if (row.contains("}")) {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
                 switch (firstWord) {
