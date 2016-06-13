@@ -255,7 +255,7 @@ class Parser {
         int lineNumber = 1, counterBlocks = 0, firstMethodLine = 1;
         ArrayList<String> rows = null;
         String word, parameters = "", methodName = "", subLine;
-        Matcher startBlock, endBlock, firstWord;
+        Matcher firstWord;
         while (input.hasNext()) {
             row = input.nextLine();
             if (rows == null) {
