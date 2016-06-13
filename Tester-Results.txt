@@ -136,15 +136,15 @@ Tester test043.sjava:
 0
 
 Tester test044.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Illegal type of value
 1
 
 Tester test045.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Illegal type of value
 1
 
 Tester test046.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	try to assignment with put value
 1
 
 Tester test047.sjava:
@@ -407,15 +407,15 @@ Tester test243.sjava:
 0
 
 Tester test244.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Illegal type of value
 1
 
 Tester test245.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Illegal type of value
 1
 
 Tester test246.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	try to assignment with put value
 1
 
 Tester test247.sjava:
@@ -672,7 +672,7 @@ java.lang.IllegalStateException: No match available
 	at java.util.regex.Matcher.start(Matcher.java:343)
 	at oop.ex6.main.Method.analysisParameters(Method.java:83)
 	at oop.ex6.main.Method.<init>(Method.java:43)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:313)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:311)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:17)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)

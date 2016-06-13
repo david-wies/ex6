@@ -128,10 +128,10 @@ class Parser {
 
         try {
             Matcher matcher = firstWordPattern.matcher(string);
-            Matcher matcherWithBraces = firstBracesWord.matcher(string);
+//            Matcher matcherWithBraces = firstBracesWord.matcher(string);
             if (withEdges) {
-                if (matcherWithBraces.find()) {
-                    return string.substring(matcherWithBraces.start(), matcherWithBraces.end());
+                if (matcher.find()) {
+                    return string.substring(matcher.start(), matcher.end());
                 }
             } else {
                 if (matcher.find()) {
@@ -275,8 +275,6 @@ class Parser {
                 if (firstWord.find()) {
                     word = row.substring(firstWord.start(), firstWord.end());
                     switch (word) {
-                        case START_COMMENT: // check if a row is comment.
-                            break;
                         case START_CONDITION:
                             throw new IllegalException("Cant start if condition out of a method.", lineNumber);
                         case START_LOOP:
@@ -347,7 +345,9 @@ class Parser {
     private void analyzeRow(String row, int depth, int lineNumber, String firstWord) throws IllegalException {
         Matcher endRow = legalEnd.matcher(row);
         Matcher methodCallMatcher = methodCallPattern.matcher(row);
-        if (endRow.find()) {
+        if (firstWord.equals(START_COMMENT)) {
+            return;
+        } else if (endRow.find()) {
             row = row.substring(0, endRow.start());
         } else {
             throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
