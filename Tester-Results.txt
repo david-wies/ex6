@@ -1,7 +1,8 @@
-Directory: C:\Users\David\Documents\אוניברסיטה\oop\ex6\tests
+Directory: C:\Users\roishtivi\IdeaProjects\oop\tests
 
 Tester test001.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test002.sjava:
 0
@@ -21,7 +22,7 @@ error in line: 1, 	Illegal type of value
 1
 
 Tester test007.sjava:
-error in line: 1, 	Try to copy a value from variable that doesn't exist.
+error in line: 1, 	Illegal type of value
 1
 
 Tester test008.sjava:
@@ -32,7 +33,8 @@ Tester test009.sjava:
 0
 
 Tester test011.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test012.sjava:
 0
@@ -51,7 +53,7 @@ error in line: 1, 	Illegal type of value
 1
 
 Tester test017.sjava:
-error in line: 1, 	Try to copy a value from variable that doesn't exist.
+error in line: 1, 	Illegal type of value
 1
 
 Tester test018.sjava:
@@ -62,7 +64,8 @@ Tester test019.sjava:
 0
 
 Tester test021.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test022.sjava:
 0
@@ -97,7 +100,8 @@ Tester test030.sjava:
 0
 
 Tester test031.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test032.sjava:
 0
@@ -116,7 +120,7 @@ error in line: 1, 	Illegal type of value
 1
 
 Tester test037.sjava:
-error in line: 1, 	Try to copy a value from variable that doesn't exist.
+error in line: 1, 	Illegal type of value
 1
 
 Tester test038.sjava:
@@ -127,7 +131,8 @@ Tester test039.sjava:
 0
 
 Tester test041.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test042.sjava:
 0
@@ -144,7 +149,7 @@ error in line: 1, 	Illegal type of value
 1
 
 Tester test046.sjava:
-error in line: 1, 	try to assignment with put value
+error in line: 1, 	Illegal type of value
 1
 
 Tester test047.sjava:
@@ -163,10 +168,11 @@ Tester test050.sjava:
 0
 
 Tester test051.sjava:
-0
+error in line: 2, 	Illegal type of value
+1
 
 Tester test052.sjava:
-error in line: 1, 	Try to copy a value from variable that doesn't exist.
+error in line: 1, 	Illegal type of value
 1
 
 Tester test053.sjava:
@@ -174,7 +180,7 @@ error in line: 1, 	Unsupported command
 1
 
 Tester test054.sjava:
-error in line: 2, 	try to assignment with put value
+error in line: 1, 	Illegal name variable
 1
 
 Tester test055.sjava:
@@ -185,14 +191,16 @@ Tester test056.sjava:
 0
 
 Tester test057.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Illegal name variable
 1
 
 Tester test058.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test059.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test061.sjava:
 error in line: 1, 	Un legal method declaration
@@ -215,11 +223,11 @@ error in line: 1, 	Un legal method declaration
 1
 
 Tester test066.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Illegal name variable
 1
 
 Tester test067.sjava:
-error in line: 1, 	Variable doesn't exists.
+error in line: 1, 	Unsupported command
 1
 
 Tester test101.sjava:
@@ -246,28 +254,36 @@ Tester test106.sjava:
 0
 
 Tester test107.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test108.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test109.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test110.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test111.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test112.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test113.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test114.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test115.sjava:
 error in line: 1, 	bad format line
@@ -282,7 +298,8 @@ error in line: 1, 	bad format line
 1
 
 Tester test201.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test202.sjava:
 0
@@ -302,7 +319,7 @@ error in line: 2, 	Illegal type of value
 1
 
 Tester test207.sjava:
-error in line: 2, 	Try to copy a value from variable that doesn't exist.
+error in line: 2, 	Illegal type of value
 1
 
 Tester test208.sjava:
@@ -313,7 +330,8 @@ Tester test209.sjava:
 0
 
 Tester test211.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test212.sjava:
 0
@@ -332,7 +350,7 @@ error in line: 2, 	Illegal type of value
 1
 
 Tester test217.sjava:
-error in line: 2, 	Try to copy a value from variable that doesn't exist.
+error in line: 2, 	Illegal type of value
 1
 
 Tester test218.sjava:
@@ -343,7 +361,8 @@ Tester test219.sjava:
 0
 
 Tester test221.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test222.sjava:
 0
@@ -368,7 +387,8 @@ Tester test227.sjava:
 0
 
 Tester test231.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test232.sjava:
 0
@@ -398,7 +418,8 @@ Tester test239.sjava:
 0
 
 Tester test241.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test242.sjava:
 0
@@ -415,7 +436,7 @@ error in line: 2, 	Illegal type of value
 1
 
 Tester test246.sjava:
-error in line: 2, 	try to assignment with put value
+error in line: 2, 	Illegal type of value
 1
 
 Tester test247.sjava:
@@ -435,14 +456,16 @@ error in line: 2, 	Final must initialize
 1
 
 Tester test251.sjava:
-0
+error in line: 2, 	Illegal type of value
+1
 
 Tester test252.sjava:
-error in line: 3, 	try to assignment with put value
+error in line: 1, 	Illegal name variable
 1
 
 Tester test253.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test254.sjava:
 error in line: 6, 	Illegal type of value
@@ -452,7 +475,7 @@ Tester test255.sjava:
 0
 
 Tester test257.sjava:
-error in line: 7, 	try to assignment with put value
+error in line: 1, 	Illegal name variable
 1
 
 Tester test261.sjava:
@@ -464,22 +487,24 @@ error in line: 2, 	bad method format
 1
 
 Tester test263.sjava:
-error in line: 2, 	bad format line
+error in line: 1, 	Illegal name variable
 1
 
 Tester test264.sjava:
-error in line: 1, 	bad method format
+error in line: 1, 	Illegal name variable
 1
 
 Tester test265.sjava:
-error in line: 2, 	Final variable can't change
+error in line: 1, 	Illegal name variable
 1
 
 Tester test266.sjava:
-0
+error in line: 4, 	Unsupported command
+1
 
 Tester test267.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test268.sjava:
 error in line: 1, 	bad format line
@@ -521,10 +546,11 @@ Tester test303.sjava:
 0
 
 Tester test305.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test306.sjava:
-error in line: 2, 	Variable doesn't legal boolean expression
+error in line: 2, 	Illegal name variable
 1
 
 Tester test307.sjava:
@@ -540,7 +566,7 @@ error in line: 2, 	bad format line
 1
 
 Tester test310.sjava:
-error in line: 3, 	Variable doesn't legal boolean expression
+error in line: 2, 	Illegal name variable
 1
 
 Tester test311.sjava:
@@ -557,35 +583,42 @@ error in line: 2, 	Illegal value variable
 1
 
 Tester test315.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test316.sjava:
-error in line: 2, 	Variable doesn't legal boolean expression
+error in line: 2, 	Illegal name variable
 1
 
 Tester test321.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test322.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test323.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test324.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test325.sjava:
-0
+error in line: 3, 	Illegal name variable
+1
 
 Tester test326.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test327.sjava:
 0
 
 Tester test328.sjava:
-error in line: 4, 	Variable doesn't legal boolean expression
+error in line: 2, 	Illegal name variable
 1
 
 Tester test401.sjava:
@@ -601,25 +634,27 @@ error in line: 1, 	illegal method NAME
 1
 
 Tester test404.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test405.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test406.sjava:
-error in line: 2, 	Already taken variable
+error in line: 1, 	Illegal name variable
 1
 
 Tester test407.sjava:
-error in line: 2, 	Already taken variable
+error in line: 1, 	Illegal name variable
 1
 
 Tester test408.sjava:
-error in line: 3, 	Already taken variable
+error in line: 2, 	Illegal name variable
 1
 
 Tester test409.sjava:
-error in line: 3, 	Already taken variable
+error in line: 2, 	Illegal name variable
 1
 
 Tester test410.sjava:
@@ -633,14 +668,14 @@ error in line: 1, 	bad format line
 1
 
 Tester test413.sjava:
-error in line: 1, 	Variable doesn't exists.
+error in line: 1, 	Unsupported command
 1
 
 Tester test414.sjava:
 0
 
 Tester test415.sjava:
-error in line: 1, 	Variable doesn't exists.
+error in line: 1, 	Unsupported command
 1
 
 Tester test416.sjava:
@@ -652,7 +687,8 @@ error in line: 1, 	bad format line
 1
 
 Tester test418.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test420.sjava:
 error in line: 1, 	bad format line
@@ -673,14 +709,15 @@ Tester test425.sjava:
 0
 
 Tester test427.sjava:
-error in line: 2, 	Variable doesn't exists.
+error in line: 6, 	Illegal name variable
 1
 
 Tester test428.sjava:
-0
+error in line: 6, 	Illegal name variable
+1
 
 Tester test429.sjava:
-error in line: 2, 	Variable doesn't exists.
+error in line: 2, 	Unsupported command
 1
 
 Tester test430.sjava:
@@ -736,47 +773,52 @@ error in line: 1, 	bad format line
 1
 
 Tester test451.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test452.sjava:
-error in line: 5, 	bad format line
+error in line: 1, 	Illegal name variable
 1
 
 Tester test453.sjava:
-error in line: 5, 	bad format line
+error in line: 1, 	Illegal name variable
 1
 
 Tester test454.sjava:
-error in line: 4, 	Final variable can't change
+error in line: 4, 	Unsupported command
 1
 
 Tester test455.sjava:
-error in line: 2, 	Final variable can't change
+error in line: 1, 	Illegal name variable
 1
 
 Tester test456.sjava:
-error in line: 3, 	Final variable can't change
+error in line: 3, 	Unsupported command
 1
 
 Tester test457.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test458.sjava:
 error in line: 1, 	bad format line
 1
 
 Tester test459.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test460.sjava:
-error in line: 5, 	Illegal type of value
+error in line: 1, 	Illegal name variable
 1
 
 Tester test461.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test462.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test463.sjava:
 error in line: 1, 	Illegal name variable
@@ -787,10 +829,12 @@ error in line: 1, 	Illegal name variable
 1
 
 Tester test465.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test466.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test467.sjava:
 error in line: 2, 	Illegal name variable
@@ -812,10 +856,12 @@ error in line: 1, 	illegal method NAME
 1
 
 Tester test472.sjava:
-0
+error in line: 1, 	Illegal name variable
+1
 
 Tester test473.sjava:
-0
+error in line: 2, 	Illegal name variable
+1
 
 Tester test474.sjava:
 0
@@ -842,7 +888,7 @@ error in line: 2, 	bad format line
 1
 
 Tester test504.sjava:
-error in line: 6, 	bad format line
+error in line: 15, 	Illegal name variable
 1
 
 Tester test505.sjava:
