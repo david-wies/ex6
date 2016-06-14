@@ -334,7 +334,11 @@ class Parser {
         if (firstWord.equals(START_COMMENT)) {
             return;
         } else if (endRow.find()) {
-            row = row.substring(0, endRow.start());
+            if (row.indexOf(";") != row.lastIndexOf(";")) {
+                throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
+            } else {
+                row = row.substring(0, endRow.start());
+            }
         } else {
             throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
         }

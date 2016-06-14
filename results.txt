@@ -459,7 +459,7 @@ test472.sjava
 test473.sjava
 0
 test474.sjava
-0
+1
 test475.sjava
 0
 test476.sjava
