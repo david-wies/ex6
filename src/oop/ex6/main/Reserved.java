@@ -1,9 +1,10 @@
 package oop.ex6.main;
 
 /**
- *  A class that represent the reserved keyword in s-java file.
+ * A class that represent the reserved keyword in s-java file.
  */
 class Reserved {
+
 
     private static final String[] RESERVED_KEYWORDS = {"void", "final", "if", "while", "true", "false",
             "return", "int", "double", "boolean", "char", "String"};

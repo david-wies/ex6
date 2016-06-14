@@ -28,7 +28,6 @@ public class Sjavac {
             System.out.println(FILE_ERROR);
         } catch (IllegalException e) {
             System.err.println(e.getMessage());
-            e.printStackTrace();
             System.out.println(ILLEGAL_FILE);
         }
     }

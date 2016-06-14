@@ -43,6 +43,9 @@ abstract class Block {
         return ORIGIN_LINE;
     }
 
+    /**
+     * @return The depth of this block.
+     */
     int getDepth() {
         return DEPTH;
     }
