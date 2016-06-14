@@ -24,7 +24,6 @@ class Parser {
     // Errors string's.
     private final static String BAD_FORMAT_ERROR = "Bad format line.";
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value.";
-    private final static String ALREADY_TOKEN_ERROR_MESSAGE = "Already taken variable.";
     private final static String RETURN_ERROR = "Un legal return format.";
     private final static String BAD_METHOD_FORMAT_ERROR = "Bad method format.";
     private final static String UNSUPPORTED_COMMAND = "Unsupported command.";
