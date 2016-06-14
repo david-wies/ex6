@@ -357,7 +357,7 @@ test410.sjava
 test411.sjava
 0
 test412.sjava
-1
+0
 test413.sjava
 1
 test414.sjava

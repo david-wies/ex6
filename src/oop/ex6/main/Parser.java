@@ -162,7 +162,6 @@ class Parser {
                 if (isFinal) {
                     throw new IllegalException(INITIALIZE_ERROR_MESSAGE, lineNumber);
                 }
-//                String[] equal = part.split("=");
                 Matcher singleNameMatcher = singleName.matcher(part);
                 if (singleNameMatcher.matches()) {
                     String varName = extractFirstWord(part, lineNumber);
@@ -178,13 +177,14 @@ class Parser {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
             } else { //var assignment with value .
-                String varName = extractFirstWord(part, lineNumber); // TODO: 14/06/2016 change
+                String[] equal = part.split("=");
+                String varName = extractFirstWord(equal[0], lineNumber); // TODO: 14/06/2016 change
                 Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
                 if (!addVariable(newVar, depth)) {
                     throw new IllegalException(DUPLICATION_VARIABLES_NAMES, lineNumber);
                 }
-                part = part.substring(part.indexOf(varName) + varName.length());
-                assignmentValue(part, newVar, lineNumber);
+//                part = part.substring(part.indexOf(varName) + varName.length());
+                assignmentValue("=" + equal[1], newVar, lineNumber);
             }
         }
     }

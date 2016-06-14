@@ -42,7 +42,9 @@ class Variable {
         if (!isLegalVariableType(type)) {
             throw new IllegalException(TYPE_ERROR_MESSAGE, originLine);
         }
-//        if (Parser.)
+        if (!isLegalVariableName(name)) {
+            throw new IllegalException(NAME_ERROR_MESSAGE, originLine);
+        }
         TYPE = type;
         NAME = name;
         this.isFinal = isFinal;

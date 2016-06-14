@@ -24,8 +24,8 @@ public class ex6testRunner {
     public static void main(String[] args) {
 //        runAndCheck();
 //        System.out.println(findTest("001"));
-//        runAndCheck();
-        runSpecificFileWPrint("test412.sjava");
+        runAndCheck();
+//        runSpecificFileWPrint("test057.sjava");
     }
 
     private static void runAndCheck() {
