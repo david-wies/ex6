@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by David and Roi.
+ * A class that represent a variable in s-java.
  */
 class Variable {
 
@@ -273,6 +273,10 @@ class Variable {
         return isLegal;
     }
 
+    /**
+     * check if a variable is a boolean expression (boolean, int or double)
+     * @return True if it is boolean expression, false otherwise.
+     */
     boolean isBooleanExpression() {
         return hasValue && (TYPE.equals(BOOLEAN) || TYPE.equals(INT) || TYPE.equals(DOUBLE));
     }
@@ -303,6 +307,10 @@ class Variable {
         return variable;
     }
 
+    /**
+     * represent a print version of a variable.
+     * @return The String representation of the value.
+     */
     public String toString() {
         return (TYPE + ", " + NAME + ", has Value: " + hasValue + ", is final: " + isFinal);
     }

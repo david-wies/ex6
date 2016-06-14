@@ -1,7 +1,7 @@
 package oop.ex6.main;
 
 /**
- * Created by David and Roi.
+ * A class that represent a generic type 1 error that can be occur in the compilation.
  */
 class IllegalException extends Exception {
 

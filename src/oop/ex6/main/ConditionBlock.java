@@ -3,7 +3,7 @@ package oop.ex6.main;
 import java.util.ArrayList;
 
 /**
- * Created by David and Roi.
+ * A class that extends Block  and represent a block with a condition value, such as while/ if.
  */
 class ConditionBlock extends Block {
 
@@ -56,11 +56,6 @@ class ConditionBlock extends Block {
                         throw new IllegalException(BOOLEAN_EXPRESSION_ERROR_MESSAGE, getOriginLine());
                     }
                 }
-//                if (variable == null && !(variable.isBooleanExpression())) {
-//                    throw new IllegalException(BOOLEAN_EXPRESSION_ERROR_MESSAGE, getOriginLine());
-//                } else {
-//                    Parser.variables.get(getDepth()).put(variable.getName(), variable);
-//                }
             }
 
         }

@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by David and Roi.
+ * A class that extends Block and represent a method block.
  */
 class Method extends Block {
 
@@ -125,6 +125,13 @@ class Method extends Block {
         }
     }
 
+    /**
+     * Get a String line of the parameters and analyz them into a Array list of Variables.
+     * @param stringParameters The String line that represent the parameters data.
+     * @param lineNumber The number of the line in the full s-java file.
+     * @return Array list of the variables that was given.
+     * @throws IllegalException
+     */
     private ArrayList<Variable> createParameters(String stringParameters, int lineNumber) throws IllegalException {
         Variable variable;
         ArrayList<Variable> varParameters = new ArrayList<>();
@@ -149,6 +156,9 @@ class Method extends Block {
         }
     }
 
+    /**
+     * @return the name of the method.
+     */
     String getName() {
         return NAME;
     }

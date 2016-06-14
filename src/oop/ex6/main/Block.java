@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by David and Roi.
+ * A class that represent a scope(Block) in the s-java file.
  */
 abstract class Block {
 

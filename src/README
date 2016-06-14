@@ -8,7 +8,7 @@ roi1255
 
 . . .
 	-	Block.java
-	       An abstract class that represent a scope(Block) in the s-java file.
+	       A class that represent a scope(Block) in the s-java file.
 	-	ConditionBlock.java
 	       A class that extends Block  and represent a block with a condition value, such as while/ if.
 	-	IllegalException.java
