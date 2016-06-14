@@ -1,7 +1,5 @@
-omer000.sjava
-1
 test001.sjava
-1
+0
 test002.sjava
 0
 test003.sjava
@@ -333,7 +331,7 @@ test325.sjava
 test326.sjava
 0
 test327.sjava
-1
+0
 test328.sjava
 1
 test401.sjava

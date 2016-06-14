@@ -14,27 +14,28 @@ import java.util.regex.Pattern;
 class Parser {
 
     // Useful value's.
-    private final static String CHAR = "char", STRING = "String", FINAL = "final";
+    private final static String STRING = "String", FINAL = "final";
     private final static String START_LOOP = "while", START_CONDITION = "if", START_FUNCTION = "void";
     private final static String RETURN = "return", END_FILE_NAME = ".sjava", START_COMMENT = "//";
 
     // Errors string's.
-    private final static String BAD_FORMAT_ERROR = "bad format line";
+    private final static String BAD_FORMAT_ERROR = "Bad format line";
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
     private final static String ALREADY_TOKEN_ERROR_MESSAGE = "Already taken variable";
-    private final static String COMMENT_ERROR = "Un legal comment format";
     private final static String RETURN_ERROR = "Un legal return format";
-    private final static String BAD_METHOD_FORMAT_ERROR = "bad method format";
+    private final static String BAD_METHOD_FORMAT_ERROR = "Bad method format";
     private final static String UNSUPPORTED_COMMAND = "Unsupported command";
     private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
     private final static String INITIALIZE_ERROR_MESSAGE = "Final must initialize";
-    private final static String ILLEGAL_METHOD_CALL_ERROR = "UNKNOWN METHOD CALL";
+    private final static String ILLEGAL_METHOD_CALL_ERROR = "Unknown method call";
+    private final static String CONDITION_ERROR = "Cant start if condition out of a method.";
+    private final static String LOOP_ERROR = "Cant start if loop out of a method.";
+    private final static String FILE_TYPE_ERROR = "Un support type of file";
+    private final static String DUPLICATION_VARIABLES_NAMES = "Two variables cannot have the same name.";
 
 
     // Pattern's string's.
     private static final String FIRST_WORD = "\\S+";
-    //    private static final String FIRST_BRACKETS_WORD = "['\"]{1}\\S+['\"]{1}";
-    private static final String FIRST_NAME = "\\b\\w+\\b";
     private static final String METHOD_NAME = "\\S+\\s*\\(";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
@@ -53,7 +54,6 @@ class Parser {
     private static Pattern singleName = Pattern.compile(SINGLE_NAME);
     private static Pattern firstWordPattern = Pattern.compile(FIRST_WORD);
     private static Pattern methodName = Pattern.compile(METHOD_NAME);
-    private static Pattern firstNamePattern = Pattern.compile(FIRST_NAME);
     private static Pattern legalEnd = Pattern.compile(LEGAL_END);
     private static Pattern endBlockPattern = Pattern.compile(END_BLOCK);
     private static Pattern startBlockPattern = Pattern.compile(START_BLOCK);
@@ -124,24 +124,13 @@ class Parser {
         }
     }
 
-    private static String extractFirstName(String string, int numberLine) throws IllegalException {
-        Matcher matcher = firstNamePattern.matcher(string);
-        if (string.equals(""))
-            return string;
-        if (matcher.find()) {
-            return string.substring(matcher.start(), matcher.end());
-        }
-        throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
-    }
-
     private static String extractMethodName(String string, int numberLine) throws IllegalException {
         Matcher matcher = methodName.matcher(string);
         if (string.equals(""))
             throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         if (matcher.find()) {
             string = string.substring(matcher.start(), matcher.end() - 1);
-            String[] parts = string.split("\\s+");
-            return parts[0];
+            return extractFirstWord(string, numberLine);
         }
         throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
     }
@@ -154,7 +143,6 @@ class Parser {
      * @throws IllegalException
      */
     private void updateVariables(int depth, String line, int lineNumber, String firstWord) throws IllegalException {
-        HashMap<String, Variable> scopeVariables = variables.get(depth);
         String varType;
         boolean isFinal = false;
         if (firstWord.equals(FINAL)) {
@@ -182,14 +170,18 @@ class Parser {
                     }
                     containInSameScope(varName, depth, lineNumber);
                     Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
-                    scopeVariables.put(newVar.getName(), newVar);
+                    if (!addVariable(newVar, depth)) {
+                        throw new IllegalException(DUPLICATION_VARIABLES_NAMES, lineNumber);
+                    }
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
             } else { //var assignment with value .
                 String varName = extractFirstWord(part, lineNumber);
                 Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
-                scopeVariables.put(newVar.getName(), newVar);
+                if (!addVariable(newVar, depth)) {
+                    throw new IllegalException(DUPLICATION_VARIABLES_NAMES, lineNumber);
+                }
                 part = part.substring(part.indexOf(varName) + varName.length());
                 assignmentValue(part, newVar, lineNumber);
             }
@@ -248,7 +240,7 @@ class Parser {
      */
     void analyzerFile(String path) throws IOException, IllegalException {
         if (!isLegalFile(path)) {
-            throw new IOException("Un support type of file");
+            throw new IOException(FILE_TYPE_ERROR);
         }
         File sJavaFile = new File(path);
         Scanner input = new Scanner(sJavaFile);
@@ -265,9 +257,9 @@ class Parser {
                     word = row.substring(firstWord.start(), firstWord.end());
                     switch (word) {
                         case START_CONDITION:
-                            throw new IllegalException("Cant start if condition out of a method.", lineNumber);
+                            throw new IllegalException(CONDITION_ERROR, lineNumber);
                         case START_LOOP:
-                            throw new IllegalException("Cant start loop out of a method.", lineNumber);
+                            throw new IllegalException(LOOP_ERROR, lineNumber);
                         case START_FUNCTION:
                             subLine = row.substring(firstWord.end());
                             rows = new ArrayList<>();
@@ -297,6 +289,7 @@ class Parser {
             }
             lineNumber++;
         }
+        input.close();
     }
 
     /**
@@ -474,6 +467,14 @@ class Parser {
         } else {
             throw new IllegalException(BAD_METHOD_FORMAT_ERROR, method.getOriginLine());
         }
+    }
 
+    static boolean addVariable(Variable variable, int depth) {
+        if (variables.get(depth).containsKey(variable.getName())) {
+            return false;
+        } else {
+            variables.get(depth).put(variable.getName(), variable);
+            return true;
+        }
     }
 }

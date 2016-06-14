@@ -85,8 +85,13 @@ class Method extends Block {
                 String newPart = part.substring(start, end);
                 String[] typeAndName = newPart.split("\\s+");
                 Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], getOriginLine(), isFinal);
-                Parser.variables.get(getDepth()).put(newVar.getName(), newVar);
-                this.parameters.add(newVar);
+                if (!Parser.addVariable(newVar, getDepth())) {
+                    throw new IllegalException("Two parameters has to have two different names.",
+                            getOriginLine());
+                }
+//                Parser.addVariable(newVar, getDepth());
+//                Parser.variables.get(getDepth()).put(newVar.getName(), newVar);
+//                this.parameters.add(newVar);
             } else
                 throw new IllegalException(NAME_ERROR, getOriginLine());
         }
