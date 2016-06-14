@@ -492,14 +492,18 @@ class Parser {
         }
     }
 
-    private ArrayList<Variable> extractParameters(String row, int lineNumber) throws IllegalException {
+    /*
+     * @param row The row of call to the method.
+     * @param lineNumber  The number of the current line in the sjava file.
+     * @return The sub-string that hold the parameters.
+     * @throws IllegalException There isn't brackets in the row.
+     */
+    private String extractParameters(String row, int lineNumber) throws IllegalException {
         Matcher matcher = extractParameters.matcher(row);
-        ArrayList<Variable>
         if (matcher.find()) {
-            return ro
+            return row.substring(matcher.start() + 1, matcher.end() - 1);
         } else {
             throw new IllegalException("", lineNumber);
         }
-        return null;
     }
 }
