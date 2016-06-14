@@ -17,29 +17,32 @@ class Parser {
     private final static String STRING = "String", FINAL = "final", EMPTY_STRING = "", EQUAL = "=";
     private final static String START_LOOP = "while", START_CONDITION = "if", START_FUNCTION = "void";
     private final static String RETURN = "return", END_FILE_NAME = ".sjava", START_COMMENT = "//";
-    private final static String COMMA = ",";
-    private final static char START_BRACKETS = '(', END_BRACKETS = ')';
-    private static final int GLOBAL_DEPTH = 0;
+    private final static String COMMA = ",", GOOD_BRACKET = " ( ", END_BRACES = "}";
+    private final static char START_BRACKETS = '(', END_BRACKETS = ')', SEMICOLON = ';';
+    private static final int GLOBAL_DEPTH = 0, LENGTH_EQUALITY = 2;
 
     // Errors string's.
-    private final static String BAD_FORMAT_ERROR = "Bad format line";
-    private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
-    private final static String ALREADY_TOKEN_ERROR_MESSAGE = "Already taken variable";
-    private final static String RETURN_ERROR = "Un legal return format";
-    private final static String BAD_METHOD_FORMAT_ERROR = "Bad method format";
-    private final static String UNSUPPORTED_COMMAND = "Unsupported command";
-    private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
-    private final static String INITIALIZE_ERROR_MESSAGE = "Final must initialize";
-    private final static String ILLEGAL_METHOD_CALL_ERROR = "Unknown method call";
+    private final static String BAD_FORMAT_ERROR = "Bad format line.";
+    private final static String TYPE_ERROR_MESSAGE = "Illegal type of value.";
+    private final static String ALREADY_TOKEN_ERROR_MESSAGE = "Already taken variable.";
+    private final static String RETURN_ERROR = "Un legal return format.";
+    private final static String BAD_METHOD_FORMAT_ERROR = "Bad method format.";
+    private final static String UNSUPPORTED_COMMAND = "Unsupported command.";
+    private final static String NAME_ERROR_MESSAGE = "Illegal name variable.";
+    private final static String INITIALIZE_ERROR_MESSAGE = "Final must initialize.";
+    private final static String ILLEGAL_METHOD_CALL_ERROR = "Unknown method call.";
     private final static String CONDITION_ERROR = "Cant start if condition out of a method.";
     private final static String LOOP_ERROR = "Cant start if loop out of a method.";
-    private final static String FILE_TYPE_ERROR = "Un support type of file";
+    private final static String FILE_TYPE_ERROR = "Un support type of file.";
     private final static String DUPLICATION_VARIABLES_NAMES = "Two variables cannot have the same name.";
-    private final static String METHOD_DECLARATION = "Illegal method declaration";
+    private final static String METHOD_DECLARATION = "Illegal method declaration.";
+    private final static String CLOSE_METHOD_ERROR = "Method never closed the Brackets.";
+    private final static String INNER_METHOD_ERROR = "Can't create method in another method.";
 
 
     // Pattern's string's.
     private static final String SPACES = "\\s+";
+    private static final String BAD_BRACKET = "\\s*\\(\\s*";
     private static final String FIRST_WORD = "\\S+";
     private static final String METHOD_NAME = "\\S+[\\s\\S]*\\(";
     private static final String LEGAL_END = ";\\s*";
@@ -190,7 +193,6 @@ class Parser {
                     if (!Variable.isLegalVariableName(varName)) {
                         throw new IllegalException(NAME_ERROR_MESSAGE, lineNumber);
                     }
-                    containInSameScope(varName, depth, lineNumber);
                     Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
                     if (!addVariable(newVar, depth)) {
                         throw new IllegalException(DUPLICATION_VARIABLES_NAMES, lineNumber);
@@ -221,7 +223,7 @@ class Parser {
     private void assignmentValue(String assignment, Variable variable, int lineNumber) throws IllegalException {
         String[] parameters = assignment.split(EQUAL);
         String varValue;
-        if (parameters.length == 2) {
+        if (parameters.length == LENGTH_EQUALITY) {
             Matcher matcher = spaceRowPattern.matcher(parameters[0]);
             if (matcher.matches()) {
                 switch (variable.getType()) {
@@ -292,8 +294,8 @@ class Parser {
                                 throw new IllegalException("", lineNumber);
                             }
                             Matcher startBlockMatcher = startBlockPattern.matcher(row);
-                            if (!startBlockMatcher.find(row.indexOf('(') + 1)) {
-                                throw new IllegalException("", lineNumber);
+                            if (!startBlockMatcher.find(row.indexOf(START_BRACKETS) + 1)) {
+                                throw new IllegalException(EMPTY_STRING, lineNumber);
                             }
                             break;
                         default:
@@ -315,7 +317,7 @@ class Parser {
         }
         input.close();
         if (rows != null) {
-            throw new IllegalException("Method never closed the Brackets.", firstMethodLine);
+            throw new IllegalException(CLOSE_METHOD_ERROR, firstMethodLine);
         }
     }
 
@@ -342,15 +344,15 @@ class Parser {
      */
     private void analyzeRow(String row, int depth, int lineNumber, String firstWord) throws IllegalException {
         if (firstWord == null) {
-            firstWord = "";
+            firstWord = EMPTY_STRING;
         }
-        row = row.replaceAll("\\s*\\(\\s*", " ( ");
+        row = row.replaceAll(BAD_BRACKET, GOOD_BRACKET);
         Matcher endRow = legalEnd.matcher(row);
         Matcher methodCallMatcher = methodCallPattern.matcher(row);
         if (firstWord.startsWith(START_COMMENT)) {
             return;
         } else if (endRow.find()) {
-            if (row.indexOf(";") != row.lastIndexOf(";")) {
+            if (row.indexOf(SEMICOLON) != row.lastIndexOf(SEMICOLON)) {
                 throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
             } else {
                 row = row.substring(0, endRow.start());
@@ -388,13 +390,15 @@ class Parser {
 
     /*
      * Parse a single block.
+     * @param block The block to parse.
+     * @throws IllegalException
      */
     private void parseBlock(Block block) throws IllegalException {
         int lineNumber = block.getOriginLine() + 1, counterBlock = 0, firstNewBlockLine = lineNumber;
         ArrayList<String> rows = null;
-        String firstWord, condition = "";
+        String firstWord, condition = EMPTY_ROW;
         for (String row : block.getRows()) {
-            row = row.replaceAll("\\s*\\(\\s*", " ( ");
+            row = row.replaceAll(BAD_BRACKET, GOOD_BRACKET);
             Matcher emptyRowMatcher = emptyRowPattern.matcher(row);
             Matcher firstWordMatcher = firstWordPattern.matcher(row);
             if (firstWordMatcher.find()) {
@@ -405,12 +409,12 @@ class Parser {
                 throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
             }
             if (rows == null) {
-                if (row.contains("}")) {
+                if (row.contains(END_BRACES)) {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
                 switch (firstWord) {
                     case START_FUNCTION:
-                        throw new IllegalException("Can't create method in another method.", lineNumber);
+                        throw new IllegalException(INNER_METHOD_ERROR, lineNumber);
                     case START_CONDITION:
                     case START_LOOP:
                         rows = new ArrayList<>();
@@ -436,6 +440,8 @@ class Parser {
     }
 
     /*
+     * Add row that belong to a block to the block.
+     *
      * @param rows The array-list of the rows of the new block.
      * @param row The current line.
      * @param counterBlocks Counter of depth of the inner blocks.
@@ -490,20 +496,10 @@ class Parser {
     }
 
     /*
-     * Check if a variable is contains in the same scope
-     * @param name the name of the variable
-     * @param depth the depth of the scope.
-     * @param lineNumber The number of the line in the full s-java file.
-     * @throws IllegalException
-     */
-    private void containInSameScope(String name, int depth, int lineNumber) throws IllegalException {
-        if (variables.get(depth).containsKey(name)) {
-            throw new IllegalException(ALREADY_TOKEN_ERROR_MESSAGE, lineNumber);
-        }
-    }
-
-    /*
      * Parse a single method.
+     *
+     * @param method The method to parse.
+     * @throws IllegalException
      */
     private void parseMethod(Method method) throws IllegalException {
         int lastRowIndex = method.getRows().size() - 1;
@@ -544,7 +540,7 @@ class Parser {
         if (matcher.find()) {
             return row.substring(matcher.start() + 1, matcher.end() - 1);
         } else {
-            throw new IllegalException("", lineNumber);
+            throw new IllegalException(EMPTY_STRING, lineNumber);
         }
     }
 }
