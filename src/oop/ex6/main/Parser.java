@@ -128,6 +128,7 @@ class Parser {
 
     /*
      * Giving a String line the function will extract the method name in it.
+     *
      * @param line The line of the method.
      * @param numberLine  the number line of the string.
      * @return The name of the method.
