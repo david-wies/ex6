@@ -9,13 +9,13 @@ import java.util.regex.Pattern;
  */
 class Method extends Block {
     //Useful Values
-    private static final String FINAL = "final", EMPTY_STRING="", COMMA=",",SINGEL_SPACE = " ";
+    private static final String FINAL = "final", EMPTY_STRING = "", COMMA = ",", SINGEL_SPACE = " ";
 
     // Errors string's.
     private final static String NAME_ERROR = "Illegal method NAME";
     private final static String PARAMETERS_ERROR = "Unmatched parameter's";
     private final static String BAD_FORMAT_ERROR = "Bad format line";
-    private final static String SAME_NAME_PARAMETERS ="Two parameters has to have two different names.";
+    private final static String SAME_NAME_PARAMETERS = "Two parameters has to have two different names.";
 
     // Pattern's string.
     private final static String TYPES_AND_NAMES_PATTERN = "\\s*(int|double|String|boolean|char)\\s+\\S+\\s*";
@@ -23,7 +23,7 @@ class Method extends Block {
     private final static String NAME_PATTERN = "[a-zA-Z]+\\w*";
     private final static String REMOVE_EDGES_OF_WHITE_SPACES = "\\S(.*\\S)?";
     private final static String SPACES = "\\s+";
-    private final static String COMMA_BETWEEN_SPACES ="\\s*,\\s*";
+    private final static String COMMA_BETWEEN_SPACES = "\\s*,\\s*";
 
     // Pattern's
     private static Pattern typeAndName = Pattern.compile(TYPES_AND_NAMES_PATTERN);
@@ -34,7 +34,6 @@ class Method extends Block {
     // Field's of Method.
     private ArrayList<Variable> parameters;
     private final String NAME;
-
 
 
     /**
@@ -130,9 +129,10 @@ class Method extends Block {
     }
 
     /**
-     * Get a String line of the parameters and analyz them into a Array list of Variables.
+     * Get a String line of the parameters and analyze them into a Array list of Variables.
+     *
      * @param stringParameters The String line that represent the parameters data.
-     * @param lineNumber The number of the line in the full s-java file.
+     * @param lineNumber       The number of the line in the full s-java file.
      * @return Array list of the variables that was given.
      * @throws IllegalException
      */

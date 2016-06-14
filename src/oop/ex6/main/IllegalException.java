@@ -5,7 +5,7 @@ package oop.ex6.main;
  */
 class IllegalException extends Exception {
 
-    private final static String ERROR_MESSAGE = "error in line:";
+    private final static String ERROR_MESSAGE = "error in line:", SPACE = " ";
 
     /**
      * The constructor.
@@ -14,6 +14,6 @@ class IllegalException extends Exception {
      * @param line    The number of the line that the error happened.
      */
     IllegalException(String message, int line) {
-        super(ERROR_MESSAGE + " " + line + ", \t" + message);
+        super(ERROR_MESSAGE + SPACE + line + ", " + message);
     }
 }
