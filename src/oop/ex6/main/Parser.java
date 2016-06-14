@@ -308,6 +308,9 @@ class Parser {
             lineNumber++;
         }
         input.close();
+        if (rows != null) {
+            throw new IllegalException("Method never closed the Brackets.", firstMethodLine);
+        }
     }
 
     /**
@@ -429,8 +432,8 @@ class Parser {
     /*
      * @param rows The array-list of the rows of the new block.
      * @param row The current line.
-     * @param counterBlocks Counter of depth of the inner blocks. 
-     * @return The update counterBlocks after the current row. 
+     * @param counterBlocks Counter of depth of the inner blocks.
+     * @return The update counterBlocks after the current row.
      */
     private int blockRunner(ArrayList<String> rows, String row, int counterBlocks) {
         Matcher startBlock, endBlock;
@@ -492,6 +495,7 @@ class Parser {
             throw new IllegalException(ALREADY_TOKEN_ERROR_MESSAGE, lineNumber);
         }
     }
+
     /*
      * Parse a single method.
      */
@@ -509,8 +513,9 @@ class Parser {
 
     /**
      * This function get a variable can check add it to the right depth place if possible.
+     *
      * @param variable The variable we want to add in the giving depth
-     * @param depth The depth of the block.
+     * @param depth    The depth of the block.
      * @return true if no variable contains in the same depth, false otherwise.
      */
     static boolean addVariable(Variable variable, int depth) {

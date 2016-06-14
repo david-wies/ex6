@@ -461,11 +461,11 @@ test473.sjava
 test474.sjava
 1
 test475.sjava
-0
+1
 test476.sjava
-0
+1
 test477.sjava
-0
+1
 test501.sjava
 1
 test502.sjava
