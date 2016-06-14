@@ -8,15 +8,21 @@ roi1255
 
 . . .
 	-	Block.java
+	       An abstract class that represent a scope(Block) in the s-java file.
 	-	ConditionBlock.java
-	-	DavidTester.java
+	       A class that extends Block  and represent a block with a condition value, such as while/ if.
 	-	IllegalException.java
+	       A class that represent a generic type 1 error that can be occur in the compilation.
 	-	Method.java
+	       A class that extends Block and represent a method block.
 	-	Parser.java
+	       A class that parse the s-java file.
 	-	Reserved.java
-	-	roiTests.java
+           A class that represent the reserved keyword in s-java file.
 	-	Sjavac.java
+	       A class that execute ex6 program.
 	-	Variable.java
+	       A class that represent a variable in s-java.
 
 =====================
 ===    Design    ===
@@ -26,9 +32,43 @@ roi1255
 =====================================
 ===    Implementation details    ===
 =====================================
-
+We've have run into a problem on how to save the method and variable in which we could know to differentiate
+between each Block variables and methods.
+and we decided that a proper way will be to save
 
 ===================================
 ===    Answers to questions    ===
 ===================================
+6.1
+  Error handling :
+    We've created a class that represent type No.1 error that can be occur in s-java file.
+    The error is generic and get a String that will be print as an informative information for the user,
+    and the line number that the error has been made.
+6.2.1
+  How would we'll modify our code to add new types of variables ?
+    For example if we'll want in the future to add support for float variables, we just need to add
+    private method isFloat() and refer the float situation (else if - float ) in the main setValue() at the
+    variable class.
 
+
+6.2.2
+  Importing the methods and global variables of one s-Java file to another :
+    We'll create a class that represent an s-java file that has an attribute of the file's
+    methods and variables, and we'll insert them into HashMap<fileName, File>.
+    That way, when some file will command to import another file, we'll firstly search in the HashMap to see
+    if the name of that file is contains, and if so, we'll add to the importing file the methods and variables
+    of the the new file from depth 0 and above.
+
+6.2.2
+  Unary and binary operators :
+    We'll create an abstract class name Operator, and UnaryOperator, BinaryOperator classes
+    that will extends Operator.
+    In each class we'll add function that will recognize the sign of the operator and each sign will have
+    a private function the will represent it's action.
+
+6.3
+  Two of the main regular expressions :
+    firstWordPattern - is a regular expression the help to extract the first word in a line.
+                       use to analyze row types.
+    namePatter - a regular expression that used in both Method and Variable class, and check if a string can
+                 be a valid method/variable name.
