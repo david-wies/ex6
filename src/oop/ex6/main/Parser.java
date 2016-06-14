@@ -139,7 +139,9 @@ class Parser {
         if (string.equals(""))
             throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         if (matcher.find()) {
-            return string.substring(matcher.start(), matcher.end() - 1);
+            string = string.substring(matcher.start(), matcher.end() - 1);
+            String[] parts = string.split("\\s+");
+            return parts[0];
         }
         throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
     }
@@ -271,7 +273,7 @@ class Parser {
                             rows = new ArrayList<>();
                             firstMethodLine = lineNumber;
                             parameters = extractInnerBrackets(subLine, lineNumber);
-                            methodName = extractFirstName(subLine, lineNumber);
+                            methodName = extractMethodName(subLine, lineNumber);
                             Method.verifyLegalityMethodName(methodName, lineNumber);
                             Matcher startBlockMatcher = startBlockPattern.matcher(row);
                             if (!startBlockMatcher.find(row.indexOf('(') + 1)) {

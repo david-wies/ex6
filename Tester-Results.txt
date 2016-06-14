@@ -597,7 +597,8 @@ error in line: 2, 	Illegal name variable
 1
 
 Tester test403.sjava:
-0
+error in line: 1, 	illegal method NAME
+1
 
 Tester test404.sjava:
 0
