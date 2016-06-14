@@ -14,9 +14,12 @@ import java.util.regex.Pattern;
 class Parser {
 
     // Useful value's.
-    private final static String STRING = "String", FINAL = "final";
+    private final static String STRING = "String", FINAL = "final", EMPTY_STRING = "", EQUAL = "=";
     private final static String START_LOOP = "while", START_CONDITION = "if", START_FUNCTION = "void";
     private final static String RETURN = "return", END_FILE_NAME = ".sjava", START_COMMENT = "//";
+    private final static String COMMA = ",";
+    private final static char START_BRACKETS = '(', END_BRACKETS = ')';
+    private static final int GLOBAL_DEPTH = 0;
 
     // Errors string's.
     private final static String BAD_FORMAT_ERROR = "Bad format line";
@@ -32,15 +35,17 @@ class Parser {
     private final static String LOOP_ERROR = "Cant start if loop out of a method.";
     private final static String FILE_TYPE_ERROR = "Un support type of file";
     private final static String DUPLICATION_VARIABLES_NAMES = "Two variables cannot have the same name.";
+    private final static String METHOD_DECLARATION = "Illegal method declaration";
 
 
     // Pattern's string's.
+    private static final String SPACES = "\\s+";
     private static final String FIRST_WORD = "\\S+";
     private static final String METHOD_NAME = "\\S+[\\s\\S]*\\(";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
-    private static final String START_BLOCK = "\\s*\\S+\\s*\\{\\s*"; // \\S+ and not \\S* dose not work on while/if
-    private static final String START_BLOCK_NEW = ".+\\{\\s*"; //  working on while/if ( need to see if to use it in the other places)
+    private static final String START_BLOCK = "\\s*\\S+\\s*\\{\\s*";
+    private static final String START_BLOCK_NEW = ".+\\{\\s*";
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
     private static final String LEGAL_RETURN = "\\s*\\breturn\\b\\s*";
@@ -71,7 +76,6 @@ class Parser {
     // Field's of Parser.
     private HashMap<String, Method> methods;
     static ArrayList<HashMap<String, Variable>> variables;
-    private static final int GLOBAL_DEPTH = 0;
 
     /**
      * The constructor.
@@ -97,11 +101,11 @@ class Parser {
      * @throws IllegalException
      */
     private static String extractInnerBrackets(String line, int numberLine) throws IllegalException {
-        int startIndex = line.indexOf('('), endIndex = line.indexOf(')');
+        int startIndex = line.indexOf(START_BRACKETS), endIndex = line.indexOf(END_BRACKETS);
         if (startIndex < endIndex) {
-            return line.substring(startIndex + 1, endIndex); // was returning the parameters with " ( "
+            return line.substring(startIndex + 1, endIndex);
         } else {
-            throw new IllegalException("Un legal method declaration", numberLine);
+            throw new IllegalException(METHOD_DECLARATION, numberLine);
         }
     }
 
@@ -136,11 +140,11 @@ class Parser {
      */
     private static String extractMethodName(String line, int numberLine) throws IllegalException {
         Matcher matcher = methodName.matcher(line);
-        if (line.equals(""))
+        if (line.equals(EMPTY_STRING))
             throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         if (matcher.find()) {
             line = line.substring(matcher.start(), matcher.end() - 1);
-            String[] parts = line.split("\\s+");
+            String[] parts = line.split(SPACES);
             if (parts.length > 1) {
                 throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
             } else {
@@ -154,8 +158,10 @@ class Parser {
     /*
      * get line of variable initialing and update the variable array.
      *
+     * @param depth      The depth of the block that the variables bolong to.
      * @param line       The line of the declare of the variable's.
-     * @param lineNumber the number line of the string.
+     * @param lineNumber The number line of the string.
+     * @param firstWord  The first word in the row.
      * @throws IllegalException
      */
     private void updateVariables(int depth, String line, int lineNumber, String firstWord) throws IllegalException {
@@ -172,9 +178,9 @@ class Parser {
             varType = firstWord;
         }
         line = line.substring(line.indexOf(varType) + varType.length());
-        String[] parts = line.split(",");
+        String[] parts = line.split(COMMA);
         for (String part : parts) {
-            if (!part.contains("=")) { //var assignment without value.
+            if (!part.contains(EQUAL)) { //var assignment without value.
                 if (isFinal) {
                     throw new IllegalException(INITIALIZE_ERROR_MESSAGE, lineNumber);
                 }
@@ -192,15 +198,14 @@ class Parser {
                 } else {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 }
-            } else { //var assignment with value .
-                String[] equal = part.split("=");
+            } else { //var assignment with value.
+                String[] equal = part.split(EQUAL);
                 String varName = extractFirstWord(equal[0], lineNumber);
                 Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
                 if (!addVariable(newVar, depth)) {
                     throw new IllegalException(DUPLICATION_VARIABLES_NAMES, lineNumber);
                 }
-//                part = part.substring(part.indexOf(varName) + varName.length());
-                assignmentValue("=" + equal[1], newVar, lineNumber);
+                assignmentValue(EQUAL + equal[1], newVar, lineNumber);
             }
         }
     }
@@ -214,7 +219,7 @@ class Parser {
      * @throws IllegalException THe line format was illegal.
      */
     private void assignmentValue(String assignment, Variable variable, int lineNumber) throws IllegalException {
-        String[] parameters = assignment.split("=");
+        String[] parameters = assignment.split(EQUAL);
         String varValue;
         if (parameters.length == 2) {
             Matcher matcher = spaceRowPattern.matcher(parameters[0]);
@@ -264,7 +269,7 @@ class Parser {
         String row;
         int lineNumber = 1, counterBlocks = 1, firstMethodLine = 1;
         ArrayList<String> rows = null;
-        String word, parameters = "", methodName = "", subLine;
+        String word, parameters = EMPTY_STRING, methodName = EMPTY_STRING, subLine;
         Matcher firstWord;
         while (input.hasNext()) {
             row = input.nextLine();
