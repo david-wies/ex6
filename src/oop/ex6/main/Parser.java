@@ -351,7 +351,9 @@ class Parser {
                 row = row.substring(row.indexOf(firstWord) + firstWord.length());
                 assignmentValue(row, variable, lineNumber);
             } else if (method != null) {
-                method.calledThisMethod(, lineNumber);
+                method.calledThisMethod(extractParameters(row, lineNumber), lineNumber);
+            } else {
+                throw new IllegalException(UNSUPPORTED_COMMAND, lineNumber);
             }
         } else if (methodCallMatcher.find()) { // check if a known method has been called.
             String methodName = row.substring(methodCallMatcher.start(), methodCallMatcher.end() - 1);
