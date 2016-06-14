@@ -341,7 +341,7 @@ class Parser {
         row = row.replaceAll("\\s*\\(\\s*", " ( ");
         Matcher endRow = legalEnd.matcher(row);
         Matcher methodCallMatcher = methodCallPattern.matcher(row);
-        if (firstWord.equals(START_COMMENT)) {
+        if (firstWord.startsWith(START_COMMENT)) {
             return;
         } else if (endRow.find()) {
             if (row.indexOf(";") != row.lastIndexOf(";")) {
