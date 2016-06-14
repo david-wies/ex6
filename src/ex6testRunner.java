@@ -18,18 +18,18 @@ public class ex6testRunner {
     private static final int MIN_ARG_LEN = 1;
     private static final int FILE_LOCATION = 0;
     private static final String NEXT_LINE = "\n";
-    private static final String TESTPATH = ".\\tests\\";
+    private static final String TEST_PATH = ".\\tests\\";
     private static final Pattern p = Pattern.compile("test([0-9]+).sjava\\s+([0-2])");
 
     public static void main(String[] args) {
 //        runAndCheck();
 //        System.out.println(findTest("001"));
-        runAndCheck();
-//        runSpecificFileWPrint("test114.sjava");
+//        runAndCheck();
+        runSpecificFileWPrint("test412.sjava");
     }
 
     private static void runAndCheck() {
-        File folder = new File(TESTPATH);
+        File folder = new File(TEST_PATH);
 //        Scope scope;
         String[] m = new String[1];
         try {
@@ -47,7 +47,7 @@ public class ex6testRunner {
                     System.out.println("error in test: " + mat.group(1));
                     System.out.println("received error code: " + mat.group(2));
                     System.out.println("wanted error code: " + findTest(mat.group(1)) + "\n");
-                    printTest(TESTPATH + "test" + mat.group(1) + ".sjava");
+                    printTest(TEST_PATH + "test" + mat.group(1) + ".sjava");
                     System.out.println("\n");
                 }
             }
@@ -73,7 +73,7 @@ public class ex6testRunner {
     }
 
     public static void runAll() {
-        File folder = new File(TESTPATH);
+        File folder = new File(TEST_PATH);
 //        Scope scope;
         String[] m = new String[1];
         for (File test : folder.listFiles()) {
@@ -83,7 +83,7 @@ public class ex6testRunner {
 
     private static void runSpecificFile(String name) {
         System.out.println(name);
-        String pre = TESTPATH;
+        String pre = TEST_PATH;
         String[] m = new String[1];
         m[0] = pre + name;
         Sjavac.main(m);
@@ -91,7 +91,7 @@ public class ex6testRunner {
 
     public static void runSpecificFileWPrint(String name) {
         System.out.println(name);
-        String pre = TESTPATH;
+        String pre = TEST_PATH;
         String[] m = new String[1];
         m[0] = pre + name;
         printTest(pre + name);
