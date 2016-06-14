@@ -40,7 +40,7 @@ class Parser {
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
     private static final String START_BLOCK = "\\s*\\S+\\s*\\{\\s*"; // \\S+ and not \\S* dose not work on while/if
-    private static final String START_BLOCK_NEW = ".+\\{"; //  working on while/if ( need to see if to use it in the other places)
+    private static final String START_BLOCK_NEW = ".+\\{\\s*"; //  working on while/if ( need to see if to use it in the other places)
     private static final String SINGLE_NAME = "\\s*\\S+\\s*";
     private static final String IS_STRING = "\".*\"";
     private static final String LEGAL_RETURN = "\\s*\\breturn\\b\\s*";
@@ -244,7 +244,7 @@ class Parser {
      * Go other all of the s-java file and do the first analysis.
      *
      * @param path The path tp the s-java file.
-     * @throws IOException      The file does'nt exist.
+     * @throws IOException      The file does'nt exist or the file isn't sjava file.
      * @throws IllegalException The file contain illegal command.
      */
     void analyzerFile(String path) throws IOException, IllegalException {
@@ -373,6 +373,7 @@ class Parser {
         ArrayList<String> rows = null;
         String firstWord, condition = "";
         for (String row : block.getRows()) {
+            row = row.replaceAll("\\s*\\(\\s*", " ( ");
             Matcher emptyRowMatcher = emptyRowPattern.matcher(row);
             Matcher firstWordMatcher = firstWordPattern.matcher(row);
             if (firstWordMatcher.find()) {
