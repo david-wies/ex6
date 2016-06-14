@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * Created by David and Roi.
  */
-class Block {
+abstract class Block {
 
     private final int ORIGIN_LINE, DEPTH;
     private ArrayList<String> rows;
