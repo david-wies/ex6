@@ -328,6 +328,7 @@ class Parser {
         if (firstWord == null) {
             firstWord = "";
         }
+        row = row.replaceAll("\\s*\\(\\s*", " ( ");
         Matcher endRow = legalEnd.matcher(row);
         Matcher methodCallMatcher = methodCallPattern.matcher(row);
         if (firstWord.equals(START_COMMENT)) {

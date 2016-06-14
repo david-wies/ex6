@@ -126,6 +126,7 @@ class Method extends Block {
     }
 
     private ArrayList<Variable> createParameters(String stringParameters, int lineNumber) throws IllegalException {
+        Variable variable;
         ArrayList<Variable> varParameters = new ArrayList<>();
         Matcher matcher = removeEdges.matcher(stringParameters);
         if (!matcher.find()) {
@@ -134,10 +135,13 @@ class Method extends Block {
             stringParameters = stringParameters.substring(matcher.start(), matcher.end());
             String[] parameters = stringParameters.split("\\s*,\\s*");
             for (String parameter : parameters) {
-                if (parameter.contains(" ")) {
+                variable = Parser.getVariable(parameter);
+                if (variable != null) {
+                    varParameters.add(variable);
+                } else if (parameter.contains(" ")) {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 } else {
-                    Variable variable = Variable.createDefaultVariable(parameter, lineNumber);
+                    variable = Variable.createDefaultVariable(parameter, lineNumber);
                     varParameters.add(variable);
                 }
             }
