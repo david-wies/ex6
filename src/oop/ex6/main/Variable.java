@@ -13,7 +13,9 @@ class Variable {
     private final static String CHAR = "char", STRING = "String";
     private final static String TRUE = "true", FALSE = "false";
     private final static char APOSTROPHE = '\'', CHAR_APOSTROPHES = '"';
-    private final static String STRING_APOSTROPHES = "\"";
+    private final static String STRING_APOSTROPHES = "\"", DEFAULT_STRING = "DefaultString";
+    private final static String DEFAULT_INT = "DefaultInt",DEFAULT_DOUBLE = "DefaultDouble";
+    private final static String DEFAULT_BOOLEAN = "DefaultBoolean",DEFAULT_CHAR = "DefaultChar";
 
     // Errors string's.
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
@@ -297,15 +299,15 @@ class Variable {
     static Variable createDefaultVariable(String value, int numberLine) throws IllegalException {
         Variable variable;
         if (isInt(value)) {
-            variable = createParameter(INT, "DefaultInt", numberLine, true);
+            variable = createParameter(INT, DEFAULT_INT, numberLine, true);
         } else if (isDouble(value)) {
-            variable = createParameter(DOUBLE, "DefaultDouble", numberLine, true);
+            variable = createParameter(DOUBLE, DEFAULT_DOUBLE, numberLine, true);
         } else if (isChar(value)) {
-            variable = createParameter(CHAR, "DefaultChar", numberLine, true);
+            variable = createParameter(CHAR, DEFAULT_CHAR, numberLine, true);
         } else if (isBoolean(value)) {
-            variable = createParameter(BOOLEAN, "DefaultBoolean", numberLine, true);
+            variable = createParameter(BOOLEAN, DEFAULT_BOOLEAN, numberLine, true);
         } else if (isString(value)) {
-            variable = createParameter(STRING, "DefaultString", numberLine, true);
+            variable = createParameter(STRING, DEFAULT_STRING, numberLine, true);
         } else {
             throw new IllegalException(VALUE_ERROR_MESSAGE, numberLine);
         }

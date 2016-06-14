@@ -15,11 +15,11 @@ Tester test004.sjava:
 Tester test005.sjava:
 error in line: 1, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -33,11 +33,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 Tester test006.sjava:
 error in line: 1, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -51,11 +51,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 Tester test007.sjava:
 error in line: 1, 	Try to copy a value from variable that doesn't exist.
 oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from variable that doesn't exist.
-	at oop.ex6.main.Variable.setValue(Variable.java:165)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:167)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -67,11 +67,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from varia
 1
 
 Tester test008.sjava:
-error in line: 1, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -103,11 +103,11 @@ Tester test015.sjava:
 Tester test016.sjava:
 error in line: 1, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -121,11 +121,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 Tester test017.sjava:
 error in line: 1, 	Try to copy a value from variable that doesn't exist.
 oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from variable that doesn't exist.
-	at oop.ex6.main.Variable.setValue(Variable.java:165)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:167)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -137,11 +137,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from varia
 1
 
 Tester test018.sjava:
-error in line: 1, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -162,12 +162,12 @@ Tester test022.sjava:
 0
 
 Tester test023.sjava:
-error in line: 1, 	Illegal type of value
-oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Illegal type of value.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:235)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -179,12 +179,12 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 1
 
 Tester test024.sjava:
-error in line: 1, 	Illegal type of value
-oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Illegal type of value.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:235)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -196,12 +196,12 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 1
 
 Tester test025.sjava:
-error in line: 1, 	Illegal type of value
-oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Illegal type of value.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:235)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -213,11 +213,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 1
 
 Tester test026.sjava:
-error in line: 1, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -235,12 +235,12 @@ Tester test028.sjava:
 0
 
 Tester test029.sjava:
-error in line: 1, 	Illegal type of value
-oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Illegal type of value.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:235)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -272,11 +272,11 @@ Tester test035.sjava:
 Tester test036.sjava:
 error in line: 1, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -290,11 +290,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 Tester test037.sjava:
 error in line: 1, 	Try to copy a value from variable that doesn't exist.
 oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from variable that doesn't exist.
-	at oop.ex6.main.Variable.setValue(Variable.java:165)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:167)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -306,11 +306,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from varia
 1
 
 Tester test038.sjava:
-error in line: 1, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -336,11 +336,11 @@ Tester test043.sjava:
 Tester test044.sjava:
 error in line: 1, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -354,11 +354,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 Tester test045.sjava:
 error in line: 1, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -372,11 +372,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 Tester test046.sjava:
 error in line: 1, 	Try to assignment to unexcited value
 oop.ex6.main.IllegalException: error in line: 1, 	Try to assignment to unexcited value
-	at oop.ex6.main.Variable.setValue(Variable.java:168)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:170)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -390,11 +390,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Try to assignment to unexcited
 Tester test047.sjava:
 error in line: 1, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -408,11 +408,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 Tester test048.sjava:
 error in line: 1, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -424,11 +424,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
 1
 
 Tester test049.sjava:
-error in line: 1, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -448,11 +448,11 @@ Tester test051.sjava:
 Tester test052.sjava:
 error in line: 1, 	Try to copy a value from variable that doesn't exist.
 oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from variable that doesn't exist.
-	at oop.ex6.main.Variable.setValue(Variable.java:165)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:167)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -466,11 +466,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from varia
 Tester test053.sjava:
 error in line: 2, 	Try to copy a value from variable that doesn't exist.
 oop.ex6.main.IllegalException: error in line: 2, 	Try to copy a value from variable that doesn't exist.
-	at oop.ex6.main.Variable.setValue(Variable.java:165)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:167)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -484,11 +484,11 @@ oop.ex6.main.IllegalException: error in line: 2, 	Try to copy a value from varia
 Tester test054.sjava:
 error in line: 2, 	Try to assignment to unexcited value
 oop.ex6.main.IllegalException: error in line: 2, 	Try to assignment to unexcited value
-	at oop.ex6.main.Variable.setValue(Variable.java:168)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.setValue(Variable.java:170)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -500,11 +500,11 @@ oop.ex6.main.IllegalException: error in line: 2, 	Try to assignment to unexcited
 1
 
 Tester test055.sjava:
-error in line: 1, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -521,10 +521,10 @@ Tester test056.sjava:
 Tester test057.sjava:
 error in line: 1, 	Illegal name variable
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable
-	at oop.ex6.main.Variable.<init>(Variable.java:51)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:198)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Variable.<init>(Variable.java:53)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:205)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -542,10 +542,10 @@ Tester test059.sjava:
 0
 
 Tester test061.sjava:
-error in line: 1, 	Un legal method declaration
-oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
-	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:104)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:284)
+error in line: 1, 	Illegal method declaration.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal method declaration.
+	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:110)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:290)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -557,10 +557,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
 1
 
 Tester test062.sjava:
-error in line: 1, 	Un legal method declaration
-oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
-	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:104)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:284)
+error in line: 1, 	Illegal method declaration.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal method declaration.
+	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:110)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:290)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -572,10 +572,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
 1
 
 Tester test063.sjava:
-error in line: 1, 	Un legal method declaration
-oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
-	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:104)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:284)
+error in line: 1, 	Illegal method declaration.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal method declaration.
+	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:110)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:290)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -587,10 +587,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
 1
 
 Tester test064.sjava:
-error in line: 1, 	Un legal method declaration
-oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
-	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:104)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:284)
+error in line: 1, 	Illegal method declaration.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal method declaration.
+	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:110)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:290)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -602,10 +602,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
 1
 
 Tester test065.sjava:
-error in line: 1, 	Un legal method declaration
-oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
-	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:104)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:284)
+error in line: 1, 	Illegal method declaration.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal method declaration.
+	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:110)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:290)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -617,11 +617,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
 1
 
 Tester test066.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:200)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -633,10 +633,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test067.sjava:
-error in line: 1, 	Unsupported command
-oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:372)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Unsupported command.
+oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:378)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -648,10 +648,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command
 1
 
 Tester test101.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -663,10 +663,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test102.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -678,10 +678,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test103.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -693,10 +693,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test104.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -708,10 +708,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test105.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -750,7 +750,7 @@ Tester test114.sjava:
 error in line: 1, 	Two parameters has to have two different names.
 oop.ex6.main.IllegalException: error in line: 1, 	Two parameters has to have two different names.
 	at oop.ex6.main.Method.<init>(Method.java:54)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:302)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:308)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -762,10 +762,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Two parameters has to have two
 1
 
 Tester test115.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -777,10 +777,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test116.sjava:
-error in line: 7, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 7, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 7, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 7, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -792,12 +792,12 @@ oop.ex6.main.IllegalException: error in line: 7, 	Bad format line
 1
 
 Tester test117.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:241)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:247)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -823,13 +823,13 @@ Tester test204.sjava:
 Tester test205.sjava:
 error in line: 2, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -843,13 +843,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 Tester test206.sjava:
 error in line: 2, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -863,13 +863,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 Tester test207.sjava:
 error in line: 2, 	Try to copy a value from variable that doesn't exist.
 oop.ex6.main.IllegalException: error in line: 2, 	Try to copy a value from variable that doesn't exist.
-	at oop.ex6.main.Variable.setValue(Variable.java:165)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:167)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -881,13 +881,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Try to copy a value from varia
 1
 
 Tester test208.sjava:
-error in line: 2, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -919,13 +919,13 @@ Tester test215.sjava:
 Tester test216.sjava:
 error in line: 2, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -939,13 +939,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 Tester test217.sjava:
 error in line: 2, 	Try to copy a value from variable that doesn't exist.
 oop.ex6.main.IllegalException: error in line: 2, 	Try to copy a value from variable that doesn't exist.
-	at oop.ex6.main.Variable.setValue(Variable.java:165)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:167)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -957,13 +957,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Try to copy a value from varia
 1
 
 Tester test218.sjava:
-error in line: 2, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -984,14 +984,14 @@ Tester test222.sjava:
 0
 
 Tester test223.sjava:
-error in line: 2, 	Illegal type of value
-oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Illegal type of value.
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:235)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1003,14 +1003,14 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 1
 
 Tester test224.sjava:
-error in line: 2, 	Illegal type of value
-oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Illegal type of value.
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:235)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1022,14 +1022,14 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 1
 
 Tester test225.sjava:
-error in line: 2, 	Illegal type of value
-oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Illegal type of value.
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:235)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1041,13 +1041,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 1
 
 Tester test226.sjava:
-error in line: 2, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1079,13 +1079,13 @@ Tester test235.sjava:
 Tester test236.sjava:
 error in line: 2, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1097,10 +1097,10 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 1
 
 Tester test237.sjava:
-error in line: 1, 	Bad method format
-oop.ex6.main.IllegalException: error in line: 1, 	Bad method format
+error in line: 1, 	Bad method format.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad method format.
 	at oop.ex6.main.Parser.parseMethod(Parser.java:511)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1112,13 +1112,13 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad method format
 1
 
 Tester test238.sjava:
-error in line: 2, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1144,13 +1144,13 @@ Tester test243.sjava:
 Tester test244.sjava:
 error in line: 2, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1164,13 +1164,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 Tester test245.sjava:
 error in line: 2, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1184,13 +1184,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 Tester test246.sjava:
 error in line: 2, 	Try to assignment to unexcited value
 oop.ex6.main.IllegalException: error in line: 2, 	Try to assignment to unexcited value
-	at oop.ex6.main.Variable.setValue(Variable.java:168)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:170)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1204,13 +1204,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Try to assignment to unexcited
 Tester test247.sjava:
 error in line: 2, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1224,13 +1224,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 Tester test248.sjava:
 error in line: 2, 	Illegal type of value
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
-	at oop.ex6.main.Variable.setValue(Variable.java:160)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:162)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1242,13 +1242,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
 1
 
 Tester test249.sjava:
-error in line: 2, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1260,13 +1260,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
 1
 
 Tester test250.sjava:
-error in line: 2, 	Final must initialize
-oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
-	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Final must initialize.
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1283,13 +1283,13 @@ Tester test251.sjava:
 Tester test252.sjava:
 error in line: 3, 	Try to assignment to unexcited value
 oop.ex6.main.IllegalException: error in line: 3, 	Try to assignment to unexcited value
-	at oop.ex6.main.Variable.setValue(Variable.java:168)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:170)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1304,14 +1304,14 @@ Tester test253.sjava:
 0
 
 Tester test254.sjava:
-error in line: 6, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 6, 	Bad format line
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:241)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 6, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 6, 	Bad format line.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:247)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1328,13 +1328,13 @@ Tester test255.sjava:
 Tester test257.sjava:
 error in line: 7, 	Try to assignment to unexcited value
 oop.ex6.main.IllegalException: error in line: 7, 	Try to assignment to unexcited value
-	at oop.ex6.main.Variable.setValue(Variable.java:168)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:170)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1346,10 +1346,10 @@ oop.ex6.main.IllegalException: error in line: 7, 	Try to assignment to unexcited
 1
 
 Tester test261.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1361,10 +1361,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test262.sjava:
-error in line: 2, 	Bad method format
-oop.ex6.main.IllegalException: error in line: 2, 	Bad method format
+error in line: 2, 	Bad method format.
+oop.ex6.main.IllegalException: error in line: 2, 	Bad method format.
 	at oop.ex6.main.Parser.parseMethod(Parser.java:511)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1376,10 +1376,10 @@ oop.ex6.main.IllegalException: error in line: 2, 	Bad method format
 1
 
 Tester test263.sjava:
-error in line: 2, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 2, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1391,10 +1391,10 @@ oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
 1
 
 Tester test264.sjava:
-error in line: 1, 	Bad method format
-oop.ex6.main.IllegalException: error in line: 1, 	Bad method format
+error in line: 1, 	Bad method format.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad method format.
 	at oop.ex6.main.Parser.parseMethod(Parser.java:511)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1408,12 +1408,12 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad method format
 Tester test265.sjava:
 error in line: 2, 	Final variable can't change
 oop.ex6.main.IllegalException: error in line: 2, 	Final variable can't change
-	at oop.ex6.main.Variable.setValue(Variable.java:125)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:127)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:374)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1431,10 +1431,10 @@ Tester test267.sjava:
 0
 
 Tester test268.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1448,7 +1448,7 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 Tester test269.sjava:
 error in line: 1, 	
 oop.ex6.main.IllegalException: error in line: 1, 	
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:291)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:297)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1460,10 +1460,10 @@ oop.ex6.main.IllegalException: error in line: 1,
 1
 
 Tester test270.sjava:
-error in line: 1, 	Bad method format
-oop.ex6.main.IllegalException: error in line: 1, 	Bad method format
+error in line: 1, 	Bad method format.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad method format.
 	at oop.ex6.main.Parser.parseMethod(Parser.java:511)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1478,10 +1478,10 @@ Tester test271.sjava:
 0
 
 Tester test272.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1493,10 +1493,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test273.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1508,10 +1508,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test274.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1542,9 +1542,9 @@ error in line: 2, 	Variable doesn't legal boolean expression
 oop.ex6.main.IllegalException: error in line: 2, 	Variable doesn't legal boolean expression
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:56)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1560,9 +1560,9 @@ error in line: 3, 	Variable doesn't legal boolean expression
 oop.ex6.main.IllegalException: error in line: 3, 	Variable doesn't legal boolean expression
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:49)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1574,10 +1574,10 @@ oop.ex6.main.IllegalException: error in line: 3, 	Variable doesn't legal boolean
 1
 
 Tester test308.sjava:
-error in line: 8, 	Bad method format
-oop.ex6.main.IllegalException: error in line: 8, 	Bad method format
+error in line: 8, 	Bad method format.
+oop.ex6.main.IllegalException: error in line: 8, 	Bad method format.
 	at oop.ex6.main.Parser.parseMethod(Parser.java:511)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1589,14 +1589,14 @@ oop.ex6.main.IllegalException: error in line: 8, 	Bad method format
 1
 
 Tester test309.sjava:
-error in line: 2, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
-	at oop.ex6.main.Parser.extractFirstWord(Parser.java:122)
+error in line: 2, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line.
+	at oop.ex6.main.Parser.extractFirstWord(Parser.java:128)
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:43)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1612,9 +1612,9 @@ error in line: 3, 	Variable doesn't legal boolean expression
 oop.ex6.main.IllegalException: error in line: 3, 	Variable doesn't legal boolean expression
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:49)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1637,12 +1637,12 @@ Tester test313.sjava:
 Tester test314.sjava:
 error in line: 2, 	Illegal value variable
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
-	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:312)
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1661,9 +1661,9 @@ error in line: 2, 	Variable doesn't legal boolean expression
 oop.ex6.main.IllegalException: error in line: 2, 	Variable doesn't legal boolean expression
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:56)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1700,9 +1700,9 @@ error in line: 4, 	Variable doesn't legal boolean expression
 oop.ex6.main.IllegalException: error in line: 4, 	Variable doesn't legal boolean expression
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:49)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1714,11 +1714,11 @@ oop.ex6.main.IllegalException: error in line: 4, 	Variable doesn't legal boolean
 1
 
 Tester test401.sjava:
-error in line: 1, 	Illegal name variable
-oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable
-	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Illegal name variable.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1730,13 +1730,13 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable
 1
 
 Tester test402.sjava:
-error in line: 2, 	Illegal name variable
-oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable
-	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Illegal name variable.
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1750,7 +1750,7 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable
 Tester test403.sjava:
 error in line: 1, 	
 oop.ex6.main.IllegalException: error in line: 1, 	
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:287)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:293)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1768,14 +1768,13 @@ Tester test405.sjava:
 0
 
 Tester test406.sjava:
-error in line: 2, 	Already taken variable
-oop.ex6.main.IllegalException: error in line: 2, 	Already taken variable
-	at oop.ex6.main.Parser.containInSameScope(Parser.java:496)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Two variables cannot have the same name.
+oop.ex6.main.IllegalException: error in line: 2, 	Two variables cannot have the same name.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:197)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1787,14 +1786,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Already taken variable
 1
 
 Tester test407.sjava:
-error in line: 2, 	Already taken variable
-oop.ex6.main.IllegalException: error in line: 2, 	Already taken variable
-	at oop.ex6.main.Parser.containInSameScope(Parser.java:496)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Two variables cannot have the same name.
+oop.ex6.main.IllegalException: error in line: 2, 	Two variables cannot have the same name.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:197)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1806,14 +1804,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Already taken variable
 1
 
 Tester test408.sjava:
-error in line: 3, 	Already taken variable
-oop.ex6.main.IllegalException: error in line: 3, 	Already taken variable
-	at oop.ex6.main.Parser.containInSameScope(Parser.java:496)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 3, 	Two variables cannot have the same name.
+oop.ex6.main.IllegalException: error in line: 3, 	Two variables cannot have the same name.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:197)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1825,14 +1822,13 @@ oop.ex6.main.IllegalException: error in line: 3, 	Already taken variable
 1
 
 Tester test409.sjava:
-error in line: 3, 	Already taken variable
-oop.ex6.main.IllegalException: error in line: 3, 	Already taken variable
-	at oop.ex6.main.Parser.containInSameScope(Parser.java:496)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 3, 	Two variables cannot have the same name.
+oop.ex6.main.IllegalException: error in line: 3, 	Two variables cannot have the same name.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:197)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1853,10 +1849,10 @@ Tester test412.sjava:
 0
 
 Tester test413.sjava:
-error in line: 1, 	Unsupported command
-oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:372)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Unsupported command.
+oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:378)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1871,10 +1867,10 @@ Tester test414.sjava:
 0
 
 Tester test415.sjava:
-error in line: 1, 	Unsupported command
-oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:372)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Unsupported command.
+oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:378)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1886,11 +1882,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command
 1
 
 Tester test416.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:200)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1902,12 +1898,12 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test417.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:241)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:247)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1922,10 +1918,10 @@ Tester test418.sjava:
 0
 
 Tester test420.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1937,10 +1933,10 @@ oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
 1
 
 Tester test421.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.extractMethodName(Parser.java:145)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:285)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.extractMethodName(Parser.java:151)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:291)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1956,7 +1952,7 @@ error in line: 1, 	Illegal method NAME
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal method NAME
 	at oop.ex6.main.Method.analysisParameters(Method.java:104)
 	at oop.ex6.main.Method.<init>(Method.java:51)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:302)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:308)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1972,7 +1968,7 @@ error in line: 1, 	Illegal method NAME
 oop.ex6.main.IllegalException: error in line: 1, 	Illegal method NAME
 	at oop.ex6.main.Method.analysisParameters(Method.java:104)
 	at oop.ex6.main.Method.<init>(Method.java:51)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:302)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:308)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -1993,12 +1989,12 @@ Tester test428.sjava:
 0
 
 Tester test429.sjava:
-error in line: 2, 	Unsupported command
-oop.ex6.main.IllegalException: error in line: 2, 	Unsupported command
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:372)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Unsupported command.
+oop.ex6.main.IllegalException: error in line: 2, 	Unsupported command.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:378)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2010,13 +2006,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Unsupported command
 1
 
 Tester test430.sjava:
-error in line: 2, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
-	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:200)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2028,14 +2024,14 @@ oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
 1
 
 Tester test431.sjava:
-error in line: 2, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:241)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:247)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2055,12 +2051,12 @@ Tester test433.sjava:
 Tester test434.sjava:
 error in line: 2, 	Illegal value variable
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
-	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:312)
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2072,12 +2068,12 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
 1
 
 Tester test435.sjava:
-error in line: 2, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2091,12 +2087,12 @@ oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
 Tester test436.sjava:
 error in line: 2, 	Illegal value variable
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
-	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:312)
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2116,12 +2112,12 @@ Tester test438.sjava:
 Tester test439.sjava:
 error in line: 2, 	Illegal value variable
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
-	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:312)
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2133,12 +2129,12 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
 1
 
 Tester test440.sjava:
-error in line: 2, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2152,12 +2148,12 @@ oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
 Tester test441.sjava:
 error in line: 2, 	Illegal value variable
 oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
-	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:312)
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2169,10 +2165,10 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
 1
 
 Tester test442.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2187,14 +2183,14 @@ Tester test451.sjava:
 0
 
 Tester test452.sjava:
-error in line: 5, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 5, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 5, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
 	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:433)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:433)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2206,14 +2202,14 @@ oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
 1
 
 Tester test453.sjava:
-error in line: 5, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 5, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 5, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
 	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:433)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:433)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2227,12 +2223,12 @@ oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
 Tester test454.sjava:
 error in line: 4, 	Final variable can't change
 oop.ex6.main.IllegalException: error in line: 4, 	Final variable can't change
-	at oop.ex6.main.Variable.setValue(Variable.java:125)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:127)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:374)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2246,12 +2242,12 @@ oop.ex6.main.IllegalException: error in line: 4, 	Final variable can't change
 Tester test455.sjava:
 error in line: 2, 	Final variable can't change
 oop.ex6.main.IllegalException: error in line: 2, 	Final variable can't change
-	at oop.ex6.main.Variable.setValue(Variable.java:125)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:127)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:374)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2265,12 +2261,12 @@ oop.ex6.main.IllegalException: error in line: 2, 	Final variable can't change
 Tester test456.sjava:
 error in line: 3, 	Final variable can't change
 oop.ex6.main.IllegalException: error in line: 3, 	Final variable can't change
-	at oop.ex6.main.Variable.setValue(Variable.java:125)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:127)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:374)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2285,8 +2281,8 @@ Tester test457.sjava:
 error in line: 5, 	Unmatched parameter's
 oop.ex6.main.IllegalException: error in line: 5, 	Unmatched parameter's
 	at oop.ex6.main.Method.calledThisMethod(Method.java:122)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:370)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:376)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2298,10 +2294,10 @@ oop.ex6.main.IllegalException: error in line: 5, 	Unmatched parameter's
 1
 
 Tester test458.sjava:
-error in line: 1, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2316,8 +2312,8 @@ Tester test459.sjava:
 error in line: 5, 	Unmatched parameter's
 oop.ex6.main.IllegalException: error in line: 5, 	Unmatched parameter's
 	at oop.ex6.main.Method.calledThisMethod(Method.java:122)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:370)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:376)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2329,12 +2325,12 @@ oop.ex6.main.IllegalException: error in line: 5, 	Unmatched parameter's
 1
 
 Tester test460.sjava:
-error in line: 5, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:241)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 5, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 5, 	Bad format line.
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:247)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2352,11 +2348,11 @@ Tester test462.sjava:
 0
 
 Tester test463.sjava:
-error in line: 1, 	Illegal name variable
-oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable
-	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Illegal name variable.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2368,11 +2364,11 @@ oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable
 1
 
 Tester test464.sjava:
-error in line: 1, 	Illegal name variable
-oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable
-	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 1, 	Illegal name variable.
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2390,13 +2386,13 @@ Tester test466.sjava:
 0
 
 Tester test467.sjava:
-error in line: 2, 	Illegal name variable
-oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable
-	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Illegal name variable.
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2408,13 +2404,13 @@ oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable
 1
 
 Tester test468.sjava:
-error in line: 2, 	Illegal name variable
-oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable
-	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 2, 	Illegal name variable.
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable.
+	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2431,7 +2427,7 @@ Tester test469.sjava:
 Tester test470.sjava:
 error in line: 1, 	
 oop.ex6.main.IllegalException: error in line: 1, 	
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:287)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:293)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2445,7 +2441,7 @@ oop.ex6.main.IllegalException: error in line: 1,
 Tester test471.sjava:
 error in line: 1, 	
 oop.ex6.main.IllegalException: error in line: 1, 	
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:287)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:293)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2463,12 +2459,12 @@ Tester test473.sjava:
 0
 
 Tester test474.sjava:
-error in line: 5, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:349)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+error in line: 5, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 5, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:355)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2482,7 +2478,7 @@ oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
 Tester test475.sjava:
 error in line: 1, 	Method never closed the Brackets.
 oop.ex6.main.IllegalException: error in line: 1, 	Method never closed the Brackets.
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:313)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:319)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2496,7 +2492,7 @@ oop.ex6.main.IllegalException: error in line: 1, 	Method never closed the Bracke
 Tester test476.sjava:
 error in line: 1, 	Method never closed the Brackets.
 oop.ex6.main.IllegalException: error in line: 1, 	Method never closed the Brackets.
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:313)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:319)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2510,7 +2506,7 @@ oop.ex6.main.IllegalException: error in line: 1, 	Method never closed the Bracke
 Tester test477.sjava:
 error in line: 2, 	Method never closed the Brackets.
 oop.ex6.main.IllegalException: error in line: 2, 	Method never closed the Brackets.
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:313)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:319)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2525,10 +2521,10 @@ Tester test501.sjava:
 0
 
 Tester test502.sjava:
-error in line: 10, 	Bad format line
-oop.ex6.main.IllegalException: error in line: 10, 	Bad format line
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
-	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+error in line: 10, 	Bad format line.
+oop.ex6.main.IllegalException: error in line: 10, 	Bad format line.
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:360)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:301)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2542,13 +2538,13 @@ oop.ex6.main.IllegalException: error in line: 10, 	Bad format line
 Tester test503.sjava:
 error in line: 25, 	Try to copy a value from variable that doesn't exist.
 oop.ex6.main.IllegalException: error in line: 25, 	Try to copy a value from variable that doesn't exist.
-	at oop.ex6.main.Variable.setValue(Variable.java:165)
-	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
-	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
-	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Variable.setValue(Variable.java:167)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:245)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:209)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
@@ -2562,13 +2558,13 @@ oop.ex6.main.IllegalException: error in line: 25, 	Try to copy a value from vari
 Tester test504.sjava:
 error in line: 7, 	Illegal value variable
 oop.ex6.main.IllegalException: error in line: 7, 	Illegal value variable
-	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:312)
 	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
 	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
-	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:431)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:433)
 	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
-	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:330)
 	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
 	at Tester.independenceTest(Tester.java:30)
 	at Tester.main(Tester.java:16)
