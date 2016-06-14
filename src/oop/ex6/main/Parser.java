@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Parse the s-java file.
+ * A class that parse the s-java file.
  */
 class Parser {
 

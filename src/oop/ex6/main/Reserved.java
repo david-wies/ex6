@@ -1,7 +1,7 @@
 package oop.ex6.main;
 
 /**
- * Created by David and Roi.
+ *  A class that represent the reserved keyword in s-java file.
  */
 class Reserved {
 
