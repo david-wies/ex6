@@ -36,7 +36,7 @@ class Parser {
 
     // Pattern's string's.
     private static final String FIRST_WORD = "\\S+";
-    private static final String METHOD_NAME = "\\S+\\s*\\(";
+    private static final String METHOD_NAME = "\\S+[\\s\\S]*\\(";
     private static final String LEGAL_END = ";\\s*";
     private static final String END_BLOCK = "\\s*}\\s*";
     private static final String START_BLOCK = "\\s*\\S+\\s*\\{\\s*"; // \\S+ and not \\S* dose not work on while/if
@@ -48,6 +48,7 @@ class Parser {
     private static final String SPACE_ROW = "\\s*";
     private static final String METHOD_CALL = "[a-zA-Z]+\\w*\\(";
     private static final String LEGAL_METHOD_RETURN = "\\s*return\\s*;\\s*";
+    private static final String PARAMETERS = "\\(.*\\)";
 
 
     // Patterns
@@ -64,6 +65,7 @@ class Parser {
     private static Pattern methodCallPattern = Pattern.compile(METHOD_CALL);
     private static Pattern legalMethodReturn = Pattern.compile(LEGAL_METHOD_RETURN);
     private static Pattern newStartBlock = Pattern.compile(START_BLOCK_NEW);
+    private static Pattern extractParameters = Pattern.compile(PARAMETERS);
 
 
     // Field's of Parser.
@@ -124,15 +126,21 @@ class Parser {
         }
     }
 
-    private static String extractMethodName(String string, int numberLine) throws IllegalException {
-        Matcher matcher = methodName.matcher(string);
-        if (string.equals(""))
+    private static String extractMethodName(String name, int numberLine) throws IllegalException {
+        Matcher matcher = methodName.matcher(name);
+        if (name.equals(""))
             throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         if (matcher.find()) {
-            string = string.substring(matcher.start(), matcher.end() - 1);
-            return extractFirstWord(string, numberLine);
+            name = name.substring(matcher.start(), matcher.end() - 1);
+            String[] parts = name.split("\\s+");
+            if (parts.length > 1) {
+                throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
+            } else {
+                return parts[0];
+            }
+        } else {
+            throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         }
-        throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
     }
 
     /**
@@ -178,7 +186,7 @@ class Parser {
                 }
             } else { //var assignment with value .
                 String[] equal = part.split("=");
-                String varName = extractFirstWord(equal[0], lineNumber); // TODO: 14/06/2016 change
+                String varName = extractFirstWord(equal[0], lineNumber);
                 Variable newVar = new Variable(varType, varName, lineNumber, isFinal);
                 if (!addVariable(newVar, depth)) {
                     throw new IllegalException(DUPLICATION_VARIABLES_NAMES, lineNumber);
@@ -267,7 +275,9 @@ class Parser {
                             firstMethodLine = lineNumber;
                             parameters = extractInnerBrackets(subLine, lineNumber);
                             methodName = extractMethodName(subLine, lineNumber);
-                            Method.verifyLegalityMethodName(methodName, lineNumber);
+                            if (!Method.isLegalMethodName(methodName)) {
+                                throw new IllegalException("", lineNumber);
+                            }
                             Matcher startBlockMatcher = startBlockPattern.matcher(row);
                             if (!startBlockMatcher.find(row.indexOf('(') + 1)) {
                                 throw new IllegalException("", lineNumber);
@@ -315,6 +325,9 @@ class Parser {
      * @throws IllegalException The line is not legal.
      */
     private void analyzeRow(String row, int depth, int lineNumber, String firstWord) throws IllegalException {
+        if (firstWord == null) {
+            firstWord = "";
+        }
         Matcher endRow = legalEnd.matcher(row);
         Matcher methodCallMatcher = methodCallPattern.matcher(row);
         if (firstWord.equals(START_COMMENT)) {
@@ -333,11 +346,12 @@ class Parser {
             updateVariables(depth, row, lineNumber, firstWord);
         } else if (Variable.isLegalVariableName(firstWord)) {
             Variable variable = getVariable(firstWord);
-            if (variable == null) {
-                throw new IllegalException("Variable doesn't exists.", lineNumber);
-            } else {
+            Method method = methods.get(firstWord);
+            if (variable != null) {
                 row = row.substring(row.indexOf(firstWord) + firstWord.length());
                 assignmentValue(row, variable, lineNumber);
+            } else if (method != null) {
+                method.calledThisMethod(, lineNumber);
             }
         } else if (methodCallMatcher.find()) { // check if a known method has been called.
             String methodName = row.substring(methodCallMatcher.start(), methodCallMatcher.end() - 1);
@@ -482,6 +496,21 @@ class Parser {
         } else {
             variables.get(depth).put(variable.getName(), variable);
             return true;
+        }
+    }
+
+    /*
+     * @param row The row of call to the method.
+     * @param lineNumber  The number of the current line in the sjava file.
+     * @return The sub-string that hold the parameters.
+     * @throws IllegalException There isn't brackets in the row.
+     */
+    private String extractParameters(String row, int lineNumber) throws IllegalException {
+        Matcher matcher = extractParameters.matcher(row);
+        if (matcher.find()) {
+            return row.substring(matcher.start() + 1, matcher.end() - 1);
+        } else {
+            throw new IllegalException("", lineNumber);
         }
     }
 }

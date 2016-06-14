@@ -54,11 +54,9 @@ class Method extends Block {
      *
      * @throws IllegalException
      */
-    static void verifyLegalityMethodName(String name, int originLine) throws IllegalException {
+    static boolean isLegalMethodName(String name) throws IllegalException {
         Matcher m = namePattern.matcher(name);
-        if (!m.matches() || Reserved.isReserved(name)) {
-            throw new IllegalException(NAME_ERROR, originLine);
-        }
+        return !(!m.matches() || Reserved.isReserved(name));
     }
 
     /**
