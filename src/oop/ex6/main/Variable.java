@@ -12,11 +12,16 @@ class Variable {
     private final static String INT = "int", DOUBLE = "double", BOOLEAN = "boolean";
     private final static String CHAR = "char", STRING = "String";
     private final static String TRUE = "true", FALSE = "false";
+    private final static char APOSTROPHE = '\'', CHAR_APOSTROPHES = '"';
+    private final static String STRING_APOSTROPHES = "\"";
 
     // Errors string's.
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
     private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
     private final static String VALUE_ERROR_MESSAGE = "Illegal value variable";
+    private final static String FINAL_ASSIGNMENT = "Final variable can't change";
+    private final static String MISSING_VARIABLE = "Try to copy a value from variable that doesn't exist.";
+    private final static String UNEXCITED_VALUE = "Try to assignment to unexcited value";
 
     // Pattern's string's.
     private static final String TYPES_PATTERN = "int|double|String|boolean|char";
@@ -117,7 +122,7 @@ class Variable {
      */
     void setValue(String value, int lineNumber) throws IllegalException {
         if (isFinal && hasValue) {
-            throw new IllegalException("Final variable can't change", lineNumber);
+            throw new IllegalException(FINAL_ASSIGNMENT, lineNumber);
         }
         boolean isValue;
         isValue = !isLegalVariableName(value);
@@ -157,10 +162,10 @@ class Variable {
         } else {
             Variable variable = Parser.getVariable(value);
             if (variable == null) {
-                throw new IllegalException("Try to copy a value from variable that doesn't exist.",
+                throw new IllegalException(MISSING_VARIABLE,
                         lineNumber);
             } else if (!variable.hasValue) {
-                throw new IllegalException("try to assignment with put value", lineNumber);
+                throw new IllegalException(UNEXCITED_VALUE, lineNumber);
             } else {
                 copyValue(variable.getType());
             }
@@ -210,7 +215,7 @@ class Variable {
      * @return true if the value represent char value, false otherwise.
      */
     private static boolean isChar(String value) {
-        return value.indexOf('\'') == 0 && value.lastIndexOf('\'') == 2 && value.length() == 3;
+        return value.indexOf(APOSTROPHE) == 0 && value.lastIndexOf(APOSTROPHE) == 2 && value.length() == 3;
     }
 
     /*
@@ -219,12 +224,12 @@ class Variable {
      * @return true if the given string represent a string value, false otherwise.
      */
     private static boolean isString(String value) {
-        int firstIndex = value.indexOf('"'), lastIndex = value.lastIndexOf('"');
+        int firstIndex = value.indexOf(CHAR_APOSTROPHES), lastIndex = value.lastIndexOf(CHAR_APOSTROPHES);
         if (firstIndex == -1 || firstIndex == lastIndex) {
             return false;
         } else {
             value = value.substring(firstIndex + 1, lastIndex);
-            return !value.contains("\"");
+            return !value.contains(STRING_APOSTROPHES);
         }
     }
 

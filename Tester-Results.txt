@@ -1,8 +1,7 @@
 Directory: C:\Users\roishtivi\IdeaProjects\oop\tests
 
 Tester test001.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test002.sjava:
 0
@@ -15,26 +14,79 @@ Tester test004.sjava:
 
 Tester test005.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test006.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test007.sjava:
-error in line: 1, 	Illegal type of value
+error in line: 1, 	Try to copy a value from variable that doesn't exist.
+oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from variable that doesn't exist.
+	at oop.ex6.main.Variable.setValue(Variable.java:165)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test008.sjava:
 error in line: 1, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test009.sjava:
 0
 
 Tester test011.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test012.sjava:
 0
@@ -50,40 +102,130 @@ Tester test015.sjava:
 
 Tester test016.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test017.sjava:
-error in line: 1, 	Illegal type of value
+error in line: 1, 	Try to copy a value from variable that doesn't exist.
+oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from variable that doesn't exist.
+	at oop.ex6.main.Variable.setValue(Variable.java:165)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test018.sjava:
 error in line: 1, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test019.sjava:
 0
 
 Tester test021.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test022.sjava:
 0
 
 Tester test023.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test024.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test025.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test026.sjava:
 error in line: 1, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test027.sjava:
@@ -94,14 +236,26 @@ Tester test028.sjava:
 
 Tester test029.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test030.sjava:
 0
 
 Tester test031.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test032.sjava:
 0
@@ -117,22 +271,61 @@ Tester test035.sjava:
 
 Tester test036.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test037.sjava:
-error in line: 1, 	Illegal type of value
+error in line: 1, 	Try to copy a value from variable that doesn't exist.
+oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from variable that doesn't exist.
+	at oop.ex6.main.Variable.setValue(Variable.java:165)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test038.sjava:
 error in line: 1, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test039.sjava:
 0
 
 Tester test041.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test042.sjava:
 0
@@ -142,49 +335,184 @@ Tester test043.sjava:
 
 Tester test044.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test045.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test046.sjava:
-error in line: 1, 	Illegal type of value
+error in line: 1, 	Try to assignment to unexcited value
+oop.ex6.main.IllegalException: error in line: 1, 	Try to assignment to unexcited value
+	at oop.ex6.main.Variable.setValue(Variable.java:168)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test047.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test048.sjava:
 error in line: 1, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test049.sjava:
 error in line: 1, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test050.sjava:
 0
 
 Tester test051.sjava:
-error in line: 2, 	Illegal type of value
-1
+0
 
 Tester test052.sjava:
-error in line: 1, 	Illegal type of value
+error in line: 1, 	Try to copy a value from variable that doesn't exist.
+oop.ex6.main.IllegalException: error in line: 1, 	Try to copy a value from variable that doesn't exist.
+	at oop.ex6.main.Variable.setValue(Variable.java:165)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test053.sjava:
-error in line: 1, 	Unsupported command
+error in line: 2, 	Try to copy a value from variable that doesn't exist.
+oop.ex6.main.IllegalException: error in line: 2, 	Try to copy a value from variable that doesn't exist.
+	at oop.ex6.main.Variable.setValue(Variable.java:165)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test054.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 2, 	Try to assignment to unexcited value
+oop.ex6.main.IllegalException: error in line: 2, 	Try to assignment to unexcited value
+	at oop.ex6.main.Variable.setValue(Variable.java:168)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test055.sjava:
 error in line: 1, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 1, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test056.sjava:
@@ -192,114 +520,296 @@ Tester test056.sjava:
 
 Tester test057.sjava:
 error in line: 1, 	Illegal name variable
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable
+	at oop.ex6.main.Variable.<init>(Variable.java:51)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:198)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test058.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test059.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test061.sjava:
 error in line: 1, 	Un legal method declaration
+oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
+	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:104)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:284)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test062.sjava:
 error in line: 1, 	Un legal method declaration
+oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
+	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:104)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:284)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test063.sjava:
 error in line: 1, 	Un legal method declaration
+oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
+	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:104)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:284)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test064.sjava:
 error in line: 1, 	Un legal method declaration
+oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
+	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:104)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:284)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test065.sjava:
 error in line: 1, 	Un legal method declaration
+oop.ex6.main.IllegalException: error in line: 1, 	Un legal method declaration
+	at oop.ex6.main.Parser.extractInnerBrackets(Parser.java:104)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:284)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test066.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test067.sjava:
 error in line: 1, 	Unsupported command
+oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:372)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test101.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test102.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test103.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test104.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test105.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test106.sjava:
 0
 
 Tester test107.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test108.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test109.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test110.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test111.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test112.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test113.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test114.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 1, 	Two parameters has to have two different names.
+oop.ex6.main.IllegalException: error in line: 1, 	Two parameters has to have two different names.
+	at oop.ex6.main.Method.<init>(Method.java:54)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:302)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test115.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test116.sjava:
-error in line: 7, 	bad format line
+error in line: 7, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 7, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test117.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:241)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test201.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test202.sjava:
 0
@@ -312,26 +822,87 @@ Tester test204.sjava:
 
 Tester test205.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test206.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test207.sjava:
-error in line: 2, 	Illegal type of value
+error in line: 2, 	Try to copy a value from variable that doesn't exist.
+oop.ex6.main.IllegalException: error in line: 2, 	Try to copy a value from variable that doesn't exist.
+	at oop.ex6.main.Variable.setValue(Variable.java:165)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test208.sjava:
 error in line: 2, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test209.sjava:
 0
 
 Tester test211.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test212.sjava:
 0
@@ -347,48 +918,151 @@ Tester test215.sjava:
 
 Tester test216.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test217.sjava:
-error in line: 2, 	Illegal type of value
+error in line: 2, 	Try to copy a value from variable that doesn't exist.
+oop.ex6.main.IllegalException: error in line: 2, 	Try to copy a value from variable that doesn't exist.
+	at oop.ex6.main.Variable.setValue(Variable.java:165)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test218.sjava:
 error in line: 2, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test219.sjava:
 0
 
 Tester test221.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test222.sjava:
 0
 
 Tester test223.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test224.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test225.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:229)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test226.sjava:
 error in line: 2, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test227.sjava:
 0
 
 Tester test231.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test232.sjava:
 0
@@ -404,22 +1078,62 @@ Tester test235.sjava:
 
 Tester test236.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test237.sjava:
-error in line: 1, 	bad method format
+error in line: 1, 	Bad method format
+oop.ex6.main.IllegalException: error in line: 1, 	Bad method format
+	at oop.ex6.main.Parser.parseMethod(Parser.java:511)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test238.sjava:
 error in line: 2, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test239.sjava:
 0
 
 Tester test241.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test242.sjava:
 0
@@ -429,108 +1143,383 @@ Tester test243.sjava:
 
 Tester test244.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test245.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test246.sjava:
-error in line: 2, 	Illegal type of value
+error in line: 2, 	Try to assignment to unexcited value
+oop.ex6.main.IllegalException: error in line: 2, 	Try to assignment to unexcited value
+	at oop.ex6.main.Variable.setValue(Variable.java:168)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test247.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test248.sjava:
 error in line: 2, 	Illegal type of value
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal type of value
+	at oop.ex6.main.Variable.setValue(Variable.java:160)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test249.sjava:
 error in line: 2, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test250.sjava:
 error in line: 2, 	Final must initialize
+oop.ex6.main.IllegalException: error in line: 2, 	Final must initialize
+	at oop.ex6.main.Parser.updateVariables(Parser.java:179)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test251.sjava:
-error in line: 2, 	Illegal type of value
-1
+0
 
 Tester test252.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 3, 	Try to assignment to unexcited value
+oop.ex6.main.IllegalException: error in line: 3, 	Try to assignment to unexcited value
+	at oop.ex6.main.Variable.setValue(Variable.java:168)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test253.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test254.sjava:
-error in line: 6, 	Illegal type of value
+error in line: 6, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 6, 	Bad format line
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:241)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test255.sjava:
 0
 
 Tester test257.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 7, 	Try to assignment to unexcited value
+oop.ex6.main.IllegalException: error in line: 7, 	Try to assignment to unexcited value
+	at oop.ex6.main.Variable.setValue(Variable.java:168)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test261.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test262.sjava:
-error in line: 2, 	bad method format
+error in line: 2, 	Bad method format
+oop.ex6.main.IllegalException: error in line: 2, 	Bad method format
+	at oop.ex6.main.Parser.parseMethod(Parser.java:511)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test263.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 2, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test264.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 1, 	Bad method format
+oop.ex6.main.IllegalException: error in line: 1, 	Bad method format
+	at oop.ex6.main.Parser.parseMethod(Parser.java:511)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test265.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 2, 	Final variable can't change
+oop.ex6.main.IllegalException: error in line: 2, 	Final variable can't change
+	at oop.ex6.main.Variable.setValue(Variable.java:125)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test266.sjava:
-error in line: 4, 	Unsupported command
-1
+0
 
 Tester test267.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test268.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test269.sjava:
 error in line: 1, 	
+oop.ex6.main.IllegalException: error in line: 1, 	
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:291)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test270.sjava:
-error in line: 1, 	bad method format
+error in line: 1, 	Bad method format
+oop.ex6.main.IllegalException: error in line: 1, 	Bad method format
+	at oop.ex6.main.Parser.parseMethod(Parser.java:511)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test271.sjava:
 0
 
 Tester test272.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test273.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test274.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test291.sjava:
@@ -546,27 +1535,94 @@ Tester test303.sjava:
 0
 
 Tester test305.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test306.sjava:
-error in line: 2, 	Illegal name variable
+error in line: 2, 	Variable doesn't legal boolean expression
+oop.ex6.main.IllegalException: error in line: 2, 	Variable doesn't legal boolean expression
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:56)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test307.sjava:
 error in line: 3, 	Variable doesn't legal boolean expression
+oop.ex6.main.IllegalException: error in line: 3, 	Variable doesn't legal boolean expression
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:49)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test308.sjava:
-error in line: 8, 	bad method format
+error in line: 8, 	Bad method format
+oop.ex6.main.IllegalException: error in line: 8, 	Bad method format
+	at oop.ex6.main.Parser.parseMethod(Parser.java:511)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test309.sjava:
-error in line: 2, 	bad format line
+error in line: 2, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
+	at oop.ex6.main.Parser.extractFirstWord(Parser.java:122)
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:43)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test310.sjava:
-error in line: 2, 	Illegal name variable
+error in line: 3, 	Variable doesn't legal boolean expression
+oop.ex6.main.IllegalException: error in line: 3, 	Variable doesn't legal boolean expression
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:49)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test311.sjava:
@@ -580,81 +1636,211 @@ Tester test313.sjava:
 
 Tester test314.sjava:
 error in line: 2, 	Illegal value variable
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test315.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test316.sjava:
-error in line: 2, 	Illegal name variable
+error in line: 2, 	Variable doesn't legal boolean expression
+oop.ex6.main.IllegalException: error in line: 2, 	Variable doesn't legal boolean expression
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:56)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test321.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test322.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test323.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test324.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test325.sjava:
-error in line: 3, 	Illegal name variable
-1
+0
 
 Tester test326.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test327.sjava:
 0
 
 Tester test328.sjava:
-error in line: 2, 	Illegal name variable
+error in line: 4, 	Variable doesn't legal boolean expression
+oop.ex6.main.IllegalException: error in line: 4, 	Variable doesn't legal boolean expression
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:49)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test401.sjava:
 error in line: 1, 	Illegal name variable
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable
+	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test402.sjava:
 error in line: 2, 	Illegal name variable
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable
+	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test403.sjava:
-error in line: 1, 	illegal method NAME
+error in line: 1, 	
+oop.ex6.main.IllegalException: error in line: 1, 	
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:287)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test404.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test405.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test406.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 2, 	Already taken variable
+oop.ex6.main.IllegalException: error in line: 2, 	Already taken variable
+	at oop.ex6.main.Parser.containInSameScope(Parser.java:496)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test407.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 2, 	Already taken variable
+oop.ex6.main.IllegalException: error in line: 2, 	Already taken variable
+	at oop.ex6.main.Parser.containInSameScope(Parser.java:496)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test408.sjava:
-error in line: 2, 	Illegal name variable
+error in line: 3, 	Already taken variable
+oop.ex6.main.IllegalException: error in line: 3, 	Already taken variable
+	at oop.ex6.main.Parser.containInSameScope(Parser.java:496)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test409.sjava:
-error in line: 2, 	Illegal name variable
+error in line: 3, 	Already taken variable
+oop.ex6.main.IllegalException: error in line: 3, 	Already taken variable
+	at oop.ex6.main.Parser.containInSameScope(Parser.java:496)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:187)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test410.sjava:
@@ -664,11 +1850,21 @@ Tester test411.sjava:
 0
 
 Tester test412.sjava:
-error in line: 1, 	bad format line
-1
+0
 
 Tester test413.sjava:
 error in line: 1, 	Unsupported command
+oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:372)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test414.sjava:
@@ -676,222 +1872,713 @@ Tester test414.sjava:
 
 Tester test415.sjava:
 error in line: 1, 	Unsupported command
+oop.ex6.main.IllegalException: error in line: 1, 	Unsupported command
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:372)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test416.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test417.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:241)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test418.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test420.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test421.sjava:
-0
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.extractMethodName(Parser.java:145)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:285)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+1
 
 Tester test422.sjava:
-error in line: 1, 	illegal method NAME
+error in line: 1, 	Illegal method NAME
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal method NAME
+	at oop.ex6.main.Method.analysisParameters(Method.java:104)
+	at oop.ex6.main.Method.<init>(Method.java:51)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:302)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test423.sjava:
-error in line: 1, 	illegal method NAME
+error in line: 1, 	Illegal method NAME
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal method NAME
+	at oop.ex6.main.Method.analysisParameters(Method.java:104)
+	at oop.ex6.main.Method.<init>(Method.java:51)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:302)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test425.sjava:
 0
 
 Tester test427.sjava:
-error in line: 6, 	Illegal name variable
-1
+0
 
 Tester test428.sjava:
-error in line: 6, 	Illegal name variable
-1
+0
 
 Tester test429.sjava:
 error in line: 2, 	Unsupported command
+oop.ex6.main.IllegalException: error in line: 2, 	Unsupported command
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:372)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test430.sjava:
-error in line: 2, 	bad format line
+error in line: 2, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
+	at oop.ex6.main.Parser.updateVariables(Parser.java:193)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test431.sjava:
-error in line: 2, 	bad format line
+error in line: 2, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:241)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test432.sjava:
-error in line: 5, 	bad format line
-1
+0
 
 Tester test433.sjava:
-error in line: 2, 	bad format line
-1
+0
 
 Tester test434.sjava:
-error in line: 5, 	bad format line
+error in line: 2, 	Illegal value variable
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test435.sjava:
-error in line: 2, 	bad format line
+error in line: 2, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test436.sjava:
-error in line: 2, 	bad format line
+error in line: 2, 	Illegal value variable
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test437.sjava:
-error in line: 5, 	bad format line
-1
+0
 
 Tester test438.sjava:
-error in line: 2, 	bad format line
-1
+0
 
 Tester test439.sjava:
-error in line: 5, 	bad format line
+error in line: 2, 	Illegal value variable
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test440.sjava:
-error in line: 2, 	bad format line
+error in line: 2, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 2, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test441.sjava:
-error in line: 2, 	bad format line
+error in line: 2, 	Illegal value variable
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal value variable
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test442.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test451.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test452.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 5, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test453.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 5, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test454.sjava:
-error in line: 4, 	Unsupported command
+error in line: 4, 	Final variable can't change
+oop.ex6.main.IllegalException: error in line: 4, 	Final variable can't change
+	at oop.ex6.main.Variable.setValue(Variable.java:125)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test455.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 2, 	Final variable can't change
+oop.ex6.main.IllegalException: error in line: 2, 	Final variable can't change
+	at oop.ex6.main.Variable.setValue(Variable.java:125)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test456.sjava:
-error in line: 3, 	Unsupported command
+error in line: 3, 	Final variable can't change
+oop.ex6.main.IllegalException: error in line: 3, 	Final variable can't change
+	at oop.ex6.main.Variable.setValue(Variable.java:125)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:368)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test457.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 5, 	Unmatched parameter's
+oop.ex6.main.IllegalException: error in line: 5, 	Unmatched parameter's
+	at oop.ex6.main.Method.calledThisMethod(Method.java:122)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:370)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test458.sjava:
-error in line: 1, 	bad format line
+error in line: 1, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 1, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test459.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 5, 	Unmatched parameter's
+oop.ex6.main.IllegalException: error in line: 5, 	Unmatched parameter's
+	at oop.ex6.main.Method.calledThisMethod(Method.java:122)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:370)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test460.sjava:
-error in line: 1, 	Illegal name variable
+error in line: 5, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:241)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test461.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test462.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test463.sjava:
 error in line: 1, 	Illegal name variable
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable
+	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test464.sjava:
 error in line: 1, 	Illegal name variable
+oop.ex6.main.IllegalException: error in line: 1, 	Illegal name variable
+	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test465.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test466.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test467.sjava:
 error in line: 2, 	Illegal name variable
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable
+	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test468.sjava:
 error in line: 2, 	Illegal name variable
+oop.ex6.main.IllegalException: error in line: 2, 	Illegal name variable
+	at oop.ex6.main.Parser.updateVariables(Parser.java:185)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test469.sjava:
 0
 
 Tester test470.sjava:
-error in line: 1, 	illegal method NAME
+error in line: 1, 	
+oop.ex6.main.IllegalException: error in line: 1, 	
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:287)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test471.sjava:
-error in line: 1, 	illegal method NAME
+error in line: 1, 	
+oop.ex6.main.IllegalException: error in line: 1, 	
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:287)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test472.sjava:
-error in line: 1, 	Illegal name variable
-1
+0
 
 Tester test473.sjava:
-error in line: 2, 	Illegal name variable
-1
+0
 
 Tester test474.sjava:
-0
-
-Tester test475.sjava:
-0
-
-Tester test476.sjava:
-0
-
-Tester test477.sjava:
-0
-
-Tester test501.sjava:
-error in line: 4, 	bad format line
+error in line: 5, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 5, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:349)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
+Tester test475.sjava:
+error in line: 1, 	Method never closed the Brackets.
+oop.ex6.main.IllegalException: error in line: 1, 	Method never closed the Brackets.
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:313)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+1
+
+Tester test476.sjava:
+error in line: 1, 	Method never closed the Brackets.
+oop.ex6.main.IllegalException: error in line: 1, 	Method never closed the Brackets.
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:313)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+1
+
+Tester test477.sjava:
+error in line: 2, 	Method never closed the Brackets.
+oop.ex6.main.IllegalException: error in line: 2, 	Method never closed the Brackets.
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:313)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+1
+
+Tester test501.sjava:
+0
+
 Tester test502.sjava:
-error in line: 4, 	bad format line
+error in line: 10, 	Bad format line
+oop.ex6.main.IllegalException: error in line: 10, 	Bad format line
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:354)
+	at oop.ex6.main.Parser.analyzerFile(Parser.java:295)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:21)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test503.sjava:
-error in line: 2, 	bad format line
+error in line: 25, 	Try to copy a value from variable that doesn't exist.
+oop.ex6.main.IllegalException: error in line: 25, 	Try to copy a value from variable that doesn't exist.
+	at oop.ex6.main.Variable.setValue(Variable.java:165)
+	at oop.ex6.main.Parser.assignmentValue(Parser.java:239)
+	at oop.ex6.main.Parser.updateVariables(Parser.java:203)
+	at oop.ex6.main.Parser.analyzeRow(Parser.java:362)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:417)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test504.sjava:
-error in line: 15, 	Illegal name variable
+error in line: 7, 	Illegal value variable
+oop.ex6.main.IllegalException: error in line: 7, 	Illegal value variable
+	at oop.ex6.main.Variable.createDefaultVariable(Variable.java:310)
+	at oop.ex6.main.ConditionBlock.analysisCondition(ConditionBlock.java:52)
+	at oop.ex6.main.ConditionBlock.<init>(ConditionBlock.java:29)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:423)
+	at oop.ex6.main.Parser.parseBlock(Parser.java:425)
+	at oop.ex6.main.Parser.parseMethod(Parser.java:509)
+	at oop.ex6.main.Parser.parseMethods(Parser.java:324)
+	at oop.ex6.main.Sjavac.main(Sjavac.java:22)
+	at Tester.independenceTest(Tester.java:30)
+	at Tester.main(Tester.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
 1
 
 Tester test505.sjava:
-error in line: 4, 	bad format line
-1
+0
 

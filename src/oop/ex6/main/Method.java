@@ -8,17 +8,22 @@ import java.util.regex.Pattern;
  * A class that extends Block and represent a method block.
  */
 class Method extends Block {
+    //Useful Values
+    private static final String FINAL = "final", EMPTY_STRING="", COMMA=",",SINGEL_SPACE = " ";
 
     // Errors string's.
-    static final private String NAME_ERROR = "Illegal method NAME";
-    static final private String PARAMETERS_ERROR = "Unmatched parameter's";
+    private final static String NAME_ERROR = "Illegal method NAME";
+    private final static String PARAMETERS_ERROR = "Unmatched parameter's";
     private final static String BAD_FORMAT_ERROR = "Bad format line";
+    private final static String SAME_NAME_PARAMETERS ="Two parameters has to have two different names.";
 
     // Pattern's string.
     private final static String TYPES_AND_NAMES_PATTERN = "\\s*(int|double|String|boolean|char)\\s+\\S+\\s*";
     private final static String SEPARATED_WORDS_PATTERNS = "\\S+\\s+\\S+";
     private final static String NAME_PATTERN = "[a-zA-Z]+\\w*";
     private final static String REMOVE_EDGES_OF_WHITE_SPACES = "\\S(.*\\S)?";
+    private final static String SPACES = "\\s+";
+    private final static String COMMA_BETWEEN_SPACES ="\\s*,\\s*";
 
     // Pattern's
     private static Pattern typeAndName = Pattern.compile(TYPES_AND_NAMES_PATTERN);
@@ -29,7 +34,7 @@ class Method extends Block {
     // Field's of Method.
     private ArrayList<Variable> parameters;
     private final String NAME;
-    private static final String FINAL = "final";
+
 
 
     /**
@@ -46,8 +51,7 @@ class Method extends Block {
         ArrayList<Variable> methodVars = analysisParameters(parameters, getOriginLine());
         for (Variable variable : methodVars) {
             if (!Parser.addVariable(variable, getDepth())) {
-                throw new IllegalException("Two parameters has to have two different names.",
-                        getOriginLine());
+                throw new IllegalException(SAME_NAME_PARAMETERS, getOriginLine());
             } else {
                 this.parameters.add(variable);
             }
@@ -75,12 +79,12 @@ class Method extends Block {
             IllegalException {
         this.parameters = new ArrayList<>();
         ArrayList<Variable> vars = new ArrayList<>();
-        if (parameters.equals("")) {
+        if (parameters.equals(EMPTY_STRING)) {
             return vars;
         }
         int start;
         int end;
-        String[] parts = parameters.split(",");
+        String[] parts = parameters.split(COMMA);
         for (String part : parts) {
             boolean isFinal = false;
             if (Parser.extractFirstWord(part, lineNumber).equals(FINAL)) {
@@ -93,7 +97,7 @@ class Method extends Block {
                 start = separatedWordsMatcher.start();
                 end = separatedWordsMatcher.end();
                 String newPart = part.substring(start, end);
-                String[] typeAndName = newPart.split("\\s+");
+                String[] typeAndName = newPart.split(SPACES);
                 Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], lineNumber, isFinal);
                 vars.add(newVar);
             } else {
@@ -140,12 +144,12 @@ class Method extends Block {
             return varParameters;
         } else {
             stringParameters = stringParameters.substring(matcher.start(), matcher.end());
-            String[] parameters = stringParameters.split("\\s*,\\s*");
+            String[] parameters = stringParameters.split(COMMA_BETWEEN_SPACES);
             for (String parameter : parameters) {
                 variable = Parser.getVariable(parameter);
                 if (variable != null) {
                     varParameters.add(variable);
-                } else if (parameter.contains(" ")) {
+                } else if (parameter.contains(SINGEL_SPACE)) {
                     throw new IllegalException(BAD_FORMAT_ERROR, lineNumber);
                 } else {
                     variable = Variable.createDefaultVariable(parameter, lineNumber);
