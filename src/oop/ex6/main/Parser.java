@@ -88,7 +88,7 @@ class Parser {
         return path.endsWith(END_FILE_NAME);
     }
 
-    /**
+    /*
      * Extract the string that describe the parameter's from the line.
      *
      * @param line       The line that contain the describe of the parameter's.
@@ -126,13 +126,20 @@ class Parser {
         }
     }
 
-    private static String extractMethodName(String name, int numberLine) throws IllegalException {
-        Matcher matcher = methodName.matcher(name);
-        if (name.equals(""))
+    /*
+     * Giving a String line the function will extract the method name in it.
+     * @param line The line of the method.
+     * @param numberLine  the number line of the string.
+     * @return The name of the method.
+     * @throws IllegalException
+     */
+    private static String extractMethodName(String line, int numberLine) throws IllegalException {
+        Matcher matcher = methodName.matcher(line);
+        if (line.equals(""))
             throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
         if (matcher.find()) {
-            name = name.substring(matcher.start(), matcher.end() - 1);
-            String[] parts = name.split("\\s+");
+            line = line.substring(matcher.start(), matcher.end() - 1);
+            String[] parts = line.split("\\s+");
             if (parts.length > 1) {
                 throw new IllegalException(BAD_FORMAT_ERROR, numberLine);
             } else {
@@ -143,7 +150,7 @@ class Parser {
         }
     }
 
-    /**
+    /*
      * get line of variable initialing and update the variable array.
      *
      * @param line       The line of the declare of the variable's.
@@ -197,7 +204,7 @@ class Parser {
         }
     }
 
-    /**
+    /*
      * Assignment value to variable.
      *
      * @param assignment THe String of what to assignment to the variable.
@@ -370,7 +377,7 @@ class Parser {
         }
     }
 
-    /**
+    /*
      * Parse a single block.
      */
     private void parseBlock(Block block) throws IllegalException {
@@ -445,7 +452,7 @@ class Parser {
         return counterBlocks;
     }
 
-    /**
+    /*
      * Check if the last row is legal return.
      *
      * @param row The last row of the function
@@ -485,7 +492,9 @@ class Parser {
             throw new IllegalException(ALREADY_TOKEN_ERROR_MESSAGE, lineNumber);
         }
     }
-
+    /*
+     * Parse a single method.
+     */
     private void parseMethod(Method method) throws IllegalException {
         int lastRowIndex = method.getRows().size() - 1;
         String lastLine = method.getRows().get(lastRowIndex);
@@ -498,6 +507,12 @@ class Parser {
         }
     }
 
+    /**
+     * This function get a variable can check add it to the right depth place if possible.
+     * @param variable The variable we want to add in the giving depth
+     * @param depth The depth of the block.
+     * @return true if no variable contains in the same depth, false otherwise.
+     */
     static boolean addVariable(Variable variable, int depth) {
         if (variables.get(depth).containsKey(variable.getName())) {
             return false;
