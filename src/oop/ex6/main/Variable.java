@@ -17,7 +17,6 @@ class Variable {
     private final static String TYPE_ERROR_MESSAGE = "Illegal type of value";
     private final static String NAME_ERROR_MESSAGE = "Illegal name variable";
     private final static String VALUE_ERROR_MESSAGE = "Illegal value variable";
-    private final static String INITIALIZE_ERROR_MESSAGE = "Final must initialize";
 
     // Pattern's string's.
     private static final String TYPES_PATTERN = "int|double|String|boolean|char";
