@@ -359,7 +359,7 @@ test411.sjava
 test412.sjava
 0
 test413.sjava
-0
+1
 test414.sjava
 0
 test415.sjava

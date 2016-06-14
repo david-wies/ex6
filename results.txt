@@ -373,7 +373,7 @@ test418.sjava
 test420.sjava
 1
 test421.sjava
-0
+1
 test422.sjava
 1
 test423.sjava
