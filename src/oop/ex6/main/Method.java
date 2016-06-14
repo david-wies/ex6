@@ -40,7 +40,13 @@ class Method extends Block {
     Method(ArrayList<String> rows, String name, int originLine, String parameters, int depth) throws IllegalException {
         super(rows, originLine, depth);
         NAME = name;
-        analysisParameters(parameters);
+        ArrayList<Variable> methodVars = analysisParameters(parameters);
+        for (Variable variable: methodVars) {
+            if (!Parser.addVariable(variable, getDepth())) {
+                throw new IllegalException("Two parameters has to have two different names.",
+                        getOriginLine());
+            }
+        }
     }
 
     /**
@@ -61,10 +67,11 @@ class Method extends Block {
      * @param parameters The string that describe the parameter's of the method.
      * @throws IllegalException
      */
-    private void analysisParameters(String parameters) throws IllegalException {
+    private ArrayList<Variable> analysisParameters(String parameters) throws IllegalException {
         this.parameters = new ArrayList<>();
+        ArrayList<Variable> vars = new ArrayList<>();
         if (parameters.equals("")) {
-            return;
+            return vars;
         }
         int start;
         int end;
@@ -85,16 +92,11 @@ class Method extends Block {
                 String newPart = part.substring(start, end);
                 String[] typeAndName = newPart.split("\\s+");
                 Variable newVar = Variable.createParameter(typeAndName[0], typeAndName[1], getOriginLine(), isFinal);
-                if (!Parser.addVariable(newVar, getDepth())) {
-                    throw new IllegalException("Two parameters has to have two different names.",
-                            getOriginLine());
-                }
-//                Parser.addVariable(newVar, getDepth());
-//                Parser.variables.get(getDepth()).put(newVar.getName(), newVar);
-//                this.parameters.add(newVar);
+                vars.add(newVar);
             } else
                 throw new IllegalException(NAME_ERROR, getOriginLine());
         }
+        return vars;
     }
 
 
@@ -105,14 +107,15 @@ class Method extends Block {
      * @param lineNumber the number of the line of call.
      * @throws IllegalException
      */
-    void calledThisMethod(ArrayList<Variable> parameters, int lineNumber) throws IllegalException {
+    void calledThisMethod(String parameters, int lineNumber) throws IllegalException {
         // if the sizes of the arrays isn't equal that it mean that parameters is unmatched.
-        if (parameters.size() != this.parameters.size()) {
+        ArrayList<Variable> varsParameters = analysisParameters(parameters);
+        if (varsParameters.size() != this.parameters.size()) {
             throw new IllegalException(PARAMETERS_ERROR, lineNumber);
         }
-        for (int index = 0; index < parameters.size(); index++) {
-            if (!this.parameters.get(index).getType().equals(parameters.get(index).getType()) &&
-                    parameters.get(index).hasValue()) {
+        for (int index = 0; index < varsParameters.size(); index++) {
+            if (!this.parameters.get(index).getType().equals(varsParameters.get(index).getType()) &&
+                    varsParameters.get(index).hasValue()) {
                 throw new IllegalException(PARAMETERS_ERROR, lineNumber);
             }
         }

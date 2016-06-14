@@ -451,6 +451,13 @@ class Parser {
         return variable;
     }
 
+    /*
+     * Check if a variable is contains in the same scope
+     * @param name the name of the variable
+     * @param depth the depth of the scope.
+     * @param lineNumber The number of the line in the full s-java file.
+     * @throws IllegalException
+     */
     private void containInSameScope(String name, int depth, int lineNumber) throws IllegalException {
         if (variables.get(depth).containsKey(name)) {
             throw new IllegalException(ALREADY_TOKEN_ERROR_MESSAGE, lineNumber);
